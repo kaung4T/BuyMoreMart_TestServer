@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order/order_success.css' %}">
+
+
+</head>
+
+
+
+
+
+<body>
+
+    {% include 'header.html' %}
+
+
+    <div class="base_content4">
+        <div class="main_order_body">
+          <div class="order_body">
+    
+                    <div class="order_header">
+                            <div class="mb-2">
+                                <h3>Your Order Successfully Placed</h3>
+                            </div>
+                                <div class="form-text">Thanks for chosing Buy More Mart!</div>
+                                <h2><i class="bi bi-check-circle"></i></h2>
+                    </div>
+
+
+
+                    <div class="order_text_group">
+                        <div class="order_left">
+                            <div class="order_user">
+                                <h4>User Detail</h4>
+                                <ul>
+                                    <li><label class="order_user_info" for="">Name: </label> KaungKaung</li>
+                                    <li><label class="order_user_info" for="">Phone: </label> +959455033077</li>
+                                    <li><label class="order_user_info" for="">Email: </label> mrkaungminnkhant@gmail.com</li>
+                                    <li><label class="order_user_info" for="">City: </label> Yangon</li>
+                                    <li><label class="order_user_info" for="">Address: </label> SHweingyin Housing Thuwana</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="order_item">
+                                <h4>Item Detail</h4>
+                                <ul>
+                                    <li><label class="order_item_info" for="">Total Items: </label> 20</li>
+                                    <li><label class="order_item_info" for="">Total Amount: </label> KS8,5000</li>
+                                    <li><label class="order_item_info" for="">Delivery Fee: </label> KS3000</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="order_right">
+                            <h4>Items List</h4>
+
+                            <div class="order_right_items_group">
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+                                
+                                <div class="order_right_items">
+                                    <img class="product_cart_image" src="/media/website_images/website_cover2.jpg" alt="">
+                                    <p>Instant Noodle</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+            <script src="{% static 'js/other/profile_active.js' %}"></script>
+
+
+</body>
+
+
+    {% include 'footer.html'%}
+
+</html>
+
+
+{% endblock %}

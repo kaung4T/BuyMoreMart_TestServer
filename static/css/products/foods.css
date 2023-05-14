@@ -1,0 +1,128 @@
+
+
+
+
+.current_link {color:#8a8787;font-size: 14px;}
+.current_link:hover {color:#8a8787;text-decoration: none;}
+
+.current_link a {color:#8a8787;font-size: 14px;}
+.current_link a:hover {color:#8a8787;text-decoration: none;}
+
+
+.category_drop {
+    /* display: flex; */
+    margin-top: 30px;
+}
+
+.category_drop .dropdown {display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.category_drop .dropdown .btn {border-radius: 0;background-color: #f2f2f2;color: #3d3d3d;}
+.category_drop .dropdown .btn:focus {box-shadow: none;}
+
+
+.category_drop .dropdown .dropdown-toggle {
+    font-size: 14px;
+    text-align: start;
+}
+
+.category_drop .dropdown .dropdown-menu {
+    font-size: 14px;
+    max-height: 191px;
+    overflow-y: scroll;
+    border-radius: 0;
+    z-index: 3;
+}
+
+.category_drop .dropdown .dropdown-menu li a {color: #3d3d3d;}
+
+.category_drop .dropdown .dropdown-menu::-webkit-scrollbar {width: 10px;}
+.category_drop .dropdown .dropdown-menu::-webkit-scrollbar-track {background: #e6e6e6;}
+.category_drop .dropdown .dropdown-menu::-webkit-scrollbar-thumb {background-color: #afafaf;}
+.category_drop .dropdown .dropdown-menu::-webkit-scrollbar-thumb:hover {background-color: #888;}
+
+.category_drop .dropdown .dropdown-menu li {
+    margin-left: -10px;
+}
+
+
+
+
+.foods_content .main_body_content {
+    margin-top: 30px;
+}
+
+.foods_feature .feature_body {
+    margin: 30px 0 30px 0 ;
+}
+
+.feature_pagination ul {
+    list-style: none;
+}
+
+.feature_pagination ul li {
+    margin-top: 11px;
+    display: inline-block;
+    color: #3d3d3d;
+}
+
+
+.feature_pagination2 {margin-bottom: 170px;}
+.feature_pagination2 ul {list-style: none;float: right;}
+.feature_pagination2 ul li {display: inline-block;color: #3d3d3d;margin-top: 11px;}
+
+
+.tab_design_left, .tab_design_right {
+    margin-right: 2px;
+    border: 1px solid #d4d4d4;
+    padding: 3px 5px 3px 5px;
+    font-size: 11px;
+    border-radius: 15%;
+    background-color: #f2f2f2;
+}
+
+
+
+.tab_design {
+    margin-right: 2px;
+    border: 1px solid #d4d4d4;
+    padding: 3px 9px 3px 9px;
+    font-size: 11px;
+    border-radius: 15%;
+    background-color: #f2f2f2;
+}
+
+.tab_design_dot {
+    margin-right: 2px;
+}
+
+.disabled {
+    display: none;
+}
+
+
+#prodcut_active {
+    background-color: #FD8C00;
+}
+
+#prodcut_active li {
+    color: #fff;
+}
+
+
+
+@media (max-width: 415px) {
+    .foods_feature .feature_body .feature_top {
+        display: block;
+    }
+    .feature_pagination {
+        margin-top: 50px;
+    }
+    .feature_pagination ul {
+        list-style: none;
+        margin-left: -30px;
+    }
+}
+

@@ -1,0 +1,385 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/one_product.css' %}">
+
+
+</head>
+
+
+
+
+
+<body>
+
+    {% include 'header.html' %}
+
+
+
+<div class="base_content4">
+    <div class="main_product_body_content">
+      <div class="product_body_content">
+
+
+        <div class="current_link"><a href="{% url 'index' %}"> Home</a> > <a href="">Foods</a></div>
+
+
+        <div class="one_product_title">
+            <h5>Instant Noodle</h5>
+            <span>Brand: SHin</span>
+        </div>
+
+
+
+
+    <div class="one_product_body">
+
+
+            <div class="one_product_image_group">
+                <img id="one_logo1" class="one_product_image" src="/media/website_images/website_cover2.jpg" alt="">
+
+                <img id="one_logo2" class="one_product_image" src="/media/website_images/instant_noodel.jpg" alt="">
+
+                <img id="one_logo3" class="one_product_image" src="/media/website_images/website_cover2.jpg" alt="">
+
+                <img id="one_logo4" class="one_product_image" src="/media/website_images/website_cover2.jpg" alt="">
+
+                
+
+
+                <div class="image_choice">
+                    <div class="image_choice_item">
+                      <div class="image_choice_item_img">
+                      <img class="one_logo1" src="/media/website_images/instant_noodel.jpg" alt="">
+                    </div>
+                    </div>
+
+                    <div class="image_choice_item">
+                        <div class="image_choice_item_img">
+                        <img class="one_logo2" src="/media/website_images/instant_noodel.jpg" alt="">
+                      </div>
+                      </div>
+
+
+                      <div class="image_choice_item">
+                        <div class="image_choice_item_img">
+                        <img class="one_logo3" src="/media/website_images/instant_noodel.jpg" alt="">
+                      </div>
+                      </div>
+
+                      <div class="image_choice_item">
+                        <div class="image_choice_item_img">
+                        <img class="one_logo4" src="/media/website_images/instant_noodel.jpg" alt="">
+                      </div>
+                      </div>
+                </div>
+            </div>
+
+            
+            
+        <div class="one_product_text_group">
+            <div class="one_product_text">
+                <h6>Glowing Pink 20mm Silicone Band Strap for 
+                    Samsung Galaxy Watch Active 2 Watch 3 42mm Gear S3 Watchband Bracelet Strap for Amazfit bip, GTR, GTS</h6>
+                <span>Brand: SHin</span>
+            </div>
+
+
+            <div class="one_product_price">
+                <p class="price">Ks5,900</p>
+                <p class="discount">Ks5,900</p>
+            </div>
+
+
+            <div class="one_product_payment">
+                <p>Payment Option: <img class="deliver_logo" src="/media/website_icons/cod.jpg" alt=""><span>Cash On Delivery</span></p>
+
+                <form action="">
+                    <div class="one_product_payment_amount_group">
+                        <i class="minus bi bi-dash btn btn-sm"></i>
+                        <p class="number">1</p>
+                        <input name="number" type="text" hidden>
+                        <i class="plus bi bi-plus btn btn-sm"></i>
+                    </div>
+
+                    <button type="submit" class="btn payment_cart" href="">Add to Cart</button>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="{% static 'js/other/one_product_img.js' %}"></script>
+
+
+
+
+    <div class="one_product_bottom">
+        <p>Prodcut Details</p>
+
+        <div class="one_product_bottom_text">
+            Noodel is a gread instant can eat instantNoodel is a gread instant can eat instant
+            Noodel is a gread instant can eat instant
+            Noodel is a gread instant can eat instant
+            Noodel is a gread instant can eat instant
+            Noodel is a gread instant can eat instant
+            Noodel is a gread instant can eat instant
+            Noodel is a gread instant can eat instant
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="one_product_array">
+
+        <div class="one_product_array_top">
+          <h3>Suggestion</h3>
+          <a href="{% url 'foods' %}">More <i class="bi bi-arrow-right"></i></a>
+        </div>
+    
+    
+        <div class="products_scroll">
+          <div class="previous_scroll">
+            <button class="one_product_left"><i class="</button>bi bi-chevron-left"></i></button>
+          </div>
+          <div class="next_scroll">
+            <button class="one_product_right"><i class="bi bi-chevron-right"></i></button>
+          </div>
+        </div>
+  
+  
+        <div class="products_scroll2">
+          <div class="previous_scroll">
+            <button class="one_product_left2"><i class="</button>bi bi-chevron-left"></i></button>
+          </div>
+          <div class="next_scroll">
+            <button class="one_product_right2"><i class="bi bi-chevron-right"></i></button>
+          </div>
+        </div>
+      
+    
+          <div class="one_products">
+    
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+  
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+
+
+              <div class="one_products_item">
+                <div class="one_products_item_img">
+                <img src="/media/website_images/instant_noodel.jpg" alt="">
+              </div>
+    
+                <p>Phone Stand Table Stand long neck folding desktop stand</p>
+                <h6>Korean Noodle</h6>
+                <p class="one_products_price">Ks5,900</p>
+                <div class="one_products_item_bottom">
+                <p class="one_products_discount_price">Ks5,900</p>
+                <a href=""><i class="bi bi-cart"></i></a>
+              </div>
+              </div>
+    
+          </div>
+
+
+
+        <script src="{% static 'js/other/one_product_array.js' %}"></script>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+    {% include 'footer.html'%}
+
+</html>
+
+
+{% endblock %}

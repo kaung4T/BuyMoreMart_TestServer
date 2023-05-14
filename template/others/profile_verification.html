@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile_password.css' %}">
+
+
+</head>
+
+
+
+
+
+<body>
+
+    {% include 'header.html' %}
+
+
+    <div class="base_content4">
+        <div class="main_profile_body_content">
+          <div class="profile_body_content">
+    
+
+            
+            <div class="profile_header">
+                <div class="profile_header_image">K</div>
+
+                <div class="profile_header_text_group">
+                <p class="profile_header_text">{{ request.user.username }}</p>
+                <span class="profile_header_text_lower">+959455033077</span>
+                </div>
+            </div>
+
+
+
+
+            <div class="profile_body">
+
+                <div class="profile_left">
+
+                    <ul>
+                        <a href="{% url 'profile' %}"><li class=""><i class="bi bi-person"></i> <p>Profile account</p></li></a>
+
+                        <a href="{% url 'security' %}"><li class=""><i class="bi bi-shield"></i> <p>Security</p></li></a>
+
+
+                    </ul>
+                    
+                </div>
+
+                <div class="profile_right">
+
+                    <div class="profile_right_head">
+                        <h4>Profile Security</h4>
+                    </div>
+
+                    
+                    {% if messages %}
+                    <div class="alert alert-danger alert-dismissible fade show message_info_box profile_password_info">
+                      {% for message in messages %}
+                          {{ message }}
+                      {% endfor %}
+                      <button type="button" class="btn-close message_alert" data-bs-dismiss="alert"></button>
+                  </div>
+                    {% endif %}
+
+
+                    <div class="profile_right_body">
+
+                        <div class="profile_right_body_form">
+                            <form accept="{% url 'profile_verification' new_password %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="mb-4">
+                                    <label for="otp" class="form-label">OTP code</label>
+                                    <input name="otp" type="text" class="form-control" id="otp">
+                                    <div class="form-text">Verification code has been sent to your email.</div>
+                                    </div>
+                                
+                                <button type="submit" class="profile_update btn btn-sm">Verify</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+            <script src="{% static 'js/other/profile_active.js' %}"></script>
+
+
+</body>
+
+
+    {% include 'footer.html'%}
+
+</html>
+
+
+{% endblock %}

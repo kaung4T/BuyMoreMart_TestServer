@@ -1,0 +1,443 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/foods.css' %}">
+
+</head>
+
+
+<body>
+
+   {% include 'header.html' %}
+
+
+   {% for item in items %}
+
+        {{ item }}
+
+   {% endfor %}
+
+
+   <div class="base_content2 foods_content">
+    <div class="main_body_content">
+      <div class="body_content">
+
+
+        <div class="current_link"><a href="{% url 'index' %}"> Home</a> > <a href="{% url 'foods' %}">Foods</a></div>
+
+
+      <div class="category_drop">
+
+          <div class="dropdown">
+            <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Types
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Types</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+              <li><a class="dropdown-item" href="#">Foods</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+              <li><a class="dropdown-item" href="#">Foods</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+              <li><a class="dropdown-item" href="#">Foods</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+
+              <li><a class="dropdown-item" href="#">Foods</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+              <li><a class="dropdown-item" href="#">Foods</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+              <li><a class="dropdown-item" href="#">Foods</a></li>
+              <li><a class="dropdown-item" href="#">Noodle</a></li>
+              <li><a class="dropdown-item" href="#">Drink</a></li>
+            </ul>
+          </div>
+
+
+          <div class="dropdown">
+            <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Price
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Price</a></li>
+              <li><a class="dropdown-item" href="#">Start from min</a></li>
+              <li><a class="dropdown-item" href="#">Start from max</a></li>
+            </ul>
+          </div>
+
+
+          <div class="dropdown">
+            <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Brand
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Brand</a></li>
+              <li><a class="dropdown-item" href="#">Shin</a></li>
+              <li><a class="dropdown-item" href="#">Cola</a></li>
+            </ul>
+          </div>
+
+      </div>
+
+
+
+
+        
+
+<div class="foods_feature">
+      <div class="feature_body">
+
+        <div class="feature_top">
+          <h3>Foods</h3>
+
+          <div class="feature_pagination">
+          <ul>
+
+            {% if items.has_previous %}
+            <a href="?page={{ items.previous_page_number }}" class="tab_design_left"><li><i class="bi bi-chevron-left"></i></li></a>
+            {% else %}
+            <a class="tab_design_left"><li><i class="bi bi-chevron-left"></i></li></a>
+            {% endif %}
+
+            
+            <!-- {% if items.number == items.paginator.num_pages %}
+            <a id="" class="pag tab_design" href="?page={{ items.number|add:'-2' }}"><li>{{ items.number|add:'-2' }}</li></a>
+            {% endif %} -->
+
+
+            <!-- first number page -->
+            {% if items.number != 2 and items.number != 3 and items.number != 1 %}
+            <a class="pag tab_design" href="?page=1"><li>1</li></a>
+            {% endif %}
+
+
+            {% if items.number >= 5  %}
+            <a class="tab_design_dot"><li>...</li></a>
+            {% endif %}  
+
+
+            
+            {% for item in items.paginator.page_range %}
+            {% if items.number == item and item != items.paginator.num_pages %}
+            
+            <a id="prodcut_active" class="pag tab_design" href="?page={{ item }}"><li>{{ item }}</li></a>
+
+            {% elif item > items.number|add:'-3' and item <  items.number|add:'2' and item != items.paginator.num_pages %}
+
+            <a id="" class="pag tab_design" href="?page={{ item }}"><li>{{ item }}</li></a>
+            
+            {% endif %}
+            {% endfor %}
+
+
+            
+
+            {% if items.paginator.num_pages > 3 %}
+            {% if items.number != items.paginator.num_pages and items.number != items.paginator.num_pages|add:'-1' and items.number != items.paginator.num_pages|add:'-2'%}
+            <a class="tab_design_dot"><li>...</li></a>
+            {% endif %}        
+            {% endif %}
+
+
+
+            <a id="" class="pag tab_design" href="?page={{ items.paginator.num_pages }}"><li>{{ items.paginator.num_pages }}</li></a>
+
+
+            {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}" class="tab_design_right"><li><i class="bi bi-chevron-right"></i></li></a>
+            {% else %}
+            <a class="tab_design_right"><li><i class="bi bi-chevron-right"></i></li></a>
+            {% endif %}
+
+          </ul>
+            </div>
+        </div>
+
+        
+      
+
+      <div class="feature_products">
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+
+        <div class="feature_products_item">
+          <div class="feature_products_item_img">
+          <img src="/media/website_images/instant_noodel.jpg" alt="" >
+        </div>
+
+          <p>Phone Stand Table Stand long neck folding desktop stand</p>
+          <h6>Korean Noodle</h6>
+          <p class="feature_products_price">Ks5,900</p>
+          <div class="feature_products_item_bottom">
+          <p class="feature_products_discount_price">Ks5,900</p>
+          <a href=""><i class="bi bi-cart"></i></a>
+        </div>
+        </div>
+
+      
+
+        </div>
+      </div>
+      
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="feature_pagination2">
+          <ul>
+
+            {% if items.has_previous %}
+            <a href="?page={{ items.previous_page_number }}" class="tab_design_left"><li><i class="bi bi-chevron-left"></i></li></a>
+            {% else %}
+            <a class="tab_design_left"><li><i class="bi bi-chevron-left"></i></li></a>
+            {% endif %}
+
+            {% if items.number != 2 and items.number != 3 and items.number != 1 %}
+            <a class="pag tab_design" href="?page=1"><li>1</li></a>
+            {% endif %}
+
+            {% if items.number >= 5  %}
+            <a class="tab_design_dot"><li>...</li></a>
+            {% endif %}  
+
+            {% for item in items.paginator.page_range %}
+            {% if items.number == item and item != items.paginator.num_pages %}
+            
+            <a id="prodcut_active" class="pag tab_design" href="?page={{ item }}"><li>{{ item }}</li></a>
+
+            {% elif item > items.number|add:'-3' and item <  items.number|add:'2' and item != items.paginator.num_pages %}
+
+            <a id="" class="pag tab_design" href="?page={{ item }}"><li>{{ item }}</li></a>
+            
+            {% endif %}
+            {% endfor %}
+
+            {% if items.paginator.num_pages > 3 %}
+            {% if items.number != items.paginator.num_pages and items.number != items.paginator.num_pages|add:'-1' and items.number != items.paginator.num_pages|add:'-2'%}
+            <a class="tab_design_dot"><li>...</li></a>
+            {% endif %}        
+            {% endif %}
+
+            <a id="" class="pag tab_design" href="?page={{ items.paginator.num_pages }}"><li>{{ items.paginator.num_pages }}</li></a>
+
+
+            {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}" class="tab_design_right"><li><i class="bi bi-chevron-right"></i></li></a>
+            {% else %}
+            <a class="tab_design_right"><li><i class="bi bi-chevron-right"></i></li></a>
+            {% endif %}
+
+          </ul>
+        </div>
+  </div>
+
+
+
+
+            <script src="{% static 'js/prodcut_active.js' %}"></script>
+
+
+
+
+
+
+  
+
+</div>
+</div>
+
+</body>
+
+
+    {% include 'footer.html'%}
+
+</html>
+
+
+{% endblock %}

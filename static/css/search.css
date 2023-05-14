@@ -1,0 +1,128 @@
+
+
+
+
+.base_content4 {
+    margin: auto;
+    max-width: 1920px;
+    
+    min-width: 260px;
+}
+
+
+.main_search_body_content {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 110px;
+    /* background-color: #f2f2f2; */
+}
+
+
+.search_body_content {
+    margin: auto;
+    max-width: 80%;
+    /* background-color: #f2f2f2; */
+}
+
+
+.current_link a {color:#8a8787;font-size: 14px;}
+.current_link a:hover {color:#8a8787;text-decoration: none;}
+
+
+.search_info {
+    margin-top: 10px;
+    color: #3d3d3d;
+    line-height: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #e4e4e4;
+}
+
+.search_info span {
+    display: inline-block;
+    word-break: break-word;
+    font-size: 27px;
+}
+
+.search_info .item_amount {
+    word-break: break-word;
+    font-size: 13px;
+    color: #a8a8a8;
+    line-height: 20px;
+
+}
+
+
+
+
+.search_feature .feature_body {
+    margin: 30px 0 30px 0 ;
+}
+
+.feature_pagination ul {
+    list-style: none;
+}
+
+.feature_pagination ul li {
+    margin-top: 11px;
+    display: inline-block;
+    color: #3d3d3d;
+}
+
+
+.feature_pagination2 {margin-bottom: 170px;}
+.feature_pagination2 ul {list-style: none;float: right;}
+.feature_pagination2 ul li {display: inline-block;color: #3d3d3d;margin-top: 11px;}
+
+
+.tab_design_left, .tab_design_right {
+    margin-right: 2px;
+    border: 1px solid #d4d4d4;
+    padding: 3px 5px 3px 5px;
+    font-size: 11px;
+    border-radius: 15%;
+    background-color: #f2f2f2;
+}
+
+
+
+.tab_design {
+    margin-right: 2px;
+    border: 1px solid #d4d4d4;
+    padding: 3px 9px 3px 9px;
+    font-size: 11px;
+    border-radius: 15%;
+    background-color: #f2f2f2;
+}
+
+.tab_design_dot {
+    margin-right: 2px;
+}
+
+.disabled {
+    display: none;
+}
+
+
+#prodcut_active {
+    background-color: #FD8C00;
+}
+
+#prodcut_active li {
+    color: #fff;
+}
+
+
+
+@media (max-width: 415px) {
+    .foods_feature .feature_body .feature_top {
+        display: block;
+    }
+    .feature_pagination {
+        margin-top: 10px;
+    }
+    .feature_pagination ul {
+        list-style: none;
+        margin-left: -30px;
+    }
+}

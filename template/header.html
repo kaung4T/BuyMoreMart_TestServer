@@ -1,0 +1,693 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_hover.css' %}">
+
+</head>
+
+
+<body>
+
+
+
+    <div class="main_header_content">
+        <div class="base_content2">
+            <div class="header_content">
+                <div class="first_header">
+                    
+                    <div class="first_header_left">
+                    <label for=""><i class="bi bi-telephone-fill"></i> +959455033077 |</label>&nbsp;
+                    <label for=""><i class="bi bi-envelope-fill"></i> BuyMoreMart@gmail.com |</label>&nbsp;
+                    <label for=""><i class="bi bi-geo-alt-fill"></i><a href=""> Yatanar Mon 5th St, Yangon</a></label>
+                    
+                    </div>
+                    
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'profile' %}">Account</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<div class="base_content2">
+
+    <div class="second_header_content">
+    <div class="second_header">
+        
+        <a href="{% url 'index' %}"><img class="logo_image" src="/media/website_images/logo-nobg.png" alt=""></a>
+
+        
+        
+        <form action="{% url 'search' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="search" class="search_form" type="text" placeholder="Search..">
+            <button class="search_form_submit"><i class="bi bi-search"></i></button>
+
+            <a class="second_header_cart" href="{% url 'cart' %}"><i class="bi bi-cart"></i>   
+                <word class="second_header_cart_number">9+</word></a>
+            
+            <a class="second_header_profile" href="{% url 'profile' %}"><i class="bi bi-person"></i></a>
+        </form>
+    
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="tablet_second_header_content">
+    <div class="second_header">
+        
+        <a href="{% url 'index' %}"><img class="logo_image" src="/media/website_images/logo-nobg.png" alt=""></a>
+        
+        <div class="mobile_second_header_lists">
+            <button class="mobile_search_form_submit"><i id="search_icon" class="bi bi-search"></i></button>
+            
+            <a class="mobile_second_header_cart" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
+                <a href="" class="mobile_second_header_cart_number"><word>9+</word></a>
+            <a class="mobile_second_header_profile" href="{% url 'profile' %}"><i class="bi bi-person"></i></a>
+        </div>
+    </div>
+    
+        <div class="second_mobile_searchheader_content">
+            <form class="mobile_search_form" action="{% url 'search' %}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                {% csrf_token %}
+            <input name="search" class="mobile_search_form_input" type="text" placeholder="Search..">
+            <div class="mobile_search_form_cancel btn btn-sm">Cancel</div>
+        </form>
+        </div>
+</div>
+
+
+
+
+
+
+    <div class="mobile_second_header_content_fixed">
+    <div class="mobile_second_header_content">
+        <div class="second_header">
+
+            <img class="logo_image click_logo" src="/media/website_images/logo-nobg.png" alt="">
+            <script src="{% static 'js/header/mobile/logo_href.js' %}"></script>
+            
+            <div class="mobile_second_header_lists">
+            <button class="mobile_search_form_submit2"><i id="search_icon" class="bi bi-search"></i></button>
+            
+            <a class="mobile_second_header_cart" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
+                <a href="" class="mobile_second_header_cart_number"><word>9+</word></a>
+            <a class="mobile_second_header_profile" href="{% url 'profile' %}"><i class="bi bi-person"></i></a>
+        </div>
+        </div>
+
+        
+
+                    <div class="second_mobile_searchheader_content2">
+                        <form class="mobile_search_form" action="{% url 'search' %}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                            {% csrf_token %}
+                        <input name="search" class="mobile_search_form_input" type="text" placeholder="Search..">
+                        <div class="mobile_search_form_cancel2 btn btn-sm">Cancel</div>
+                        </form>
+                    </div>
+        </div>
+
+        <!-- <div class="search_line_arrow"></div> -->
+    
+    </div>
+
+
+
+
+    <div class="first_line_arrow"></div>
+
+
+
+</div>
+
+
+
+
+
+    <div class="third_header_content">
+    <div class="third_header">
+        
+        <ul>
+            <li><i id="default_setting" class="bi bi-list"></i></li>
+            <li class="li2"><a href="{% url 'index' %}" class="" id="hn0">Shop Now</a>
+                <div class="shop_now2">
+                    
+                    
+                    <div class="main_row">
+                        
+                        <div class="first_row">
+                            <h6>Category</h6>
+                        <ul>
+                            <li class="shop_li1">Foods <i class="bi bi-chevron-right"></i>
+                                                        <div class="shop_food">
+                                                            <div class="shop_food2">
+                                                                <ul>
+                                                                <li>Noodle</li>
+                                                                <li>Rice</li>
+                                                                <li>Cooking Oil</li>
+                                                                <li>Cola</li>
+                                                                <li>Noodle</li>
+                                                                <li>Rice</li>
+                                                                <li>Cooking Oil</li>
+                                                                <li>Cola</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                            </li>
+                            <li class="shop_li2">Accessories <i class="bi bi-chevron-right"></i>
+                                                        <div class="shop_accessories">
+                                                            <div class="shop_accessories2">
+                                                                <ul>
+                                                                <li>Cleaning</li>
+                                                                <li>Book</li>
+                                                                <li>Material</li>
+                                                                <li>Cooking items</li>
+                                                                <li>Must Have</li>
+                                                                <li>Rice</li>
+                                                                <li>Cooking Oil</li>
+                                                                <li>Cola</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                            </li>
+                            <li class="shop_li3">Beauty <i class="bi bi-chevron-right"></i>
+                                                    <div class="shop_beauty">
+                                                        <div class="shop_beauty2">
+                                                            <ul>
+                                                            <li>Hair</li>
+                                                            <li>Makeup</li>
+                                                            <li>Lip</li>
+                                                            <li>Eyes</li>
+                                                            <li>Face</li>
+                                                            <li>Rice</li>
+                                                            <li>Cooking Oil</li>
+                                                            <li>Cola</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                            </li>
+                            <li class="shop_li4">Disount
+                                                    <!-- <div class="shop_discount">
+                                                        <div class="shop_discount2">
+                                                            <ul>
+                                                            <li>Noodle</li>
+                                                            <li>Rice</li>
+                                                            <li>Cooking Oil</li>
+                                                            <li>Cola</li>
+                                                            <li>Noodle</li>
+                                                            <li>Rice</li>
+                                                            <li>Cooking Oil</li>
+                                                            <li>Cola</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div> -->
+                            </li>
+                            <li class="shop_li5">New Arrivals <i class="bi bi-chevron-right"></i>
+                                                    <div class="shop_new">
+                                                        <div class="shop_new2">
+                                                            <ul>
+                                                            <li>Noodle</li>
+                                                            <li>Rice</li>
+                                                            <li>Cooking Oil</li>
+                                                            <li>Cola</li>
+                                                            <li>Noodle</li>
+                                                            <li>Rice</li>
+                                                            <li>Cooking Oil</li>
+                                                            <li>Cola</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                            </li>
+                        </ul>
+                        </div>
+                    
+                    </div>
+                </div>
+
+                <!-- <div class="hide"></div> -->
+            </li>
+
+
+
+            <li><a href="{% url 'foods' %}" class="" id="hn1">Foods</a>
+                <div class="food2">
+                    
+                    <div class="main_row">    
+                        <div class="first_row">
+                            <h6>Category</h6>
+                        <ul>
+                            <li class="shop_li1">Foods</li>
+                            <li class="shop_li2">Accessories</li>
+                            <li class="shop_li3">Beauty</li>
+                            <li class="shop_li4">Disount</li>
+                            <li class="shop_li5">New Arrivals</li>
+                            <li class="shop_li1">Foods</li>
+                            <li class="shop_li2">Accessories</li>
+                            <li class="shop_li3">Beauty</li>
+                            <li class="shop_li4">Disount</li>
+                            <li class="shop_li5">New Arrivals</li>
+                        </ul>
+                        </div>
+
+                        <div id="myCarousel3" class="carousel slide website_hover_slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active website_cover_item1">
+                                <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover1.jpg" alt="First slide">
+                              </div>
+                              <div class="carousel-item website_cover_item2">
+                                <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover2.png" alt="Second slide">
+                              </div>
+                              <div class="carousel-item website_cover_item3">
+                                <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover3.jpg" alt="Third slide">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel3" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel3" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="{% url 'accessories' %}" class="" id="hn2">Accessories</a>
+                    <div class="accessories2">
+                        
+                        <div class="main_row">    
+                            <div class="first_row">
+                                <h6>Category</h6>
+                            <ul>
+                                <li class="shop_li1">Accessories</li>
+                                <li class="shop_li2">Accessories</li>
+                                <li class="shop_li3">Beauty</li>
+                                <li class="shop_li4">Disount</li>
+                                <li class="shop_li5">New Arrivals</li>
+                                <li class="shop_li1">Foods</li>
+                                <li class="shop_li2">Accessories</li>
+                                <li class="shop_li3">Beauty</li>
+                                <li class="shop_li4">Disount</li>
+                                <li class="shop_li5">New Arrivals</li>
+                            </ul>
+                            </div>
+
+                            <div id="myCarousel4" class="carousel slide website_hover_slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                <div class="carousel-item active website_cover_item1">
+                                    <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover1.jpg" alt="First slide">
+                                </div>
+                                <div class="carousel-item website_cover_item2">
+                                    <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover2.png" alt="Second slide">
+                                </div>
+                                <div class="carousel-item website_cover_item3">
+                                    <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover3.jpg" alt="Third slide">
+                                </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#myCarousel4" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#myCarousel4" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+            </li>
+            <li><a href="{% url 'gb' %}" class="" id="hn3">Beauty</a>
+                <div class="beauty2">
+                    
+                    <div class="main_row">
+
+
+                        <div id="myCarousel5" class="carousel slide website_hover_slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active website_cover_item1">
+                                <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover1.jpg" alt="First slide">
+                              </div>
+                              <div class="carousel-item website_cover_item2">
+                                <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover2.png" alt="Second slide">
+                              </div>
+                              <div class="carousel-item website_cover_item3">
+                                <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover3.jpg" alt="Third slide">
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel5" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel5" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+
+
+
+                        <div class="first_row">
+                            <h6>Category</h6>
+                        <ul>
+                            <li class="shop_li1">Beauty</li>
+                            <li class="shop_li2">Accessories</li>
+                            <li class="shop_li3">Beauty</li>
+                            <li class="shop_li4">Disount</li>
+                            <li class="shop_li5">New Arrivals</li>
+                            <li class="shop_li1">Foods</li>
+                            <li class="shop_li2">Accessories</li>
+                            <li class="shop_li3">Beauty</li>
+                            <li class="shop_li4">Disount</li>
+                            <li class="shop_li5">New Arrivals</li>
+                        </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="{% url 'discount' %}" class="" id="hn4">Discount</a>
+                        <div class="discount2">
+                            
+                            <div class="main_row">
+
+
+                                <div id="myCarousel6" class="carousel slide website_hover_slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                    <div class="carousel-item active website_cover_item1">
+                                        <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover1.jpg" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item website_cover_item2">
+                                        <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover2.png" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item website_cover_item3">
+                                        <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover3.jpg" alt="Third slide">
+                                    </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#myCarousel6" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#myCarousel6" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="first_row">
+                                    <h6>Category</h6>
+                                <ul>
+                                    <li class="shop_li1">Discount</li>
+                                </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+            </li>
+            <li><a href="{% url 'new_arrivals' %}" class="" id="hn5">New Arrivals</a>
+                        <div class="new2">
+                            
+                            <div class="main_row">
+
+                                <div id="myCarousel7" class="carousel slide website_hover_slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                    <div class="carousel-item active website_cover_item1">
+                                        <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover1.jpg" alt="First slide">
+                                    </div>
+                                    <div class="carousel-item website_cover_item2">
+                                        <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover2.png" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item website_cover_item3">
+                                        <img class="d-block w-100 website_hover_cover" src="/media/website_images/foodhover3.jpg" alt="Third slide">
+                                    </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#myCarousel7" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#myCarousel7" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+
+
+                                <div class="first_row">
+                                    <h6>Category</h6>
+                                <ul>
+                                    <li class="shop_li1">New Arrivals</li>
+                                </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="main_default_page">
+        <div class="default_page">
+
+                    <div class="default_close_page"><i id="default_closer" class="bi bi-x-lg"></i></div>
+
+                        <ul class="default_page1_ul0">
+                            <li><a href="{% url 'index' %}"><img class="logo_image" src="/media/website_images/logo-nobg.png" alt=""></a></li>
+                        </ul>
+                
+                        <ul class="default_page1_ul1">
+                            <li><a href="{% url 'index' %}" class="" id="hn00">Shop Now</a></li>
+                            <li><a href="{% url 'foods' %}" class="" id="hn11">Foods</a></li>
+                            <li><a href="{% url 'accessories' %}" class="" id="hn22">Accessories</a></li>
+                            <li><a href="{% url 'gb' %}" class="" id="hn33">Beauty</a></li>
+                        </ul>
+
+                        <ul class="default_page1_ul2">
+                            <li><a href="{% url 'discount' %}" class="" id="hn44">Discount</a></li>
+                            <li><a href="{% url 'new_arrivals' %}" class="" id="hn55">New Arrivals</a></li>
+                            <li><a href="{% url 'products' %}" class="" id="hn66">All Products</a></li>
+                        </ul>
+
+                        <ul class="default_page1_ul3">
+                            <li><a href="{% url 'index' %}" class="" id="hn77"><i class="bi bi-house"></i> Home</a></li>
+                            <li><a href="{% url 'profile' %}" class="" id="hn88"><i class="bi bi-person"></i> Account</a></li>
+                            {% if user.is_authenticated %} 
+                                <li><a href="{% url 'logout' %}" class="" id="hn88"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                            {% else %}
+                                <li><a href="{% url 'login' %}" class="" id="hn88"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                            {% endif %}
+                        </ul>
+
+                        <ul class="default_page1_ul4">
+                            <li><i class="bi bi-telephone-fill"></i> +959455033077</li>
+                            <li><a href=""><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                        </ul>
+
+        </div>
+    </div>
+    <div class="second_default_page">
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/header/default_setting.js' %}"></script>
+
+
+
+
+
+
+
+    <div class="tablet_third_header_content">
+
+        <div class="tablet_third_header"> 
+            <ul>
+                <li><i id="tablet_setting" class="bi bi-list"></i></li>
+                <li><a href="{% url 'index' %}" class="" id="hn0">Shop Now</a></li>
+                <li><a href="{% url 'foods' %}" class="" id="hn1">Foods</a></li>
+                <li><a href="{% url 'accessories' %}" class="" id="hn2">Accessories</a></li>
+                <li><a href="{% url 'gb' %}" class="" id="hn3">Beauty</a></li>
+    
+                <li><a href="{% url 'discount' %}" class="" id="hn4">Discount</a></li>
+                <li><a href="{% url 'new_arrivals' %}" class="" id="hn5">New Arrivals</a></li>
+            </ul>
+        </div>
+        
+        <div class="main_tablet_page">
+            <div class="tablet_page">
+
+                        <div class="tablet_close_page"><i id="tablet_closer" class="bi bi-x-lg"></i></div>
+
+                            <ul class="tablet_page1_ul0">
+                                <li><a href="{% url 'index' %}"><img class="logo_image" src="/media/website_images/logo-nobg.png" alt=""></a></li>
+                            </ul>
+                    
+                            <ul class="tablet_page1_ul1">
+                                <li><a href="{% url 'index' %}" class="" id="hn00">Shop Now</a></li>
+                                <li><a href="{% url 'foods' %}" class="" id="hn11">Foods</a></li>
+                                <li><a href="{% url 'accessories' %}" class="" id="hn22">Accessories</a></li>
+                                <li><a href="{% url 'gb' %}" class="" id="hn33">Beauty</a></li>
+                            </ul>
+
+                            <ul class="tablet_page1_ul2">
+                                <li><a href="{% url 'discount' %}" class="" id="hn44">Discount</a></li>
+                                <li><a href="{% url 'new_arrivals' %}" class="" id="hn55">New Arrivals</a></li>
+                                <li><a href="{% url 'products' %}" class="" id="hn66">All Products</a></li>
+                            </ul>
+
+                            <ul class="tablet_page1_ul3">
+                                <li><a href="{% url 'index' %}" class="" id="hn77"><i class="bi bi-house"></i> Home</a></li>
+                                <li><a href="{% url 'profile' %}" class="" id="hn88"><i class="bi bi-person"></i> Account</a></li>
+                                {% if user.is_authenticated %} 
+                                    <li><a href="{% url 'logout' %}" class="" id="hn88"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                                {% else %}
+                                    <li><a href="{% url 'login' %}" class="" id="hn88"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                                {% endif %}
+                            </ul>
+
+                            <ul class="tablet_page1_ul4">
+                                <li><i class="bi bi-telephone-fill"></i> +959455033077</li>
+                                <li><a href=""><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                            </ul>
+
+            </div>
+        </div>
+        <div class="second_tablet_page">
+
+        </div>
+    </div>
+
+        <script src="{% static 'js/header/tablet/tablet_setting.js' %}"></script>
+
+
+        
+
+
+
+    <div class="mobile_third_header_content">
+
+        <div class="mobile_third_header">
+        <ul>
+            <li><i id="mobile_setting" class="bi bi-list"></i></li>
+            <li><a href="{% url 'index' %}" class="" id="hn0">Shop Now</a></li>
+            <li><a href="{% url 'foods' %}" class="" id="hn1">Foods</a></li>
+            <li><a href="{% url 'accessories' %}" class="" id="hn2">Accessories</a></li>
+            <li><a href="{% url 'gb' %}" class="" id="hn3">Beauty</a></li>
+        </ul>
+        </div>
+
+
+        <div class="main_mobile_page">
+            <div class="mobile_page">
+
+                <div class="mobile_close_page"><i id="mobile_closer" class="bi bi-x-lg"></i></div>
+                        <ul class="mobile_page1_ul0">
+                            <li><a href="{% url 'index' %}"><img class="mobile_logo_image" src="/media/website_images/logo-nobg.png" alt=""></a></li>
+                        </ul>
+
+                    <ul class="mobile_page1_ul1">
+                        <li><a href="{% url 'index' %}" class="" id="hn00">Shop Now</a></li>
+                        <li><a href="{% url 'foods' %}" class="" id="hn11">Foods</a></li>
+                        <li><a href="{% url 'accessories' %}" class="" id="hn22">Accessories</a></li>
+                        <li><a href="{% url 'gb' %}" class="" id="hn33">Beauty</a></li>
+                    </ul>
+
+                    <ul class="mobile_page1_ul2">
+                        <li><a href="{% url 'discount' %}" class="" id="hn44">Discount</a></li>
+                        <li><a href="{% url 'new_arrivals' %}" class="" id="hn55">New Arrivals</a></li>
+                        <li><a href="{% url 'products' %}" class="" id="hn66">All Products</a></li>
+                    </ul>
+
+                   
+                    <ul class="mobile_page1_ul3">
+                        <li><a href="{% url 'index' %}" class="" id="hn77"><i class="bi bi-house"></i> Home</a></li>
+                        <li><a href="{% url 'profile' %}" class="" id="hn88"><i class="bi bi-person"></i> Account</a></li>
+                        {% if user.is_authenticated %} 
+                            <li><a href="{% url 'logout' %}" class="" id="hn88"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}" class="" id="hn88"><i class="bi bi-box-arrow-right"></i> Login</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="mobile_page1_ul4">
+                        <li><i class="bi bi-telephone-fill"></i> +959455033077</a></li>
+                        <li><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li>
+                    </ul>
+    
+            </div>
+        </div>
+
+        <div class="second_mobile_page">
+
+        </div>
+
+
+    </div>
+
+
+    <div class="second_line_arrow"></div>
+    
+    
+
+    
+
+    
+    <script src="{% static 'js/header/mobile/mobile_setting.js' %}"></script>
+    <script src="{% static 'js/header/mobile/mobile_fixed.js' %}"></script>
+    <script src="{% static 'js/header/mobile_search.js' %}"></script>
+
+
+    <!-- <img class="website_cover" src="media/website_images/website_cover.jpg" alt=""> -->
+    
+
+</body>
+
+
+<script src="{% static 'js/header/header_nav.js' %}"></script>
+<script src="{% static 'js/header/dont_click.js' %}"></script>
+
+
+</html>
+
+
+{% endblock %}
+

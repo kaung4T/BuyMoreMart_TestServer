@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+</head>
+<body>
+
+
+
+
+    <div class="base_content3">
+        <div class="main_login_content">
+
+          
+            <div class="main_login_top">
+              <div class="login_top">
+                  <a href="{% url 'index' %}">
+                <img class="login_image" src="/media/website_images/logo-nobg.png" alt="">
+                  </a>
+              </div>
+            </div>
+            
+
+
+            <div class="login_content">
+
+
+
+                <form action="{% url 'login' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+            
+                    <div class="mb-4 account_header_text text-center">
+                      <h5>Accout Login</h5>
+                    </div>
+
+                    
+                    {% if messages %}
+                    <div class="alert alert-danger alert-dismissible fade show message_info_box">
+                      {% for message in messages %}
+                          {{ message }}
+                      {% endfor %}
+                      <button type="button" class="btn-close message_alert" data-bs-dismiss="alert"></button>
+                  </div>
+                    {% endif %}
+
+
+                    <div class="mb-2">
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input name="phone" type="text" class="form-control form-control-sm" id="phone" required>
+                    </div>
+                      <div class="mb-4">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input name="password" type="password" class="form-control form-control-sm" id="exampleInputPassword1" required>
+                        <div id="" class="form-text">Please contact an admin for problems with login.</div>
+                      </div>
+
+                      <button type="submit" class="btn btn-sm">Login</button><span class="acc_info">Create new account?<a href="{% url 'registration' %}">Sign up!</a></span>
+                  
+                  
+                  </form>
+
+            </div>
+        </div>
+      </div>  
+
+
+
+
+      {% include 'login_footer.html' %}
+
+</body>
+</html>
+
+
+{% endblock %}
