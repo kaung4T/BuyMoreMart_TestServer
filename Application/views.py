@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
-from Application.models import User
+from Application.models import User, Category, Product
 from Application.verification import send_otp, send_email
 from Application.check_phone import check_phone_num
 
@@ -11,11 +11,30 @@ from Application.check_phone import check_phone_num
 'Index Page Start'
 class Index:
     def home(self, request):
-        # response = render(request, 'index.html')
-        # response.delete_cookie('my_cookie')
-        # response.set_cookie('my_cookie', 'Product Cart')
+        all_products = Product.objects.all()
 
-        return render(request, 'index.html')
+
+        if Category.objects.filter(name='Accessories').exists():
+            accessories_id = Category.objects.get(name='Accessories')
+            accessories = Product.objects.filter(category=accessories_id.id)
+        else:
+            accessories = None
+
+        if Category.objects.filter(name='Beauty').exists():
+            beauty_id = Category.objects.get(name='Beauty')
+            beauty = Product.objects.filter(category=beauty_id.id)
+        else:
+            beauty = None
+
+
+        context = {
+            'all_products': all_products,
+            'accessories': accessories,
+            'beauty': beauty
+        }
+
+        return render(request, 'index.html',
+                    context)
 
 
     def product(self, request, id):

@@ -66,6 +66,9 @@ class Product(models.Model):
         if self.image != '':
             # return mark_safe('<img src="%s%s" width="150" height="150" />' % (f'{settings.MEDIA_URL}', self.image))
             return mark_safe(f'<img src="{self.image.url}" width="130" height="130" />')
+    
+    def get_discount_items(self):
+        return
             
 
 'For cart'
