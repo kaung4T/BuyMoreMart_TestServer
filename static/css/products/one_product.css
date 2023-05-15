@@ -213,6 +213,7 @@
     min-width: 16.9%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
+    padding-bottom: 20px;
     margin-left: 3px;
     margin-top: 20px;
     margin-right: 5px;
@@ -224,15 +225,15 @@
 
 .one_product_array .one_products .one_products_item img {width: 90px;height: 90px;margin-bottom: 10px;}
 
-.one_product_array .one_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;}
+.one_product_array .one_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;}
 
-.one_product_array .one_products h6 {font-weight: normal;font-size: 14px;margin-top: -13px;color: #8a8787;}
+.one_product_array .one_products h6 {font-weight: normal;font-size: 14px;margin-top: -13px;color: #8a8787;word-break: break-word;}
 
-.one_product_array .one_products .one_products_price {margin-top: -3px;font-size: 18px;}
+.one_product_array .one_products .one_products_price {margin-top: -3px;font-size: 18px;word-break: break-word;}
 
 
 .one_product_array .one_products .one_products_item .one_products_item_bottom {display: flex;margin-top: -13px;justify-content: space-between;}
-.one_product_array .one_products .one_products_discount_price {font-size: 14px;text-decoration: line-through}
+.one_product_array .one_products .one_products_discount_price {font-size: 14px;text-decoration: line-through;word-break: break-word;}
 .one_product_array .one_products .one_products_item .one_products_item_bottom a {margin-top: -6px;font-size: 17px;text-decoration: none;color: #3d3d3d;height: 23px;}
 
 
