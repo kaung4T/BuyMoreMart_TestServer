@@ -67,19 +67,23 @@ class Product(models.Model):
             # return mark_safe('<img src="%s%s" width="150" height="150" />' % (f'{settings.MEDIA_URL}', self.image))
             return mark_safe(f'<img src="{self.image.url}" width="130" height="130" style="object-fit: contain;" />')
     
-    def limit_get_discount_items(self):
-        discount = []
+    def limit_discount_items(self):
+        discount_list = []
         all_product = Product.objects.all().order_by('-id')
         for each_product in all_product:
             if each_product.discount:
-                discount.append(each_product) 
+                discount_list.append(each_product) 
 
-            if len(discount) == 6:
+            if len(discount_list) == 6:
                 break
 
-        return discount
+        if len(discount_list) == 0:
+            discount_list = None
+        return discount_list
 
-    def limit_get_new_arrivals_items(self):
+
+
+    def limit_new_items(self):
         new_arrivals_list = []
         all_product = Product.objects.all().order_by('-id')
         for each_product in all_product:
@@ -89,6 +93,34 @@ class Product(models.Model):
             if len(new_arrivals_list) == 12:
                 break
 
+        if len(new_arrivals_list) == 0:
+            new_arrivals_list = None
+        return new_arrivals_list
+
+
+
+    def all_discount_items(self):
+        discount_list = []
+        all_product = Product.objects.all().order_by('-id')
+        for each_product in all_product:
+            if each_product.discount:
+                discount_list.append(each_product) 
+        
+        if len(discount_list) == 0:
+            discount_list = None
+        return discount_list
+
+
+
+    def all_new_items(self):
+        new_arrivals_list = []
+        all_product = Product.objects.all().order_by('-id')
+        for each_product in all_product:
+            if each_product.new_arrival == True:
+                new_arrivals_list.append(each_product)
+
+        if len(new_arrivals_list) == 0:
+            new_arrivals_list = None
         return new_arrivals_list
             
 

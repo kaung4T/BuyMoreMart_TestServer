@@ -13,8 +13,8 @@ class Index:
     def home(self, request):
         all_products = Product.objects.all().order_by('-id')[:12]
         
-        new_arrivals = Product().limit_get_new_arrivals_items()
-        discount = Product().limit_get_discount_items()
+        new_arrivals = Product().limit_new_items()
+        discount = Product().limit_discount_items()
 
         if Category.objects.filter(name='Accessories').exists():
             accessories_id = Category.objects.get(name='Accessories')
@@ -36,7 +36,6 @@ class Index:
             'discount': discount,
             'new_arrivals': new_arrivals
         }
-
         return render(request, 'index.html',
                     context)
 

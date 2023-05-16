@@ -165,186 +165,27 @@
 
       <div class="feature_products">
 
+        
+        {% for item in items %}
         <div class="feature_products_item">
           <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
+          <img src="{{ item.image.url }}" alt="" >
         </div>
 
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
+          <p>{{ item.name }}</p>
+          <h6>{{ item.title }}</h6>
+          <p class="feature_products_price">{{ item.price }}</p>
           <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
+              {% if item.discount %}
+          <p class="feature_products_discount_price">{{ item.discount }}</p>
+              {% else %}
+          <p class="feature_products_discount_price">{{ item.discount }}</p>
+              {% endif %}
           <a href=""><i class="bi bi-cart"></i></a>
         </div>
         </div>
+            {% endfor %}
 
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-
-        <div class="feature_products_item">
-          <div class="feature_products_item_img">
-          <img src="media/website_images/instant_noodel.jpg" alt="" >
-        </div>
-
-          <p>Phone Stand Table Stand long neck folding desktop stand</p>
-          <h6>Korean Noodle</h6>
-          <p class="feature_products_price">Ks5,900</p>
-          <div class="feature_products_item_bottom">
-          <p class="feature_products_discount_price">Ks5,900</p>
-          <a href=""><i class="bi bi-cart"></i></a>
-        </div>
-        </div>
-
-      
 
         </div>
       </div>
