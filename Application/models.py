@@ -65,7 +65,7 @@ class Product(models.Model):
     def image_tag(self):
         if self.image != '':
             # return mark_safe('<img src="%s%s" width="150" height="150" />' % (f'{settings.MEDIA_URL}', self.image))
-            return mark_safe(f'<img src="{self.image.url}" width="130" height="130" />')
+            return mark_safe(f'<img src="{self.image.url}" width="130" height="130" style="object-fit: contain;" />')
     
     def get_discount_items(self):
         return
