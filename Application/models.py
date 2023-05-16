@@ -69,11 +69,14 @@ class Product(models.Model):
     
     def limit_get_discount_items(self):
         discount = []
-        all_product = Product.objects.all()
+        all_product = Product.objects.all().order_by('-id')
         for each_product in all_product:
-            if each_product.new_arrival == True:
+            if each_product.discount:
                 discount.append(each_product) 
-        
+
+            if len(discount) == 6:
+                break
+
         return discount
 
     def limit_get_new_arrivals_items(self):
@@ -85,7 +88,7 @@ class Product(models.Model):
             
             if len(new_arrivals_list) == 12:
                 break
-            
+
         return new_arrivals_list
             
 

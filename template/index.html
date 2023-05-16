@@ -119,8 +119,8 @@
             <img src="{{ each_product.image.url }}" alt="" >
           </div>
 
-            <p>{{ each_product.name }}</p>
-            <h6>{{ each_product.title }}</h6>
+            <p>{{ each_product.name|truncatechars:44 }}</p>
+            <h6>{{ each_product.title|truncatechars:24 }}</h6>
             <p class="feature_products_price">{{ each_product.price }}</p>
             <div class="feature_products_item_bottom">
               {% if each_product.discount %}
@@ -177,8 +177,8 @@
                   <img src="{{ beauty_item.image.url }}" alt="">
                 </div>
 
-                  <p>{{ beauty_item.name|truncatechars:54 }}</p>
-                  <h6>{{ beauty_item.title }}</h6>
+                  <p>{{ beauty_item.name|truncatechars:44 }}</p>
+                  <h6>{{ beauty_item.title|truncatechars:24 }}</h6>
                   <p class="beauty_products_price">{{ beauty_item.price }}</p>
                   <div class="beauty_products_item_bottom">
                       {% if beauty_item.discount %}
@@ -276,8 +276,8 @@
             <img src="{{ accessories_item.image.url }}" alt="">
           </div>
 
-            <p>{{ accessories_item.name }}</p>
-            <h6>{{ accessories_item.title }}</h6>
+            <p>{{ accessories_item.name|truncatechars:44 }}</p>
+            <h6>{{ accessories_item.title|truncatechars:24 }}</h6>
             <p class="accessories_products_price">{{ accessories_item.price }}</p>
             <div class="accessories_products_item_bottom">
               {% if accessories_item.discount %}
@@ -341,97 +341,26 @@
         
 
       <div class="discount_products">
+
+            {% for discount_item in discount %}
           <div class="discount_products_item">
             <div class="discount_products_item_img">
-            <img src="media/website_images/instant_noodel.jpg" alt="">
+            <img src="{{ discount_item.image.url }}" alt="">
           </div>
 
-            <p>Phone Stand Table Stand long neck folding desktop stand</p>
-            <h6>Korean Noodle</h6>
-            <p class="discount_products_price">Ks5,900</p>
+            <p>{{ discount_item.name|truncatechars:44 }}</p>
+            <h6>{{ discount_item.title|truncatechars:24 }}</h6>
+            <p class="discount_products_price">{{ discount_item.price }}</p>
             <div class="discount_products_item_bottom">
-            <p class="discount_products_discount_price">Ks5,900</p>
+              {% if discount_item.discount %}
+            <p class="discount_products_discount_price">{{ discount_item.discount }}</p>
+              {% else %}
+            <p class="discount_products_discount_price"></p>
+              {% endif %}
             <a href=""><i class="bi bi-cart"></i></a>
           </div>
         </div>
-
-
-            <div class="discount_products_item">
-              <div class="discount_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="discount_products_price">Ks5,900</p>
-              <div class="discount_products_item_bottom">
-              <p class="discount_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-          </div>
-
-
-            <div class="discount_products_item">
-              <div class="discount_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="discount_products_price">Ks5,900</p>
-              <div class="discount_products_item_bottom">
-              <p class="discount_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-          </div>
-
-
-          <div class="discount_products_item">
-            <div class="discount_products_item_img">
-            <img src="media/website_images/instant_noodel.jpg" alt="">
-          </div>
-
-            <p>Phone Stand Table Stand long neck folding desktop stand</p>
-            <h6>Korean Noodle</h6>
-            <p class="discount_products_price">Ks5,900</p>
-            <div class="discount_products_item_bottom">
-            <p class="discount_products_discount_price">Ks5,900</p>
-            <a href=""><i class="bi bi-cart"></i></a>
-          </div>
-        </div>
-
-
-          <div class="discount_products_item">
-            <div class="discount_products_item_img">
-            <img src="media/website_images/instant_noodel.jpg" alt="">
-          </div>
-
-            <p>Phone Stand Table Stand long neck folding desktop stand</p>
-            <h6>Korean Noodle</h6>
-            <p class="discount_products_price">Ks5,900</p>
-            <div class="discount_products_item_bottom">
-            <p class="discount_products_discount_price">Ks5,900</p>
-            <a href=""><i class="bi bi-cart"></i></a>
-          </div>
-        </div>
-
-
-          <div class="discount_products_item">
-            <div class="discount_products_item_img">
-            <img src="media/website_images/instant_noodel.jpg" alt="">
-          </div>
-
-            <p>Phone Stand Table Stand long neck folding desktop stand</p>
-            <h6>Korean Noodle</h6>
-            <p class="discount_products_price">Ks5,900</p>
-            <div class="discount_products_item_bottom">
-            <p class="discount_products_discount_price">Ks5,900</p>
-            <a href=""><i class="bi bi-cart"></i></a>
-          </div>
-          </div>
-
-
-        
+          {% endfor %}
         
         </div>
     </div>
@@ -478,8 +407,8 @@
               <img src="{{ new_arrivals_item.image.url }}" alt="">
             </div>
   
-              <p>{{ new_arrivals_item.name }}</p>
-              <h6>{{ new_arrivals_item.title }}</h6>
+              <p>{{ new_arrivals_item.name|truncatechars:44 }}</p>
+              <h6>{{ new_arrivals_item.title|truncatechars:24 }}</h6>
               <p class="newArrivals_products_price">{{ new_arrivals_item.price }}</p>
               <div class="newArrivals_products_item_bottom">
                 {% if new_arrivals_item.discount %}
