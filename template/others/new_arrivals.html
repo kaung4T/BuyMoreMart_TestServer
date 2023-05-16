@@ -174,12 +174,12 @@
 
           <p>{{ item.name }}</p>
           <h6>{{ item.title }}</h6>
-          <p class="feature_products_price">{{ item.price }}</p>
+          <p class="feature_products_price">Ks{{ item.price }}</p>
           <div class="feature_products_item_bottom">
               {% if item.discount %}
-          <p class="feature_products_discount_price">{{ item.discount }}</p>
+          <p class="feature_products_discount_price">Ks{{ item.discount }}</p>
               {% else %}
-          <p class="feature_products_discount_price">{{ item.discount }}</p>
+          <p class="feature_products_discount_price"></p>
               {% endif %}
           <a href=""><i class="bi bi-cart"></i></a>
         </div>

@@ -121,10 +121,10 @@
 
             <p>{{ each_product.name|truncatechars:44 }}</p>
             <h6>{{ each_product.title|truncatechars:24 }}</h6>
-            <p class="feature_products_price">{{ each_product.price }}</p>
+            <p class="feature_products_price">Ks{{ each_product.price }}</p>
             <div class="feature_products_item_bottom">
               {% if each_product.discount %}
-            <p class="feature_products_discount_price">{{ each_product.discount }}</p>
+            <p class="feature_products_discount_price">Ks{{ each_product.discount }}</p>
               {% else %}
             <p class="feature_products_discount_price"></p>
               {% endif %}
@@ -179,10 +179,10 @@
 
                   <p>{{ beauty_item.name|truncatechars:44 }}</p>
                   <h6>{{ beauty_item.title|truncatechars:24 }}</h6>
-                  <p class="beauty_products_price">{{ beauty_item.price }}</p>
+                  <p class="beauty_products_price">Ks{{ beauty_item.price }}</p>
                   <div class="beauty_products_item_bottom">
                       {% if beauty_item.discount %}
-                  <p class="beauty_products_discount_price">{{ beauty_item.discount }}</p>
+                  <p class="beauty_products_discount_price">Ks{{ beauty_item.discount }}</p>
                       {% else %}
                   <p class="beauty_products_discount_price"></p>
                       {% endif %}
@@ -278,10 +278,10 @@
 
             <p>{{ accessories_item.name|truncatechars:44 }}</p>
             <h6>{{ accessories_item.title|truncatechars:24 }}</h6>
-            <p class="accessories_products_price">{{ accessories_item.price }}</p>
+            <p class="accessories_products_price">Ks{{ accessories_item.price }}</p>
             <div class="accessories_products_item_bottom">
               {% if accessories_item.discount %}
-            <p class="accessories_products_discount_price">{{ accessories_item.discount }}</p>
+            <p class="accessories_products_discount_price">Ks{{ accessories_item.discount }}</p>
               {% else %}
             <p class="accessories_products_discount_price"></p>
               {% endif %}
@@ -350,10 +350,10 @@
 
             <p>{{ discount_item.name|truncatechars:44 }}</p>
             <h6>{{ discount_item.title|truncatechars:24 }}</h6>
-            <p class="discount_products_price">{{ discount_item.price }}</p>
+            <p class="discount_products_price">Ks{{ discount_item.price }}</p>
             <div class="discount_products_item_bottom">
               {% if discount_item.discount %}
-            <p class="discount_products_discount_price">{{ discount_item.discount }}</p>
+            <p class="discount_products_discount_price">Ks{{ discount_item.discount }}</p>
               {% else %}
             <p class="discount_products_discount_price"></p>
               {% endif %}
@@ -409,10 +409,10 @@
   
               <p>{{ new_arrivals_item.name|truncatechars:44 }}</p>
               <h6>{{ new_arrivals_item.title|truncatechars:24 }}</h6>
-              <p class="newArrivals_products_price">{{ new_arrivals_item.price }}</p>
+              <p class="newArrivals_products_price">Ks{{ new_arrivals_item.price }}</p>
               <div class="newArrivals_products_item_bottom">
                 {% if new_arrivals_item.discount %}
-              <p class="newArrivals_products_discount_price">{{ new_arrivals_item.discount }}</p>
+              <p class="newArrivals_products_discount_price">Ks{{ new_arrivals_item.discount }}</p>
                 {% else %}
               <p class="newArrivals_products_discount_price"></p>
                 {% endif %}
