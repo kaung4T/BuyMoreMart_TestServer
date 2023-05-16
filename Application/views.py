@@ -11,18 +11,18 @@ from Application.check_phone import check_phone_num
 'Index Page Start'
 class Index:
     def home(self, request):
-        all_products = Product.objects.all()
+        all_products = Product.objects.all().order_by('-id')[:12]
 
 
         if Category.objects.filter(name='Accessories').exists():
             accessories_id = Category.objects.get(name='Accessories')
-            accessories = Product.objects.filter(category=accessories_id.id)
+            accessories = Product.objects.filter(category=accessories_id.id).order_by('-id')[:12]
         else:
             accessories = None
 
         if Category.objects.filter(name='Beauty').exists():
             beauty_id = Category.objects.get(name='Beauty')
-            beauty = Product.objects.filter(category=beauty_id.id)
+            beauty = Product.objects.filter(category=beauty_id.id).order_by('-id')[:12]
         else:
             beauty = None
 
