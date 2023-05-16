@@ -1,19 +1,22 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from Application.models import Product
+from Application.models import Category, Product
 
 class Food:
     def home(self, request):
-
-        if Product.objects.filter(category=1).exists:
-            product = Product.objects.filter(category=1)
+        if Category.objects.filter(name='Foods').exists():
+            foods_id = Category.objects.get(name='Foods')
+            foods = Product.objects.filter(category=foods_id.id).order_by('-id')
         else:
-            product = None
-        
-        p = Paginator(product, 2)
-        
+            foods = None
+
+        p = Paginator(foods, 12)
         page = request.GET.get("page")
-        items = p.get_page(page)
+
+        if foods is not None:
+            items = p.get_page(page)
+        else:
+            items = None
 
         context = {
             "items": items
