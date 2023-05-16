@@ -244,7 +244,7 @@ body {
 
 .feature_body .feature_products .feature_products_item .feature_products_item_img {text-align: center;}
 
-.feature_body .feature_products .feature_products_item img {width: 180px;height: 160px;margin-bottom: 10px;}
+.feature_body .feature_products .feature_products_item img {width: 180px;height: 160px;margin-bottom: 10px;object-fit: contain;}
 
 .feature_body .feature_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;}
 
@@ -299,7 +299,7 @@ body {
 
 .discount_body .discount_products .discount_products_item .discount_products_item_img {text-align: center;}
 
-.discount_body .discount_products .discount_products_item img {width: 180px;height: 160px;margin-bottom: 10px;}
+.discount_body .discount_products .discount_products_item img {width: 180px;height: 160px;margin-bottom: 10px;object-fit: contain;}
 
 .discount_body .discount_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;}
 
@@ -421,7 +421,7 @@ body {
 
 .beauty_body .beauty_products .beauty_products_item .beauty_products_item_img {text-align: center;}
 
-.beauty_body .beauty_products .beauty_products_item img {width: 120px;height: 110px;margin-bottom: 10px;}
+.beauty_body .beauty_products .beauty_products_item img {width: 120px;height: 110px;margin-bottom: 10px;object-fit: contain;}
 
 .beauty_body .beauty_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;}
 
@@ -490,7 +490,7 @@ body {
 
 .accessories_body .accessories_products .accessories_products_item .accessories_products_item_img {text-align: center;}
 
-.accessories_body .accessories_products .accessories_products_item img {width: 120px;height: 110px;margin-bottom: 10px;}
+.accessories_body .accessories_products .accessories_products_item img {width: 120px;height: 110px;margin-bottom: 10px;object-fit: contain;}
 
 .accessories_body .accessories_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;}
 
@@ -562,7 +562,7 @@ body {
 
 .newArrivals_body .newArrivals_products .newArrivals_products_item .newArrivals_products_item_img {text-align: center;}
 
-.newArrivals_body .newArrivals_products .newArrivals_products_item img {width: 120px;height: 110px;margin-bottom: 10px;}
+.newArrivals_body .newArrivals_products .newArrivals_products_item img {width: 120px;height: 110px;margin-bottom: 10px;object-fit: contain;}
 
 .newArrivals_body .newArrivals_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;}
 
