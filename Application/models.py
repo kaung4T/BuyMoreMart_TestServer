@@ -67,8 +67,26 @@ class Product(models.Model):
             # return mark_safe('<img src="%s%s" width="150" height="150" />' % (f'{settings.MEDIA_URL}', self.image))
             return mark_safe(f'<img src="{self.image.url}" width="130" height="130" style="object-fit: contain;" />')
     
-    def get_discount_items(self):
-        return
+    def limit_get_discount_items(self):
+        discount = []
+        all_product = Product.objects.all()
+        for each_product in all_product:
+            if each_product.new_arrival == True:
+                discount.append(each_product) 
+        
+        return discount
+
+    def limit_get_new_arrivals_items(self):
+        new_arrivals_list = []
+        all_product = Product.objects.all().order_by('-id')
+        for each_product in all_product:
+            if each_product.new_arrival == True:
+                new_arrivals_list.append(each_product)
+            
+            if len(new_arrivals_list) == 12:
+                break
+            
+        return new_arrivals_list
             
 
 'For cart'

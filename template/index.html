@@ -471,174 +471,26 @@
     
   
         <div class="newArrivals_products">
-  
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
 
+              {% for new_arrivals_item in new_arrivals %}
             <div class="newArrivals_products_item">
               <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
+              <img src="{{ new_arrivals_item.image.url }}" alt="">
             </div>
   
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
+              <p>{{ new_arrivals_item.name }}</p>
+              <h6>{{ new_arrivals_item.title }}</h6>
+              <p class="newArrivals_products_price">{{ new_arrivals_item.price }}</p>
               <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
+                {% if new_arrivals_item.discount %}
+              <p class="newArrivals_products_discount_price">{{ new_arrivals_item.discount }}</p>
+                {% else %}
+              <p class="newArrivals_products_discount_price"></p>
+                {% endif %}
               <a href=""><i class="bi bi-cart"></i></a>
             </div>
             </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
-
-            <div class="newArrivals_products_item">
-              <div class="newArrivals_products_item_img">
-              <img src="media/website_images/instant_noodel.jpg" alt="">
-            </div>
-  
-              <p>Phone Stand Table Stand long neck folding desktop stand</p>
-              <h6>Korean Noodle</h6>
-              <p class="newArrivals_products_price">Ks5,900</p>
-              <div class="newArrivals_products_item_bottom">
-              <p class="newArrivals_products_discount_price">Ks5,900</p>
-              <a href=""><i class="bi bi-cart"></i></a>
-            </div>
-            </div>
+              {% endfor %}
   
         </div>
         
