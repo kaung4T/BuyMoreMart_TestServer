@@ -241,11 +241,13 @@ body {
     padding-bottom: 20px;
     margin-top: 20px;
     text-decoration: none;
+    transition: top ease 0.2s;
+    position: relative;
+    top: 0;
 }
 
 .feature_body .feature_products .feature_products_item:hover {
-    border: 1px solid #000;
-    
+    top: -5px;
 }
 
 .feature_body .feature_products .feature_products_item .feature_products_item_img {text-align: center;}
@@ -301,11 +303,13 @@ body {
     padding: 12px;
     padding-bottom: 20px;
     margin-top: 20px;
+    transition: top ease 0.2s;
+    position: relative;
+    top: 0;
 }
 
 .discount_body .discount_products .discount_products_item:hover {
-    border: 1px solid #000;
-    margin-bottom: -2px;
+    top: -5px;
 }
 
 .discount_body .discount_products .discount_products_item .discount_products_item_img {text-align: center;}
@@ -429,11 +433,13 @@ body {
     margin-right: 5px;
     margin-bottom: 8px;
     cursor: pointer;
+    transition: top ease 0.2s;
+    position: relative;
+    top: 0;
 }
 
 .beauty_body .beauty_products .beauty_products_item:hover {
-    border: 1px solid #000;
-    margin-bottom: -2px;
+    top: -5px;
 }
 
 .beauty_body .beauty_products .beauty_products_item .beauty_products_item_img {text-align: center;}
@@ -504,11 +510,13 @@ body {
     margin-right: 5px;
     margin-bottom: 8px;
     cursor: pointer;
+    transition: top ease 0.2s;
+    position: relative;
+    top: 0;
 }
 
 .accessories_body .accessories_products .accessories_products_item:hover {
-    border: 1px solid #000;
-    margin-bottom: -2px;
+    top: -5px;
 }
 
 .accessories_body .accessories_products .accessories_products_item .accessories_products_item_img {text-align: center;}
@@ -582,11 +590,13 @@ body {
     margin-right: 5px;
     margin-bottom: 8px;
     cursor: pointer;
+    transition: top ease 0.2s;
+    position: relative;
+    top: 0;
 }
 
 .newArrivals_body .newArrivals_products .newArrivals_products_item:hover {
-    border: 1px solid #000;
-    margin-bottom: -2px;
+    top: -5px;
 }
 
 .newArrivals_body .newArrivals_products .newArrivals_products_item .newArrivals_products_item_img {text-align: center;}
