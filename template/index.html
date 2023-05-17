@@ -113,24 +113,28 @@
 
       <div class="feature_products">
 
-            {% for each_product in all_products %}
-          <div class="feature_products_item">
-            <div class="feature_products_item_img">
-            <img src="{{ each_product.image.url }}" alt="" >
-          </div>
 
-            <p>{{ each_product.name|truncatechars:44 }}</p>
-            <h6>{{ each_product.title|truncatechars:24 }}</h6>
-            <p class="feature_products_price">Ks{{ each_product.price }}</p>
-            <div class="feature_products_item_bottom">
-              {% if each_product.discount %}
-            <p class="feature_products_discount_price">Ks{{ each_product.discount }}</p>
-              {% else %}
-            <p class="feature_products_discount_price"></p>
-              {% endif %}
-            <a href=""><i class="bi bi-cart"></i></a>
-          </div>
-          </div>
+
+            {% for each_product in all_products %}
+
+            <a href="" class="feature_products_item">
+                  <div class="feature_products_item_img">
+                  <img src="{{ each_product.image.url }}" alt="" >
+                </div>
+
+                  <p>{{ each_product.name|truncatechars:44 }}</p>
+                  <h6>{{ each_product.title|truncatechars:24 }}</h6>
+                  <p class="feature_products_price">Ks{{ each_product.price }}</p>
+                  <div class="feature_products_item_bottom">
+                    {% if each_product.discount %}
+                  <p class="feature_products_discount_price">Ks{{ each_product.discount }}</p>
+                    {% else %}
+                  <p class="feature_products_discount_price"></p>
+                    {% endif %}
+                    <object><a href="{% url 'login' %}"><i class="bi bi-cart"></i></a></object>
+                </div>
+            </a>
+        
             {% endfor %}
 
       </div>
