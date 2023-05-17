@@ -39,15 +39,6 @@ class Index:
         return render(request, 'index.html',
                     context)
 
-
-    def product(self, request, id):
-
-        context = {
-            "id": id
-        }
-        return render(request, 'others/product.html',
-                      context)
-
     
     def search(self, request):
         if request.method == "POST":

@@ -64,7 +64,7 @@
 .one_product_image {
     width: 410px;
     height: 320px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .image_choice {
@@ -72,7 +72,8 @@
     overflow: auto;
     margin-top: 10px;
     margin-left: -2px;
-    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
     scroll-behavior: smooth;
     width: 410px;
 }
@@ -90,7 +91,7 @@
 
 .image_choice .image_choice_item .image_choice_item_img {text-align: center;}
 
-.image_choice .image_choice_item .image_choice_item_img img {min-width: 100px;height: 80px;margin-right: 10px;cursor: pointer;}
+.image_choice .image_choice_item .image_choice_item_img img {padding: 15px;border: 1px solid #afafaf;border-radius: 20%;object-fit: contain;min-width: 100px;height: 80px;margin-right: 10px;cursor: pointer;}
 
 
 #one_logo2 {display: none;}

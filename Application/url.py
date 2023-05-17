@@ -9,6 +9,7 @@ from Application.others import discount
 from Application.others import new_arrivals
 from Application.others import products
 from Application.others import profile
+from Application.others import product
 from Application.order import cart, order_complete
 
 
@@ -39,7 +40,7 @@ urlpatterns = [
 
 
     # one page of a product 
-    path('product/<str:id>/', views.Index().product, name='product'),
+    path('product/<str:id>/', product.Index().home, name='product'),
 
     
     path('foods', foods.Food().home, name='foods'),

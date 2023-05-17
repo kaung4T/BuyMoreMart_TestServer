@@ -117,7 +117,7 @@
 
             {% for each_product in all_products %}
 
-            <a href="" class="feature_products_item">
+            <a href="{% url 'product' each_product.id %}" class="feature_products_item">
                   <div class="feature_products_item_img">
                   <img src="{{ each_product.image.url }}" alt="" >
                 </div>

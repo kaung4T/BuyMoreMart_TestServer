@@ -36,8 +36,8 @@
 
 
         <div class="one_product_title">
-            <h5>Instant Noodle</h5>
-            <span>Brand: SHin</span>
+            <h5>{{ item.title }}</h5>
+            <span>Brand: {{ item.brand}}</span>
         </div>
 
 
@@ -47,40 +47,51 @@
 
 
             <div class="one_product_image_group">
-                <img id="one_logo1" class="one_product_image" src="/media/website_images/website_cover2.jpg" alt="">
+                <img id="one_logo1" class="one_product_image" src="{{ item.image.url }}" alt="">
 
-                <img id="one_logo2" class="one_product_image" src="/media/website_images/instant_noodel.jpg" alt="">
+                  {% if item.image2 %}
+                <img id="one_logo2" class="one_product_image" src="{{ item.image2.url }}" alt="">
+                  {% endif %}
 
-                <img id="one_logo3" class="one_product_image" src="/media/website_images/website_cover2.jpg" alt="">
+                  {% if item.image3 %}
+                <img id="one_logo3" class="one_product_image" src="{{ item.image3.url }}" alt="">
+                  {% endif %}
 
-                <img id="one_logo4" class="one_product_image" src="/media/website_images/website_cover2.jpg" alt="">
-
+                  {% if item.image4 %}
+                <img id="one_logo4" class="one_product_image" src="{{ item.image4.url }}" alt="">
+                  {% endif %}
                 
 
 
                 <div class="image_choice">
                     <div class="image_choice_item">
                       <div class="image_choice_item_img">
-                      <img class="one_logo1" src="/media/website_images/instant_noodel.jpg" alt="">
+                      <img class="one_logo1" src="{{ item.image.url }}" alt="">
                     </div>
                     </div>
 
                     <div class="image_choice_item">
                         <div class="image_choice_item_img">
-                        <img class="one_logo2" src="/media/website_images/instant_noodel.jpg" alt="">
+                          {% if item.image2 %}
+                        <img class="one_logo2" src="{{ item.image2.url }}" alt="">
+                          {% endif %}
                       </div>
                       </div>
 
 
                       <div class="image_choice_item">
                         <div class="image_choice_item_img">
-                        <img class="one_logo3" src="/media/website_images/instant_noodel.jpg" alt="">
+                          {% if item.image3 %}
+                        <img class="one_logo3" src="{{ item.image3.url }}" alt="">
+                          {% endif %}
                       </div>
                       </div>
 
                       <div class="image_choice_item">
                         <div class="image_choice_item_img">
-                        <img class="one_logo4" src="/media/website_images/instant_noodel.jpg" alt="">
+                          {% if item.image4 %}
+                        <img class="one_logo4" src="{{ item.image4.url }}" alt="">
+                          {% endif %}
                       </div>
                       </div>
                 </div>
@@ -90,15 +101,22 @@
             
         <div class="one_product_text_group">
             <div class="one_product_text">
-                <h6>Glowing Pink 20mm Silicone Band Strap for 
-                    Samsung Galaxy Watch Active 2 Watch 3 42mm Gear S3 Watchband Bracelet Strap for Amazfit bip, GTR, GTS</h6>
-                <span>Brand: SHin</span>
+                <h6>{{ item.name }}</h6>
+                  {% if item.brand %}
+                <span>Brand: {{ item.brand }}</span>
+                  {% else %}
+                <span></span>
+                  {% endif %}
             </div>
 
 
             <div class="one_product_price">
-                <p class="price">Ks5,900</p>
-                <p class="discount">Ks5,900</p>
+                <p class="price">Ks{{ item.price }}</p>
+                  {% if item.discount %}
+                <p class="discount">Ks{{ item.discount }}</p>
+                  {% else %}
+                <p class="discount"></p>
+                  {% endif %}
             </div>
 
 
@@ -132,13 +150,7 @@
         <p>Prodcut Details</p>
 
         <div class="one_product_bottom_text">
-            Noodel is a gread instant can eat instantNoodel is a gread instant can eat instant
-            Noodel is a gread instant can eat instant
-            Noodel is a gread instant can eat instant
-            Noodel is a gread instant can eat instant
-            Noodel is a gread instant can eat instant
-            Noodel is a gread instant can eat instant
-            Noodel is a gread instant can eat instant
+            {{ item.description }}
         </div>
     </div>
 
