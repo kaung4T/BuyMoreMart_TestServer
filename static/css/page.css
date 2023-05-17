@@ -245,7 +245,7 @@ body {
 
 .feature_body .feature_products .feature_products_item:hover {
     border: 1px solid #000;
-    margin-bottom: -2px;
+    
 }
 
 .feature_body .feature_products .feature_products_item .feature_products_item_img {text-align: center;}
@@ -301,6 +301,11 @@ body {
     padding: 12px;
     padding-bottom: 20px;
     margin-top: 20px;
+}
+
+.discount_body .discount_products .discount_products_item:hover {
+    border: 1px solid #000;
+    margin-bottom: -2px;
 }
 
 .discount_body .discount_products .discount_products_item .discount_products_item_img {text-align: center;}
@@ -403,6 +408,7 @@ body {
     display: flex;
     overflow: auto;
     margin-top: -10px;
+    padding-bottom: 10px;
     justify-content: space-between;
     scroll-behavior: smooth;
 }
@@ -423,6 +429,11 @@ body {
     margin-right: 5px;
     margin-bottom: 8px;
     cursor: pointer;
+}
+
+.beauty_body .beauty_products .beauty_products_item:hover {
+    border: 1px solid #000;
+    margin-bottom: -2px;
 }
 
 .beauty_body .beauty_products .beauty_products_item .beauty_products_item_img {text-align: center;}
@@ -472,6 +483,7 @@ body {
     display: flex;
     overflow: auto;
     margin-top: -10px;
+    padding-bottom: 10px;
     justify-content: space-between;
     scroll-behavior: smooth;
 }
@@ -492,6 +504,11 @@ body {
     margin-right: 5px;
     margin-bottom: 8px;
     cursor: pointer;
+}
+
+.accessories_body .accessories_products .accessories_products_item:hover {
+    border: 1px solid #000;
+    margin-bottom: -2px;
 }
 
 .accessories_body .accessories_products .accessories_products_item .accessories_products_item_img {text-align: center;}
@@ -544,6 +561,7 @@ body {
     display: flex;
     overflow: auto;
     margin-top: -10px;
+    padding-bottom: 10px;
     justify-content: space-between;
     scroll-behavior: smooth;
 }
@@ -564,6 +582,11 @@ body {
     margin-right: 5px;
     margin-bottom: 8px;
     cursor: pointer;
+}
+
+.newArrivals_body .newArrivals_products .newArrivals_products_item:hover {
+    border: 1px solid #000;
+    margin-bottom: -2px;
 }
 
 .newArrivals_body .newArrivals_products .newArrivals_products_item .newArrivals_products_item_img {text-align: center;}
