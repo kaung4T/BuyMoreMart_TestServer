@@ -2,27 +2,25 @@
 
         let all_from 
 
-        $('a[id=add_cart]').each(function() {
+        $('form[id=form]').each(function() {
       
-            $(this).click(function fun (e) {
+            $(this).submit(function fun (e) {
                 e.preventDefault();
                 
                 let product_id_element = this.querySelector('#product_id');
                 let product_id = product_id_element.value;
 
-                alert(product_id);
-                
                 $.ajax({
                     'type': 'POST',
                     'url': '/add_cart',
                     'data': {
-                        'product_id': $('#product_id').val(),
-                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                        'product_id': product_id,
+                        'csrfmiddlewaretoken': $('#csrf_token').val()
                     },
-                    'success': function fun (data) {
-                        alert(data);
+                    'success': function (data) {
+                        alert(data.am);
                     },
-                    'error': function error (data) {
+                    'error': function (data) {
                         console.log(data);
                     }
 
