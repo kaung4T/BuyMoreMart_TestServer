@@ -180,11 +180,9 @@ body {
     width: 20%;
 }
 
-.first_main_body_content .body_content_item:hover {
-    /* background-color: #d6dadb; */
-    border: 1px solid #000;
-    margin-bottom: -2px;
-}
+/* .first_main_body_content .body_content_item:hover {
+
+} */
 
 .first_main_body_content .body_content_item img {width:90px;height:90px;object-fit: cover;margin-top: 20px;border-radius: 50%;}
 
