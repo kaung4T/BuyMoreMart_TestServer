@@ -131,7 +131,7 @@
                     {% else %}
                   <p class="feature_products_discount_price"></p>
                     {% endif %}
-                    <object><a href="{% url 'login' %}"><i class="bi bi-cart"></i></a></object>
+                    <object><a href="{% url 'add_cart' each_product.id %}"><i id="add_cart" class="bi bi-cart"></i></a></object>
                 </div>
             </a>
         
@@ -432,6 +432,8 @@
   </div>
 
 
+
+  <script src="{% static 'js/add_cart.js' %}"></script>
   <script src="{% static 'js/index_newArrivals_array.js' %}"></script>
 
 
