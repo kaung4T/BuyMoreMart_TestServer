@@ -261,7 +261,8 @@ body {
 
 .feature_body .feature_products .feature_products_item .feature_products_item_bottom {display: flex;margin-top: -13px;justify-content: space-between;}
 .feature_body .feature_products .feature_products_discount_price {font-size: 14px;text-decoration: line-through;word-break: break-word;}
-.feature_body .feature_products .feature_products_item .feature_products_item_bottom a {margin-top: -6px;font-size: 17px;text-decoration: none;color: #3d3d3d;height: 23px;}
+.feature_body .feature_products .feature_products_item .feature_products_item_bottom button {border: none;background-color: transparent;
+    margin-top: -6px;font-size: 17px;text-decoration: none;color: #3d3d3d;}
 
 
 .discount_body {
