@@ -702,7 +702,7 @@ body {
 
 
 
-@media (max-width: 521px) {
+@media (max-width: 554px) {
     .first_main_body_content .body_content_item {
         margin-top: 25px;
         width: 48.4%;
@@ -845,7 +845,64 @@ body {
 }
 
 
-@media (max-width: 322px) {
+@media (max-width: 342px) {
+    .feature_body .feature_products .feature_products_discount_price {margin-bottom: 2px;
+        font-size: 14px;text-decoration: line-through;word-break: break-word;}
+    .feature_body .feature_products .feature_products_item .feature_products_item_bottom {
+        display: block;margin-top: -10px;
+    }
+    .feature_body .feature_products .feature_products_item .feature_products_item_bottom button {
+        border: none;background-color: transparent;margin-left: -5px;margin-top: 5px;
+        font-size: 17px;text-decoration: none;color: #3d3d3d;
+    }
+
+
+    .discount_body .discount_products .discount_products_discount_price {margin-bottom: 2px;
+        font-size: 14px;text-decoration: line-through;word-break: break-word;}
+    .discount_body .discount_products .discount_products_item .discount_products_item_bottom {
+        display: block;margin-top: 13px;margin-top: -10px;
+    }
+    .discount_body .discount_products .discount_products_item .discount_products_item_bottom button {
+        border: none;background-color: transparent;margin-left: -5px;margin-top: 5px;
+        font-size: 17px;text-decoration: none;color: #3d3d3d;
+    }
+
+
+    .beauty_body .beauty_products .beauty_products_discount_price {margin-bottom: 2px;
+        font-size: 14px;text-decoration: line-through;word-break: break-word;}
+    .beauty_body .beauty_products .beauty_products_item .beauty_products_item_bottom {
+        display: block;margin-top: 13px;margin-top: -10px;
+    }
+    .beauty_body .beauty_products .beauty_products_item .beauty_products_item_bottom button {
+        border: none;background-color: transparent;margin-left: -5px;margin-top: 5px;
+        font-size: 17px;text-decoration: none;color: #3d3d3d;
+    }
+
+
+    .accessories_body .accessories_products .accessories_products_discount_price {margin-bottom: 2px;
+        font-size: 14px;text-decoration: line-through;word-break: break-word;}
+    .accessories_body .accessories_products .accessories_products_item .accessories_products_item_bottom {
+        display: block;margin-top: 13px;margin-top: -10px;
+    }
+    .accessories_body .accessories_products .accessories_products_item .accessories_products_item_bottom button {
+        border: none;background-color: transparent;margin-left: -5px;margin-top: 5px;
+        font-size: 17px;text-decoration: none;color: #3d3d3d;
+    }
+
+
+    .newArrivals_body .newArrivals_products .newArrivals_products_discount_price {margin-bottom: 2px;
+        font-size: 14px;text-decoration: line-through;word-break: break-word;}
+    .newArrivals_body .newArrivals_products .newArrivals_products_item .newArrivals_products_item_bottom {
+        display: block;margin-top: 13px;margin-top: -10px;
+    }
+    .newArrivals_body .newArrivals_products .newArrivals_products_item .newArrivals_products_item_bottom button {
+        border: none;background-color: transparent;margin-left: -5px;margin-top: 5px;
+        font-size: 17px;text-decoration: none;color: #3d3d3d;
+    }
+}
+
+
+@media (max-width: 328px) {
     .feature_body .feature_products .feature_products_price {font-size: 14px;}
     .feature_body .feature_products .feature_products_discount_price {font-size: 12px;}
 
@@ -855,7 +912,7 @@ body {
     .beauty_body .beauty_products .beauty_products_price {font-size: 14px;}
     .beauty_body .beauty_products .beauty_products_discount_price {font-size: 12px;}
 
-    .accessories_body .accessories_products .accessories_products_price {font-size: 14px;}
+    .accessories_body accessories_products .accessories_products_price {font-size: 14px;}
     .accessories_body .accessories_products .accessories_products_discount_price {font-size: 12px;}
 
     .newArrivals_body .newArrivals_products .newArrivals_products_price {font-size: 14px;}
@@ -865,21 +922,21 @@ body {
 }
 
 
-@media (max-width: 270px) {
+@media (max-width: 299px) {
     .feature_body .feature_products .feature_products_price {font-size: 13px;}
-    .feature_body .feature_products .feature_products_discount_price {font-size: 11px;}
+    .feature_body .feature_products .feature_products_discount_price {font-size: 12px;}
 
     .discount_body .discount_products .discount_products_price {font-size: 13px;}
-    .discount_body .discount_products .discount_products_discount_price {font-size: 11px;}
+    .discount_body .discount_products .discount_products_discount_price {font-size: 12px;}
 
     .beauty_body .beauty_products .beauty_products_price {font-size: 13px;}
-    .beauty_body .beauty_products .beauty_products_discount_price {font-size: 11px;}
+    .beauty_body .beauty_products .beauty_products_discount_price {font-size: 12px;}
 
     .accessories_body .accessories_products .accessories_products_price {font-size: 13px;}
-    .accessories_body .accessories_products .accessories_products_discount_price {font-size: 11px;}
+    .accessories_body .accessories_products .accessories_products_discount_price {font-size: 12px;}
 
     .newArrivals_body .newArrivals_products .newArrivals_products_price {font-size: 13px;}
-    .newArrivals_body .newArrivals_products .newArrivals_products_discount_price {font-size: 11px;}
+    .newArrivals_body .newArrivals_products .newArrivals_products_discount_price {font-size: 12px;}
 
 
 }
