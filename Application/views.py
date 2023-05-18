@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
+from django.http import Http404
 from Application.models import User, Category, Product
 from Application.verification import send_otp, send_email
 from Application.check_phone import check_phone_num
+
 
 # Create your views here.
 
@@ -153,7 +155,11 @@ class Account:
         if request.method == "POST":
             otp = request.POST["otp"]
 
-            user = User.objects.get(id=pk)
+            try:
+                user = User.objects.get(id=pk)
+            except Exception:
+                raise Http404
+
             if user.otp == otp:
                 user.is_verified = True
                 user.save()
@@ -162,6 +168,11 @@ class Account:
             
             messages.info(request, "Entered a wrong code. Please check the number and try again!")
             return redirect(f"/account_verification/{pk}")
+
+        try:
+            user = User.objects.get(id=pk)
+        except Exception:
+            raise Http404
 
         context = {
             "user_id": pk
