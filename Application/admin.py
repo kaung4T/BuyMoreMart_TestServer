@@ -58,6 +58,9 @@ class CartAdmin(admin.ModelAdmin):
                     'product',
                     'amount']
 
+    def get_ordering(self, request):
+        return [('user')]  # sort case insensitive
+
 
 'For Order'
 class OrderAdmin(admin.ModelAdmin):

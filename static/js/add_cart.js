@@ -18,7 +18,16 @@
                         'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
                     },
                     'success': function (data) {
-                        alert(data.am);
+                        if (data.response == "added") {
+                            alert("Successfully added");
+                        }
+                        else if (data.response == "duplicate") {
+                            alert("item already added");
+                        } 
+                        else if (data.response == "no_user") {
+                            alert("Please register your account!");
+                        } 
+                        
                     },
                     'error': function (data) {
                         console.log(data);
