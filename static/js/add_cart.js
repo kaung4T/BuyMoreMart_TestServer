@@ -22,7 +22,7 @@
                             alert("Successfully added");
                         }
                         else if (data.response == "duplicate") {
-                            alert("item already added");
+                            alert("Item already added");
                         } 
                         else if (data.response == "no_user") {
                             alert("Please register your account!");
