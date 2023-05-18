@@ -9,11 +9,13 @@ class Index:
     def home(self, request, id):
         try:
             item = Product.objects.get(id=id)
+            suggest_items = Product.objects.filter(category=item.category).order_by('-id')[:12]
         except Exception:
             raise Http404
 
         context = {
-            "item": item
+            "item": item,
+            "suggest_items": suggest_items
         }
         return render(request, 'others/product.html',
                     context)
