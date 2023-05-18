@@ -15,7 +15,7 @@
                     'url': '/add_cart',
                     'data': {
                         'product_id': product_id,
-                        'csrfmiddlewaretoken': $('#csrf_token').val()
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
                     },
                     'success': function (data) {
                         alert(data.am);

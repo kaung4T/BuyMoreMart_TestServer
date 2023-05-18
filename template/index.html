@@ -133,15 +133,11 @@
                     {% endif %}
                     
                     <object>
-
                       <form method="POST" action="{% url 'add_cart' %}" id="form" enctype="multipart/form-data">
                           {% csrf_token %}
                         <input name="product_id" id="product_id" type="text" value="{{ each_product.id }}" hidden>
-                        <input name="csrf_token" id="csrf_token" type="text" value="{{ csrf_token }}" hidden>
                           <button type="submit" class="bi bi-cart"></button>
                       </form>
-
-
                     </object>
                 </div>
             </a>
@@ -187,7 +183,7 @@
             <div class="beauty_products">
 
               {% for beauty_item in beauty %}
-                <div class="beauty_products_item">
+                <a href="{% url 'product' beauty_item.id %}" class="beauty_products_item">
                   <div class="beauty_products_item_img">
                   <img src="{{ beauty_item.image.url }}" alt="">
                 </div>
@@ -201,9 +197,16 @@
                       {% else %}
                   <p class="beauty_products_discount_price"></p>
                       {% endif %}
-                  <a href=""><i class="bi bi-cart"></i></a>
+                  
+                      <object>
+                        <form method="POST" action="{% url 'add_cart' %}" id="form" enctype="multipart/form-data">
+                            {% csrf_token %}
+                          <input name="product_id" id="product_id" type="text" value="{{ beauty_item.id }}" hidden>
+                            <button type="submit" class="bi bi-cart"></button>
+                        </form>
+                      </object>
                 </div>
-                </div>
+                </a>
               {% endfor %}
 
             </div>
@@ -286,7 +289,7 @@
       <div class="accessories_products">
 
             {% for accessories_item in accessories %}
-          <div class="accessories_products_item">
+          <a href="{% url 'product' accessories_item.id %}" class="accessories_products_item">
             <div class="accessories_products_item_img">
             <img src="{{ accessories_item.image.url }}" alt="">
           </div>
@@ -300,9 +303,16 @@
               {% else %}
             <p class="accessories_products_discount_price"></p>
               {% endif %}
-            <a href=""><i class="bi bi-cart"></i></a>
+            
+              <object>
+                <form method="POST" action="{% url 'add_cart' %}" id="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  <input name="product_id" id="product_id" type="text" value="{{ accessories_item.id }}" hidden>
+                    <button type="submit" class="bi bi-cart"></button>
+                </form>
+              </object>
           </div>
-          </div>
+          </a>
             {% endfor %}
 
       </div>
@@ -358,7 +368,7 @@
       <div class="discount_products">
 
             {% for discount_item in discount %}
-          <div class="discount_products_item">
+          <a href="{% url 'product' discount_item.id %}" class="discount_products_item">
             <div class="discount_products_item_img">
             <img src="{{ discount_item.image.url }}" alt="">
           </div>
@@ -372,9 +382,16 @@
               {% else %}
             <p class="discount_products_discount_price"></p>
               {% endif %}
-            <a href=""><i class="bi bi-cart"></i></a>
+            
+              <object>
+                <form method="POST" action="{% url 'add_cart' %}" id="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  <input name="product_id" id="product_id" type="text" value="{{ discount_item.id }}" hidden>
+                    <button type="submit" class="bi bi-cart"></button>
+                </form>
+              </object>
           </div>
-        </div>
+        </a>
           {% endfor %}
         
         </div>
@@ -417,7 +434,7 @@
         <div class="newArrivals_products">
 
               {% for new_arrivals_item in new_arrivals %}
-            <div class="newArrivals_products_item">
+            <a href="{% url 'product' new_arrivals_item.id %}" class="newArrivals_products_item">
               <div class="newArrivals_products_item_img">
               <img src="{{ new_arrivals_item.image.url }}" alt="">
             </div>
@@ -431,9 +448,16 @@
                 {% else %}
               <p class="newArrivals_products_discount_price"></p>
                 {% endif %}
-              <a href=""><i class="bi bi-cart"></i></a>
+              
+                <object>
+                  <form method="POST" action="{% url 'add_cart' %}" id="form" enctype="multipart/form-data">
+                      {% csrf_token %}
+                    <input name="product_id" id="product_id" type="text" value="{{ new_arrivals_item.id }}" hidden>
+                      <button type="submit" class="bi bi-cart"></button>
+                  </form>
+                </object>
             </div>
-            </div>
+            </a>
               {% endfor %}
   
         </div>
