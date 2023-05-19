@@ -29,6 +29,11 @@
 .current_link a:hover {color:#8a8787;text-decoration: none;}
 
 
+.no_item_result {
+    color: #3d3d3d;
+    margin-top: 10px;
+}
+
 .search_info {
     margin-top: 10px;
     color: #3d3d3d;

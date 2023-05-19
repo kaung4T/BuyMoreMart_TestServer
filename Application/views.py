@@ -49,8 +49,10 @@ class Index:
 
             if Product.objects.filter(title__icontains=search).exists():
                 product = Product.objects.filter(title__icontains=search)
+                total_item = len(list(product.values()))
             else:
                 product = None
+                total_item = 0
             
             p = Paginator(product, 12)
             page = request.GET.get("page")
@@ -62,7 +64,8 @@ class Index:
 
             context = {
                 "search": search,
-                "items": items
+                "items": items,
+                "total_item": total_item
             }
             return render(request, 'search.html',
                     context)

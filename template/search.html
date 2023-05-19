@@ -36,7 +36,7 @@
 
         <div class="search_info">
             <p>Your search: <span>"{{ search }}"</span></p>
-            <label class="item_amount" for="">Total Items: 300</label>
+            <label class="item_amount" for="">Total Items: {{ total_item }}</label>
         </div>
 
 
@@ -197,7 +197,7 @@
 
       {% else %}
 
-      <p>No result found</p>
+      <p class="no_item_result">No result found.</p>
       
       {% endif %}
       
