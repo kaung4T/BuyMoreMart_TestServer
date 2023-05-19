@@ -122,13 +122,22 @@ class Product(models.Model):
         if len(new_arrivals_list) == 0:
             new_arrivals_list = None
         return new_arrivals_list
-            
+
 
 'For cart'
 class Cart(models.Model):
     user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
     amount = models.IntegerField(default=1)
+
+    def total_item(self, user):
+        carts = Cart.objects.filter(user=user)
+        total_amount = 0
+
+        for each_cart in carts:
+            total_amount += each_cart.amount
+
+        return total_amount
 
 
 'For order'

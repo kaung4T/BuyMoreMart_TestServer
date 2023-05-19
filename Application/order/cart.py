@@ -4,7 +4,18 @@ from django.http import JsonResponse, HttpResponse
 
 class Cart_class:
     def home(self, request):
-        return render(request, 'order/cart.html')
+
+        items = Cart.objects.filter(user=request.user)
+        total_item = Cart().total_item(request.user)
+        total_type = len(list(items))
+
+        context = {
+            "items": items,
+            "total_item": total_item,
+            "total_type": total_type
+        }
+        return render(request, 'order/cart.html',
+                    context)
 
     
     def add_cart(self, request):
