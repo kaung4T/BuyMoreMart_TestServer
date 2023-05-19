@@ -1,6 +1,37 @@
 
 
 
+let mini_amount = document.querySelector('#mini_amount') 
+let existing_amount = document.querySelector('#existing_amount')
+let input_amount = document.querySelector('#amount')
+let maxi_amount = document.querySelector('#maxi_amount') 
+
+
+
+mini_amount.addEventListener('click', mini_click);
+maxi_amount.addEventListener('click', maxi_click);
+
+
+function mini_click () {
+    let mini_number_amount = Number(input_amount.value);
+    
+    if (input_amount.value != 1) {
+        mini_number_amount -= 1;
+
+        input_amount.value = mini_number_amount;
+        existing_amount.innerHTML = input_amount.value;
+    }
+}
+
+
+function maxi_click () {
+    let maxi_number_amount = Number(input_amount.value);
+    maxi_number_amount += 1;
+
+    input_amount.value = maxi_number_amount;
+    existing_amount.innerHTML = input_amount.value;
+}
+
 
 
 

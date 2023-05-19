@@ -131,11 +131,20 @@
                     {% csrf_token %}
                     <div class="one_product_payment_amount_group">
                       <input name="one_product_id" id="one_product_id" type="text" value="{{ item.id }}" hidden>
-                        <i class="minus bi bi-dash btn btn-sm"></i>
-                        <p class="number">1</p>
-                        <input name="amount" id="amount" type="text" value="7" hidden>
-                        <i class="plus bi bi-plus btn btn-sm"></i>
-                    </div>
+                        
+                        <i id="mini_amount" class="minus bi bi-dash btn btn-sm"></i>
+
+                          {% if user_cart_item.amount %}
+                        <p id="existing_amount" class="number">{{ user_cart_item.amount }}</p>
+                        <input name="amount" id="amount" type="text" value="{{ user_cart_item.amount }}" hidden>
+                          {% else %}
+                        <p id="existing_amount" class="number">1</p>
+                        <input name="amount" id="amount" type="text" value="1" hidden>
+                          {% endif %}
+
+                        <i id="maxi_amount" class="plus bi bi-plus btn btn-sm"></i>
+                    
+                      </div>
 
                     <button type="submit" class="btn payment_cart" href="">Add to Cart</button>
                 </form>
