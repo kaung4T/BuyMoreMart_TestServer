@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.http import Http404
@@ -45,8 +46,23 @@ class Index:
     def search(self, request):
         if request.method == "POST":
             search = request.POST["search"]
+
+            if Product.objects.filter(title__icontains=search).exists():
+                product = Product.objects.filter(title__icontains=search)
+            else:
+                product = None
+            
+            p = Paginator(product, 12)
+            page = request.GET.get("page")
+
+            if product is not None:
+                items = p.get_page(page)
+            else:
+                items = None
+
             context = {
-                "search": search
+                "search": search,
+                "items": items
             }
             return render(request, 'search.html',
                     context)
