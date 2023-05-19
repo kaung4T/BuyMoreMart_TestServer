@@ -1,6 +1,5 @@
 
 
-        let all_from 
 
         $('form[id=form]').each(function() {
       
@@ -36,3 +35,4 @@
                 });
         });
     });
+    
