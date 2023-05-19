@@ -37,7 +37,11 @@
 
         <div class="one_product_title">
             <h5>{{ item.title }}</h5>
-            <span>Brand: {{ item.brand}}</span>
+            {% if item.brand %}
+              <span>Brand: {{ item.brand}}</span>
+            {% else %}
+              <span></span>
+            {% endif %}
         </div>
 
 
@@ -111,9 +115,9 @@
 
 
             <div class="one_product_price">
-                <p class="price">Ks{{ item.price }}</p>
+                <p class="price">Ks{{ item.price|intcomma }}</p>
                   {% if item.discount %}
-                <p class="discount">Ks{{ item.discount }}</p>
+                <p class="discount">Ks{{ item.discount|intcomma }}</p>
                   {% else %}
                 <p class="discount"></p>
                   {% endif %}
