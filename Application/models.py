@@ -140,6 +140,14 @@ class Cart(models.Model):
 
         return total_amount
 
+    def all_total_price(self, user):
+        carts = Cart.objects.filter(user=user)
+        all_price = 0
+        
+        for each_cart in carts:
+            all_price += each_cart.total_price
+
+        return all_price
 
 'For order'
 class Order(models.Model):

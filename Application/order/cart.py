@@ -9,15 +9,18 @@ class Cart_class:
             items = Cart.objects.filter(user=request.user)
             total_item = Cart().total_item(request.user)
             total_type = len(list(items))
+            all_total_price = Cart().all_total_price(request.user)
         else:
             items = None
             total_item = 0
             total_type = 0
+            all_total_price = 0
 
         context = {
             "items": items,
             "total_item": total_item,
-            "total_type": total_type
+            "total_type": total_type,
+            "all_total_price": all_total_price
         }
         return render(request, 'order/cart.html',
                     context)
@@ -106,9 +109,9 @@ class Cart_class:
                 return JsonResponse(context)
             else:
                 if product.discount:
-                    Cart.objects.create(user=user, product=product, total_price=product.discount)
+                    Cart.objects.create(user=user, product=product, amount=product_new_amount, total_price=new_total_price)
                 else:
-                    Cart.objects.create(user=user, product=product, total_price=product.price)
+                    Cart.objects.create(user=user, product=product, amount=product_new_amount, total_price=new_total_price)
                 context = {
                 "response": "added"
                 }
