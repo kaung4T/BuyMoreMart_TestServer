@@ -65,6 +65,11 @@
 }
 
 
+.cart_image {
+    
+}
+
+
 .product_cart_image {
     width: 230px;
     height: 200px;
@@ -97,6 +102,7 @@
 }
 
 .cart_text p {
+    color: #3d3d3d;
     font-size: 15px;
 }
 
@@ -117,6 +123,7 @@
 }
 
 .cart_text_2 .cart_each_total_price {
+    color: #3d3d3d;
     font-size: 15px;
 }
 

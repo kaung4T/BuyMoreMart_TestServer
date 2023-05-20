@@ -48,29 +48,40 @@
             <div class="cart_body">
 
                     {% for item in items %}
+            
                 <div class="cart_each">
-                    <div class="cart_image">
-                        <img class="product_cart_image" src="{{ item.product.image.url }}" alt="">
-                    </div>
+                    <a href="{% url 'product' item.product.id %}">
+                        <div class="cart_image">
+                            <img class="product_cart_image" src="{{ item.product.image.url }}" alt="">
+                        </div>
+                    </a>
                                 <div class="cart_text_group">
                                     <div class="cart_text">
-                                        <a href=""><h6>{{ item.product.name }}</h6></a>
-                                        <a href=""><h5>{{ item.product.title }}</h5></a>
-                                            {% if item.product.brand %}
-                                        <p>Brand: {{ item.product.brand }}</p>
-                                            {% else %}
-                                        <p></p>
-                                            {% endif %}
-                                    </div>
-                                    <div class="cart_text_2">
-                                        <p>Qty: {{ item.amount }} <i class="bi bi-plus-circle-fill update_cart"></i></p>
-                                            {% if item.product.discount %}
-                                        <p class="cart_each_total_price">Each: {{ item.product.discount|intcomma }}</p>
-                                            {% else %}
-                                        <p class="cart_each_total_price">Each: {{ item.product.price|intcomma }}</p>
-                                            {% endif %}
+                                        <a href="{% url 'product' item.product.id %}">
+                                            <h6>{{ item.product.name }}</h6>
+                                            <h5>{{ item.product.title }}</h5>
+                                        </a>
 
+                                        {% if item.product.brand %}
+                                        <a href="{% url 'product' item.product.id %}">
+                                            <p>Brand: {{ item.product.brand }}</p>
+                                        </a>
+                                        {% else %}
+                                            <p></p>
+                                        {% endif %}
+                                    </div>
+
+                                    
+                                    <div class="cart_text_2">
+
+                            <p>Qty: {{ item.amount }} <object><a href="{% url 'product' item.product.id %}"><i class="bi bi-plus-circle-fill update_cart"></i></a></object></p>
+                                {% if item.product.discount %}
+                            <p class="cart_each_total_price">Each: {{ item.product.discount|intcomma }}</p>
+                                {% else %}
+                            <p class="cart_each_total_price">Each: {{ item.product.price|intcomma }}</p>
+                                            {% endif %}
                                         <p class="cart_price">Total: <span>Ks5,900</span></p>
+                                        
                                     </div>
                                     <div class="cart_click">
                                         <a href="" class="btn btn-sm cart_btn">Cancel</a>
