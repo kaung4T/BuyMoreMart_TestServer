@@ -5,9 +5,14 @@ from django.http import JsonResponse, HttpResponse
 class Cart_class:
     def home(self, request):
 
-        items = Cart.objects.filter(user=request.user)
-        total_item = Cart().total_item(request.user)
-        total_type = len(list(items))
+        if request.user.is_authenticated:
+            items = Cart.objects.filter(user=request.user)
+            total_item = Cart().total_item(request.user)
+            total_type = len(list(items))
+        else:
+            items = None
+            total_item = 0
+            total_type = 0
 
         context = {
             "items": items,

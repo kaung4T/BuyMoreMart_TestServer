@@ -63,7 +63,7 @@
                                             {% endif %}
                                     </div>
                                     <div class="cart_text_2">
-                                        <p>Qty: 1 <i class="bi bi-plus-circle-fill update_cart"></i></p>
+                                        <p>Qty: {{ item.amount }} <i class="bi bi-plus-circle-fill update_cart"></i></p>
                                             {% if item.product.discount %}
                                         <p class="cart_each_total_price">Each: {{ item.product.discount|intcomma }}</p>
                                             {% else %}
