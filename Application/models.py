@@ -129,6 +129,7 @@ class Cart(models.Model):
     user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
     amount = models.IntegerField(default=1)
+    total_price = models.IntegerField()
 
     def total_item(self, user):
         carts = Cart.objects.filter(user=user)

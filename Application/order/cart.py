@@ -41,7 +41,10 @@ class Cart_class:
                 }
                 return JsonResponse(context)
             else:
-                Cart.objects.create(user=user, product=product)
+                if product.discount:
+                    Cart.objects.create(user=user, product=product, total_price=product.discount)
+                else:
+                    Cart.objects.create(user=user, product=product, total_price=product.price)
                 context = {
                 "response": "added"
                 }
@@ -70,6 +73,12 @@ class Cart_class:
             product = Product.objects.get(id=product_id)
             user = User.objects.get(id=request.user.id)
 
+            if product.discount:
+                new_total_price = int(product_new_amount) * product.discount
+            else:
+                new_total_price = int(product_new_amount) * product.price
+
+
             if product_new_amount:
                 if Cart.objects.filter(user=user, product=product).exists():
                     existing_cart = Cart.objects.get(user=user, product=product)
@@ -81,6 +90,8 @@ class Cart_class:
                         return JsonResponse(context)
                     else:
                         existing_cart.amount = product_new_amount
+                        existing_cart.total_price = new_total_price
+
                         existing_cart.save()
                         context = {
                         "response": "added"
@@ -94,7 +105,10 @@ class Cart_class:
                 }
                 return JsonResponse(context)
             else:
-                Cart.objects.create(user=user, product=product)
+                if product.discount:
+                    Cart.objects.create(user=user, product=product, total_price=product.discount)
+                else:
+                    Cart.objects.create(user=user, product=product, total_price=product.price)
                 context = {
                 "response": "added"
                 }

@@ -56,7 +56,8 @@ class ProductAdmin(admin.ModelAdmin):
 class CartAdmin(admin.ModelAdmin):
     list_display = ['user', 
                     'product',
-                    'amount']
+                    'amount',
+                    'total_price']
 
     def get_ordering(self, request):
         return [('user')]  # sort case insensitive
