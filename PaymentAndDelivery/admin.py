@@ -11,8 +11,9 @@ class PaymentTypeAdmin(admin.ModelAdmin):
 
 'For Order'
 class DeliveryFeeAdmin(admin.ModelAdmin):
-    list_display = ['delivery_fee',
-                        ]
+    list_display = ['city',
+                    'delivery_fee',
+                    'free']
 
     def has_add_permission(self, request, obj=None):
         return False

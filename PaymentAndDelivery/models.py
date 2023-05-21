@@ -14,5 +14,6 @@ class Payment_type(models.Model):
 
 
 class Delivery_fee(models.Model):
+    city = models.CharField(max_length=255)
     delivery_fee = models.IntegerField()
-
+    free = models.BooleanField(default=False)
