@@ -1,16 +1,16 @@
 from django.urls import path
-from Application import views
+from app_controller.Application import views
 
-from Application.foods import foods
-from Application.accessories import accessories
-from Application.gb import gb
+from app_controller.Application.foods import foods
+from app_controller.Application.accessories import accessories
+from app_controller.Application.gb import gb
 
-from Application.others import discount
-from Application.others import new_arrivals
-from Application.others import products
-from Application.others import profile
-from Application.others import product
-from Application.order import cart, order_complete
+from app_controller.Application.others import discount
+from app_controller.Application.others import new_arrivals
+from app_controller.Application.others import products
+from app_controller.Application.others import profile
+from app_controller.Application.others import product
+from app_controller.Application.order import cart, order_complete
 
 
 urlpatterns = [

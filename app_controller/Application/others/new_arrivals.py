@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from Application.models import Category, Product
+from app_controller.Application.models import Category, Product
 
 class New_arrivals:
     def home(self, request):

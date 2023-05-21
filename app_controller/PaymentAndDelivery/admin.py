@@ -1,5 +1,5 @@
 from django.contrib import admin
-from PaymentAndDelivery.models import Payment_type, Delivery_fee
+from app_controller.PaymentAndDelivery.models import Payment_type, Delivery_fee
 # Register your models here.
 
 

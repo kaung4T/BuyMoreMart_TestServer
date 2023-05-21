@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from Application.models import User, Category, Product_type, Product, Cart, Order
+from app_controller.Application.models import User, Category, Product_type, Product, Cart, Order
 
 # Register your models here.
 

@@ -22,7 +22,7 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('BuyMoreMartmm/admin/', admin.site.urls),
-    path('', include('Application.url')),
+    path('', include('app_controller.Application.url')),
 
 
     # DEBUG FALSE

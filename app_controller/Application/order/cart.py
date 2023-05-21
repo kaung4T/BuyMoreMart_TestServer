@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from Application.models import User, Cart, Product
+from app_controller.Application.models import User, Cart, Product
 from django.http import JsonResponse, HttpResponse
 
 class Cart_class:

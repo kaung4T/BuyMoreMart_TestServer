@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'Application.apps.ApplicationConfig',
-    'PaymentAndDelivery.apps.PaymentanddeliveryConfig'
+    'app_controller.Application.apps.ApplicationConfig',
+    'app_controller.PaymentAndDelivery.apps.PaymentanddeliveryConfig'
 ]
 
 AUTH_USER_MODEL = 'Application.User'

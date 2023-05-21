@@ -3,9 +3,9 @@ from django.core.paginator import Paginator
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.http import Http404
-from Application.models import User, Category, Product
-from Application.verification import send_otp, send_email
-from Application.check_phone import check_phone_num
+from app_controller.Application.models import User, Category, Product
+from app_controller.Application.verification import send_otp, send_email
+from app_controller.Application.check_phone import check_phone_num
 
 
 # Create your views here.

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
-from Application.models import User, Cart, Category, Product
+from app_controller.Application.models import User, Cart, Category, Product
 from django.http import Http404
 
 

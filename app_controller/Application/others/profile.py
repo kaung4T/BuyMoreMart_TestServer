@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
-from Application.models import User
+from app_controller.Application.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
-from Application.verification import send_otp, send_email
+from app_controller.Application.verification import send_otp, send_email
 
 class Profile:
     def home(self, request):
