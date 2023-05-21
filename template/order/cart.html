@@ -76,11 +76,11 @@
 
                             <p>Qty: {{ item.amount }} <object><a href="{% url 'product' item.product.id %}"><i class="bi bi-plus-circle-fill update_cart"></i></a></object></p>
                                 {% if item.product.discount %}
-                            <p class="cart_each_total_price">Each: {{ item.product.discount|intcomma }}</p>
+                            <p class="cart_each_total_price">Each: Ks{{ item.product.discount|intcomma }}</p>
                                 {% else %}
-                            <p class="cart_each_total_price">Each: {{ item.product.price|intcomma }}</p>
+                            <p class="cart_each_total_price">Each: Ks{{ item.product.price|intcomma }}</p>
                                             {% endif %}
-                                        <p class="cart_price">Total: <span>{{ item.total_price|intcomma }}</span></p>
+                                        <p class="cart_price">Total: <span>Ks{{ item.total_price|intcomma }}</span></p>
                                         
                                     </div>
                                     <div class="cart_click">
@@ -99,7 +99,7 @@
         <div class="sub_total_group">
                 <div class="sub_total_first">
                     <ul>
-                        <li><label class="sub_key">Subtotal:</label>  <label class="sub_value">{{ all_total_price|intcomma }}</label></li>
+                        <li><label class="sub_key">Subtotal:</label>  <label class="sub_value">Ks{{ all_total_price|intcomma }}</label></li>
                         <li class="dis_key_bottom"><label class="dis_key">Delivery Fee:</label> <label class="dis_value">Ks3,000</label></li>
                         <li><label class="grand_key">Grand total:</label> <label class="grand_value">Ks11118,900</label></li>
                     </ul>
