@@ -72,7 +72,7 @@ class OrderAdmin(admin.ModelAdmin):
                     'status', 
                     'is_member',
                     'time']
-    
+
 
 
 
