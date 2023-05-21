@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from app_controller.Application.models import User, Category, Product_type, Product, Cart, Order
+from app_controller.Application.models import User, Category, Product_type, Product
 
 # Register your models here.
 
@@ -51,28 +51,6 @@ class ProductAdmin(admin.ModelAdmin):
     def get_ordering(self, request):
         return [('category')]  # sort case insensitive
 
-                    
-'For Cart'
-class CartAdmin(admin.ModelAdmin):
-    list_display = ['user', 
-                    'product',
-                    'amount',
-                    'total_price']
-
-    def get_ordering(self, request):
-        return [('user')]  # sort case insensitive
-
-
-'For Order'
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ['order_id',
-                    'user', 
-                    'all_products',
-                    'amount', 
-                    'status', 
-                    'is_member',
-                    'time']
-
 
 
 
@@ -80,5 +58,3 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product_type, Product_typeAdmin)
 
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Cart, CartAdmin)
-admin.site.register(Order, OrderAdmin)

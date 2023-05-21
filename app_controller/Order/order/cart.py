@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from app_controller.Application.models import User, Cart, Product
+from app_controller.Application.models import User
+from app_controller.Order.models import Cart, Product
+from app_controller.PaymentAndDelivery.models import Delivery_fee
 from django.http import JsonResponse, HttpResponse
 
 class Cart_class:
@@ -10,8 +12,10 @@ class Cart_class:
             total_item = Cart().total_item(request.user)
             total_type = len(list(items))
             all_total_price = Cart().all_total_price(request.user)
+            delivery_fees = Delivery_fee.objects.all()
         else:
             items = None
+            delivery_fees = None
             total_item = 0
             total_type = 0
             all_total_price = 0
@@ -20,7 +24,8 @@ class Cart_class:
             "items": items,
             "total_item": total_item,
             "total_type": total_type,
-            "all_total_price": all_total_price
+            "all_total_price": all_total_price,
+            "delivery_fees": delivery_fees
         }
         return render(request, 'order/cart.html',
                     context)

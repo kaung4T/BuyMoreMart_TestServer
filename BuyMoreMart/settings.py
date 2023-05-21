@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'app_controller.Application.apps.ApplicationConfig',
+    'app_controller.Order.apps.OrderConfig',
     'app_controller.PaymentAndDelivery.apps.PaymentanddeliveryConfig'
 ]
 

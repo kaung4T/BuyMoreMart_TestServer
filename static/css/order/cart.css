@@ -166,8 +166,9 @@
 
 
 .sub_total_first ul .dis_key_bottom {
+    margin-top: 10px;
     border-bottom: solid 1px #ebebeb;
-    padding-bottom: 3px;
+    padding-bottom: 10px;
 }
 .sub_total_first ul .sub_key {
     font-size: 15px;
@@ -178,7 +179,7 @@
 .sub_total_first ul .dis_key {
     font-size: 15px;
     color: #3d3d3d;
-    width: 140px;
+    width: 135px;
     font-weight: 700;
 }
 .sub_total_first ul .grand_key {
@@ -200,7 +201,7 @@
 .sub_total_first ul .dis_value {
     font-size: 15px;
     color: #8a8787;
-    margin-left: 31px;
+    margin-left: 23px;
     font-weight: normal;
 }
 .sub_total_first ul .grand_value {
@@ -209,6 +210,10 @@
     margin-left: 31px;
     font-weight: normal;
 }
+
+.sub_total_first .cart_delivery_fee {font-size: 13px;border-radius: 0%;color: #3d3d3d;width: 155px;}
+.sub_total_first .cart_delivery_fee:focus {box-shadow: none;border-color: #3d3d3d;color: #3d3d3d;}
+.sub_total_first .cart_delivery_fee_option {font-size: 13px;color: #3d3d3d;}
 
 
 
@@ -242,7 +247,7 @@
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 586px) {
     .cart_body_content {
         margin: auto;
         max-width: 80%;
@@ -257,7 +262,7 @@
     .sub_total_first ul .grand_key {width: 110px;}
 
     .sub_total_first ul .sub_value {margin-left: 21px;}
-    .sub_total_first ul .dis_value {margin-left: 21px;}
+    .sub_total_first ul .dis_value {margin-left: 17px;}
     .sub_total_first ul .grand_value {margin-left: 21px;font-size: 20px;}
 }
 
@@ -357,7 +362,7 @@
     .sub_total_first ul .dis_value {
         font-size: 15px;
         color: #8a8787;
-        margin-left: 10px;
+        margin-left: 7px;
         font-weight: normal;
     }
     .sub_total_first ul .grand_value {
@@ -396,7 +401,7 @@
     .sub_total_first ul .dis_key {
         font-size: 13px;
         color: #3d3d3d;
-        width: 110px;
+        width: 95px;
         font-weight: 700;
     }
     .sub_total_first ul .grand_key {
@@ -424,6 +429,8 @@
         margin-left: 1px;
         font-weight: normal;
     }
+    .sub_total_first .cart_delivery_fee {font-size: 11px;width: 130px;}
+    .sub_total_first .cart_delivery_fee_option {font-size: 11px;}
 }
 
 
@@ -431,4 +438,11 @@
 
 @media (max-width: 321px) {
     
+}
+
+
+@media (max-width: 275px) {
+    .cart_text_2 .cart_price {
+        font-size: 13px;
+    }
 }

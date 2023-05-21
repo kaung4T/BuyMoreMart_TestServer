@@ -10,7 +10,6 @@ from app_controller.Application.others import new_arrivals
 from app_controller.Application.others import products
 from app_controller.Application.others import profile
 from app_controller.Application.others import product
-from app_controller.Application.order import cart, order_complete
 
 
 urlpatterns = [
@@ -31,14 +30,6 @@ urlpatterns = [
     # path('account_verification', profile.Account().account_verification, name='account_verification'),
 
 
-
-
-    # order
-    path('cart', cart.Cart_class().home, name='cart'),
-    path('add_cart', cart.Cart_class().add_cart, name='add_cart'),
-    path('one_product_add_cart', cart.Cart_class().one_product_add_cart, name='one_product_add_cart'),
-    path('order_success', order_complete.Order().success, name='order_success'),
-    path('order_fail', order_complete.Order().fail, name='order_fail'),
 
 
     # one page of a product 

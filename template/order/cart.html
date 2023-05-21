@@ -100,7 +100,20 @@
                 <div class="sub_total_first">
                     <ul>
                         <li><label class="sub_key">Subtotal:</label>  <label class="sub_value">Ks{{ all_total_price|intcomma }}</label></li>
-                        <li class="dis_key_bottom"><label class="dis_key">Delivery Fee:</label> <label class="dis_value">Ks3,000</label></li>
+                        
+                        <li class="dis_key_bottom"><label class="dis_key">Delivery Fee:</label> 
+                                <label class="dis_value">
+                            <select id="country" name="country" class="form-select cart_delivery_fee">
+                                {% for each_delivery_fee in delivery_fees %}
+                                
+        <option class="cart_delivery_fee_option" 
+        value="{{ each_delivery_fee.delivery_fee }}">Ks{{ each_delivery_fee.delivery_fee }} <span>{{ each_delivery_fee.city }}</span></option>
+                                
+                                {% endfor %}
+                            </select>    
+                                </label>
+                        </li>
+
                         <li><label class="grand_key">Grand total:</label> <label class="grand_value">Ks11118,900</label></li>
                     </ul>
                 </div>
