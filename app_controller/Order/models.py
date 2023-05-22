@@ -46,9 +46,12 @@ class Order(models.Model):
     order_id = models.UUIDField(default=uuid.uuid4, unique=True, db_index=True, editable=False)
     user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     product = models.ManyToManyField(Product, related_name="order_products", help_text="အညိုရောင်နောက်ခံမှတ်ထားသောပစ္စည်းများသည် Customer ဝယ်ထားသောပစ္စည်းများ ဖြစ်ပါသည်။")
-    amount = models.IntegerField(default=1)
+    each_product = models.JSONField()
+    total_items = models.IntegerField(default=1)
+    grand_total_price = models.IntegerField()
+    delivery_fee = models.IntegerField()
     status = models.CharField(max_length=225, default="Pending", choices=choice)
-    is_member = models.CharField(max_length=225, default="False", choices=is_memberChoice)
+    # is_member = models.CharField(max_length=225, default="False", choices=is_memberChoice)
     time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def all_products(self):

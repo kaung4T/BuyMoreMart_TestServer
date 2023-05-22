@@ -1,7 +1,7 @@
 from django.urls import path
 from app_controller.Application import views
 
-from app_controller.Order.order import cart, order_complete
+from app_controller.Order.order import cart, order_complete, order
 
 
 urlpatterns = [
@@ -12,4 +12,6 @@ urlpatterns = [
     path('order_success', order_complete.Order().success, name='order_success'),
     path('order_fail', order_complete.Order().fail, name='order_fail'),
     
+    path('order', order.Order_class().check_out, name='order'),
+
     ]

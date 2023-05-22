@@ -18,10 +18,13 @@ class CartAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['order_id',
                     'user', 
-                    'all_products',
-                    'amount', 
+                    # 'all_products',
+                    'each_product',
+                    'total_items',
+                    'grand_total_price',
+                    'delivery_fee',
                     'status', 
-                    'is_member',
+                    # 'is_member',
                     'time']
 
 

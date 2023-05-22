@@ -94,7 +94,8 @@
             </div>
 
 
-
+<form method="POST" action="{% url 'order' %}" enctype="multipart/form-data">
+        {% csrf_token %}
 
         <div class="sub_total_group">
                 <div class="sub_total_first">
@@ -104,17 +105,21 @@
                         
                         <li class="dis_key_bottom"><label class="dis_key">Delivery Fee:</label> 
                                 <label class="dis_value">
-                            <select id="cart_delivery" name="country" class="form-select cart_delivery_fee">
+
+                            <select id="cart_delivery" name="cart_delivery_fee" class="form-select cart_delivery_fee">
                                 {% for each_delivery_fee in delivery_fees %}
                                 
         <option class="cart_delivery_fee_option" 
         value="{{ each_delivery_fee.delivery_fee }}">Ks{{ each_delivery_fee.delivery_fee }} <span>{{ each_delivery_fee.city }}</span></option>
                                 
                                 {% endfor %}
-                            </select>    
+                            </select>
+
                                 </label>
                         </li>
 
+                        <input type="text" name="cart_total_items" value="{{ total_item }}" hidden>
+                        <input type="text" name="cart_total" value="{{ all_total_price }}" hidden>
             <li><label class="grand_key">Grand total:</label> <label id="grand_price" class="grand_value">Ks{{ grand_total_price }}</label></li>
                     </ul>
                 </div>
@@ -128,9 +133,11 @@
                 <div class="form-text">Thanks for chosing Buy More Mart!</div>
             </div>
 
-            <a href="" class="btn btn-sm checkout_btn">Check out</a>
+            <button type="submit" href="" class="btn btn-sm checkout_btn">Check out</button>
         </div>
     </div>
+
+</form>
 
     {% else %}
 
