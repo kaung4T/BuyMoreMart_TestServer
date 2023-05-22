@@ -44,7 +44,7 @@
 
 
 
-
+    {% if items %}
             <div class="cart_body">
 
                     {% for item in items %}
@@ -132,7 +132,13 @@
         </div>
     </div>
 
+    {% else %}
 
+    
+    <div class="no_cart_item"></div>
+
+
+    {% endif %}
 
 
         </div>
