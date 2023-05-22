@@ -99,11 +99,12 @@
         <div class="sub_total_group">
                 <div class="sub_total_first">
                     <ul>
+                        <input class="total_value" value="{{ all_total_price }}" hidden>
                         <li><label class="sub_key">Subtotal:</label>  <label class="sub_value">Ks{{ all_total_price|intcomma }}</label></li>
                         
                         <li class="dis_key_bottom"><label class="dis_key">Delivery Fee:</label> 
                                 <label class="dis_value">
-                            <select id="country" name="country" class="form-select cart_delivery_fee">
+                            <select id="cart_delivery" name="country" class="form-select cart_delivery_fee">
                                 {% for each_delivery_fee in delivery_fees %}
                                 
         <option class="cart_delivery_fee_option" 
@@ -114,7 +115,7 @@
                                 </label>
                         </li>
 
-                        <li><label class="grand_key">Grand total:</label> <label class="grand_value">Ks11118,900</label></li>
+            <li><label class="grand_key">Grand total:</label> <label id="grand_price" class="grand_value">Ks{{ grand_total_price }}</label></li>
                     </ul>
                 </div>
         </div>
@@ -139,7 +140,7 @@
 </div>
 
 
-            <script src="{% static 'js/other/profile_active.js' %}"></script>
+            <script src="{% static 'js/order/cart_delivery.js' %}"></script>
 
 
 </body>

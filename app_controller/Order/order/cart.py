@@ -7,25 +7,33 @@ from django.http import JsonResponse, HttpResponse
 class Cart_class:
     def home(self, request):
 
+
+
+        delivery_fees = Delivery_fee.objects.all()
+
         if request.user.is_authenticated:
             items = Cart.objects.filter(user=request.user)
             total_item = Cart().total_item(request.user)
             total_type = len(list(items))
             all_total_price = Cart().all_total_price(request.user)
-            delivery_fees = Delivery_fee.objects.all()
+
+            grand_total_price = all_total_price + delivery_fees[0].delivery_fee
+            
         else:
             items = None
-            delivery_fees = None
             total_item = 0
             total_type = 0
             all_total_price = 0
+            grand_total_price = 0
+            
 
         context = {
             "items": items,
             "total_item": total_item,
             "total_type": total_type,
             "all_total_price": all_total_price,
-            "delivery_fees": delivery_fees
+            "delivery_fees": delivery_fees,
+            "grand_total_price": grand_total_price
         }
         return render(request, 'order/cart.html',
                     context)
