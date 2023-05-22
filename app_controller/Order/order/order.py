@@ -14,13 +14,13 @@ class Order_class:
 
         # create order of all products from cart
         user_relative_cart = Cart.objects.filter(user=request.user)
-        cart_json = {}
+        cart_all_products = ""
 
         for each_cart in user_relative_cart:
-            cart_json[each_cart.product.title] = each_cart.amount
+            cart_all_products += f"{each_cart.product.title}= {each_cart.amount},  "
 
 
-        instant = Order.objects.create(user=request.user, each_product=cart_json,
+        instant = Order.objects.create(user=request.user, each_product=cart_all_products,
                             grand_total_price=cart_grand_total_price, delivery_fee=cart_delivery_fee,
                             total_items=cart_total_items)
 
