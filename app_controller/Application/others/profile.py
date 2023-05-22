@@ -35,6 +35,9 @@ class Profile:
             messages.info(request, "Please register an account!")
             return redirect("profile")
 
+        if request.user.is_authenticated == False:
+            return redirect("login")
+
         return render(request, 'others/profile.html')
 
 

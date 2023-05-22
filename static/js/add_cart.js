@@ -24,7 +24,8 @@
                             alert("Item already added");
                         } 
                         else if (data.response == "no_user") {
-                            alert("Please register your account!");
+                            // alert("Please register your account!");
+                            window.location.href = `/login`;
                         } 
                         
                     },

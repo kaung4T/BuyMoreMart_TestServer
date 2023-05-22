@@ -7,6 +7,8 @@ from django.http import JsonResponse, HttpResponse
 class Cart_class:
     def home(self, request):
 
+        if request.user.is_authenticated == False:
+            return redirect('login')
 
 
         delivery_fees = Delivery_fee.objects.all()
