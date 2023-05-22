@@ -3,6 +3,7 @@ from app_controller.Application.models import User
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from app_controller.Application.verification import send_otp, send_email
+from app_controller.Order.models import Cart
 
 class Profile:
     def home(self, request):
@@ -31,14 +32,28 @@ class Profile:
                     user.country = country
 
                 user.save()
+                messages.info(request, "Successfully Update!")
+            
+            else:
+                messages.info(request, "Please register an account!")
 
-            messages.info(request, "Please register an account!")
             return redirect("profile")
-
+        
         if request.user.is_authenticated == False:
             return redirect("login")
 
-        return render(request, 'others/profile.html')
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user)
+            cart_len = len(list(cart))
+        else:
+            cart_len = 0
+        
+        context = {
+            "cart_noti": cart_len
+        }
+
+        return render(request, 'others/profile.html',
+                    context)
 
 
     def security(self, request):
@@ -65,7 +80,21 @@ class Profile:
                 messages.info(request, "Passwords do not match!")
                 return redirect("security")
 
-        return render(request, 'others/profile_password.html')
+        if request.user.is_authenticated == False:
+            return redirect("login")
+
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user)
+            cart_len = len(list(cart))
+        else:
+            cart_len = 0
+        
+        context = {
+            "cart_noti": cart_len
+        }
+
+        return render(request, 'others/profile_password.html',
+                    context)
         
 
     def profile_verification(self, request, new_password):
@@ -82,8 +111,15 @@ class Profile:
                     return redirect("security")
 
                 else:
+                    if request.user.is_authenticated:
+                        cart = Cart.objects.filter(user=request.user)
+                        cart_len = len(list(cart))
+                    else:
+                        cart_len = 0
+                        
                     context = {
-                        "new_password": new_password
+                        "new_password": new_password,
+                        "cart_noti": cart_len
                     }
                     messages.info(request, "Entered a wrong code. Please check the number and try again!")
                     return render(request, "others/profile_verification.html",
@@ -94,8 +130,15 @@ class Profile:
             return redirect("registration")
         
         if request.user.is_authenticated:
+            if request.user.is_authenticated:
+                cart = Cart.objects.filter(user=request.user)
+                cart_len = len(list(cart))
+            else:
+                cart_len = 0
+
             context = {
-                "new_password": new_password
+                "new_password": new_password,
+                "cart_noti": cart_len
             }
 
             return render(request, "others/profile_verification.html",

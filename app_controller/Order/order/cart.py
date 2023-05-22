@@ -10,6 +10,11 @@ class Cart_class:
         if request.user.is_authenticated == False:
             return redirect('login')
 
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user)
+            cart_len = len(list(cart))
+        else:
+            cart_len = 0
 
         delivery_fees = Delivery_fee.objects.all()
 
@@ -35,7 +40,8 @@ class Cart_class:
             "total_type": total_type,
             "all_total_price": all_total_price,
             "delivery_fees": delivery_fees,
-            "grand_total_price": grand_total_price
+            "grand_total_price": grand_total_price,
+            "cart_noti": cart_len
         }
         return render(request, 'order/cart.html',
                     context)

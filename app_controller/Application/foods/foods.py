@@ -1,9 +1,16 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from app_controller.Application.models import Category, Product
+from app_controller.Order.models import Cart
 
 class Food:
     def home(self, request):
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user)
+            cart_len = len(list(cart))
+        else:
+            cart_len = 0
+
         if Category.objects.filter(name='Foods').exists():
             foods_id = Category.objects.get(name='Foods')
             foods = Product.objects.filter(category=foods_id.id).order_by('-id')
@@ -19,7 +26,8 @@ class Food:
             items = None
 
         context = {
-            "items": items
+            "items": items,
+            "cart_noti": cart_len
         }
         return render(request, 'foods/foods.html',
                         context)

@@ -64,7 +64,7 @@
             <button class="search_form_submit"><i class="bi bi-search"></i></button>
 
             <a class="second_header_cart" href="{% url 'cart' %}"><i class="bi bi-cart"></i>   
-                <word class="second_header_cart_number">9+</word></a>
+                <word class="second_header_cart_number">{{ cart_noti }}</word></a>
             
             <a class="second_header_profile" href="{% url 'profile' %}"><i class="bi bi-person"></i></a>
         </form>
@@ -88,7 +88,7 @@
             <button class="mobile_search_form_submit"><i id="search_icon" class="bi bi-search"></i></button>
             
             <a class="mobile_second_header_cart" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
-                <a href="" class="mobile_second_header_cart_number"><word>9+</word></a>
+                <a href="" class="mobile_second_header_cart_number"><word>{{ cart_noti }}</word></a>
             <a class="mobile_second_header_profile" href="{% url 'profile' %}"><i class="bi bi-person"></i></a>
         </div>
     </div>
@@ -118,7 +118,7 @@
             <button class="mobile_search_form_submit2"><i id="search_icon" class="bi bi-search"></i></button>
             
             <a class="mobile_second_header_cart" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
-                <a href="" class="mobile_second_header_cart_number"><word>9+</word></a>
+                <a href="" class="mobile_second_header_cart_number"><word>{{ cart_noti }}</word></a>
             <a class="mobile_second_header_profile" href="{% url 'profile' %}"><i class="bi bi-person"></i></a>
         </div>
         </div>

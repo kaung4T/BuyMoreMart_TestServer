@@ -6,7 +6,7 @@ from django.http import Http404
 from app_controller.Application.models import User, Category, Product
 from app_controller.Application.verification import send_otp, send_email
 from app_controller.Application.check_phone import check_phone_num
-
+from app_controller.Order.models import Cart
 
 # Create your views here.
 
@@ -18,6 +18,12 @@ class Index:
         
         new_arrivals = Product().limit_new_items()
         discount = Product().limit_discount_items()
+
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user)
+            cart_len = len(list(cart))
+        else:
+            cart_len = 0
 
         if Category.objects.filter(name='Accessories').exists():
             accessories_id = Category.objects.get(name='Accessories')
@@ -37,7 +43,8 @@ class Index:
             'accessories': accessories,
             'beauty': beauty,
             'discount': discount,
-            'new_arrivals': new_arrivals
+            'new_arrivals': new_arrivals,
+            'cart_noti': cart_len
         }
         return render(request, 'index.html',
                     context)
@@ -46,6 +53,12 @@ class Index:
     def search(self, request):
         if request.method == "POST":
             search = request.POST["search"]
+
+            if request.user.is_authenticated:
+                cart = Cart.objects.filter(user=request.user)
+                cart_len = len(list(cart))
+            else:
+                cart_len = 0
 
             if Product.objects.filter(title__icontains=search).exists():
                 product = Product.objects.filter(title__icontains=search)
@@ -65,12 +78,24 @@ class Index:
             context = {
                 "search": search,
                 "items": items,
-                "total_item": total_item
+                "total_item": total_item,
+                "cart_noti": cart_len
             }
             return render(request, 'search.html',
                     context)
+
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user)
+            cart_len = len(list(cart))
+        else:
+            cart_len = 0
+
+        context = {
+            "cart_noti": cart_len
+        }
         
-        return render(request, 'search.html')
+        return render(request, 'search.html',
+                    context)
 
 
 
