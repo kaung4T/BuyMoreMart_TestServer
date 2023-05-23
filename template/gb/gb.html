@@ -173,10 +173,16 @@
 
           <p>{{ item.name }}</p>
           <h6>{{ item.title }}</h6>
+
+          {% if item.discount %}
+          <p class="feature_products_price">Ks{{ item.discount|intcomma }}</p>
+          {% else %}
           <p class="feature_products_price">Ks{{ item.price|intcomma }}</p>
+          {% endif %}
+          
           <div class="feature_products_item_bottom">
               {% if item.discount %}
-          <p class="feature_products_discount_price">Ks{{ item.discount|intcomma }}</p>
+          <p class="feature_products_discount_price">Ks{{ item.price|intcomma }}</p>
               {% else %}
           <p class="feature_products_discount_price"></p>
               {% endif %}

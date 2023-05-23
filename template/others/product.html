@@ -115,9 +115,14 @@
 
 
             <div class="one_product_price">
+                {% if item.discount %}
+                <p class="price">Ks{{ item.discount|intcomma }}</p>
+                {% else %}
                 <p class="price">Ks{{ item.price|intcomma }}</p>
+                {% endif %}
+
                   {% if item.discount %}
-                <p class="discount">Ks{{ item.discount|intcomma }}</p>
+                <p class="discount">Ks{{ item.price|intcomma }}</p>
                   {% else %}
                 <p class="discount"></p>
                   {% endif %}
@@ -214,10 +219,16 @@
   
               <p>{{ suggest_item.name|truncatechars:44 }}</p>
               <h6>{{ suggest_item.title|truncatechars:24 }}</h6>
+
+              {% if suggest_item.discount %}
+              <p class="one_products_price">Ks{{ suggest_item.discount|intcomma }}</p>
+              {% else %}
               <p class="one_products_price">Ks{{ suggest_item.price|intcomma }}</p>
+              {% endif %}
+
               <div class="one_products_item_bottom">
                 {% if suggest_item.discount %}
-              <p class="one_products_discount_price">Ks{{ suggest_item.discount|intcomma }}</p>
+              <p class="one_products_discount_price">Ks{{ suggest_item.price|intcomma }}</p>
                 {% else %}
               <p class="one_products_discount_price"></p>
                 {% endif %}

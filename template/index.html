@@ -125,10 +125,16 @@
 
                   <p>{{ each_product.name|truncatechars:44 }}</p>
                   <h6>{{ each_product.title|truncatechars:24 }}</h6>
+                  
+                  {% if each_product.discount %}
+                  <p class="feature_products_price">Ks{{ each_product.discount|intcomma }}</p>
+                  {% else %}
                   <p class="feature_products_price">Ks{{ each_product.price|intcomma }}</p>
+                  {% endif %}
+                  
                   <div class="feature_products_item_bottom">
                     {% if each_product.discount %}
-                  <p class="feature_products_discount_price">Ks{{ each_product.discount|intcomma }}</p>
+                  <p class="feature_products_discount_price">Ks{{ each_product.price|intcomma }}</p>
                     {% else %}
                   <p class="feature_products_discount_price"></p>
                     {% endif %}
@@ -191,10 +197,16 @@
 
                   <p>{{ beauty_item.name|truncatechars:44 }}</p>
                   <h6>{{ beauty_item.title|truncatechars:24 }}</h6>
+                  
+                  {% if beauty_item.discount %}
+                  <p class="beauty_products_price">Ks{{ beauty_item.discount|intcomma }}</p>
+                  {% else %}
                   <p class="beauty_products_price">Ks{{ beauty_item.price|intcomma }}</p>
+                  {% endif %}
+
                   <div class="beauty_products_item_bottom">
                       {% if beauty_item.discount %}
-                  <p class="beauty_products_discount_price">Ks{{ beauty_item.discount|intcomma }}</p>
+                  <p class="beauty_products_discount_price">Ks{{ beauty_item.price|intcomma }}</p>
                       {% else %}
                   <p class="beauty_products_discount_price"></p>
                       {% endif %}
@@ -297,10 +309,16 @@
 
             <p>{{ accessories_item.name|truncatechars:44 }}</p>
             <h6>{{ accessories_item.title|truncatechars:24 }}</h6>
+
+            {% if accessories_item.discount %}
+            <p class="accessories_products_price">Ks{{ accessories_item.discount|intcomma }}</p>
+            {% else %}
             <p class="accessories_products_price">Ks{{ accessories_item.price|intcomma }}</p>
+            {% endif %}
+              
             <div class="accessories_products_item_bottom">
               {% if accessories_item.discount %}
-            <p class="accessories_products_discount_price">Ks{{ accessories_item.discount|intcomma }}</p>
+            <p class="accessories_products_discount_price">Ks{{ accessories_item.price|intcomma }}</p>
               {% else %}
             <p class="accessories_products_discount_price"></p>
               {% endif %}
@@ -376,10 +394,16 @@
 
             <p>{{ discount_item.name|truncatechars:44 }}</p>
             <h6>{{ discount_item.title|truncatechars:24 }}</h6>
+            
+            {% if discount_item.discount %}
+            <p class="discount_products_price">Ks{{ discount_item.discount|intcomma }}</p>
+            {% else %}
             <p class="discount_products_price">Ks{{ discount_item.price|intcomma }}</p>
+            {% endif %}
+            
             <div class="discount_products_item_bottom">
               {% if discount_item.discount %}
-            <p class="discount_products_discount_price">Ks{{ discount_item.discount|intcomma }}</p>
+            <p class="discount_products_discount_price">Ks{{ discount_item.price|intcomma }}</p>
               {% else %}
             <p class="discount_products_discount_price"></p>
               {% endif %}
@@ -442,10 +466,16 @@
   
               <p>{{ new_arrivals_item.name|truncatechars:44 }}</p>
               <h6>{{ new_arrivals_item.title|truncatechars:24 }}</h6>
+
+              {% if new_arrivals_item.discount %}
+              <p class="newArrivals_products_price">Ks{{ new_arrivals_item.discount|intcomma }}</p>
+              {% else %}
               <p class="newArrivals_products_price">Ks{{ new_arrivals_item.price|intcomma }}</p>
+              {% endif %}
+
               <div class="newArrivals_products_item_bottom">
                 {% if new_arrivals_item.discount %}
-              <p class="newArrivals_products_discount_price">Ks{{ new_arrivals_item.discount|intcomma }}</p>
+              <p class="newArrivals_products_discount_price">Ks{{ new_arrivals_item.price|intcomma }}</p>
                 {% else %}
               <p class="newArrivals_products_discount_price"></p>
                 {% endif %}
