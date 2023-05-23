@@ -38,7 +38,19 @@ function maxi_click () {
 
 $('#one_form').submit(function one_product (e) {
         e.preventDefault();
+
+        // cart_noti
+        let element_cart_noti = document.querySelector('#element_cart_noti');
+        let cart_noti = document.querySelector('#cart_noti_value');
+        let cart_noti_value = Number(cart_noti.value);
+
+        // mobile_cart_noti also tablet
+        let mobile_element_cart_noti = document.querySelector('#mobile_element_cart_noti');
+
+        // tablet_cart_noti also mobile
+        let mobile_element_cart_noti2 = document.querySelector('#mobile_element_cart_noti2');
         
+
         let product_id_element = document.querySelector('#one_product_id');
         let product_id = product_id_element.value;
 
@@ -53,6 +65,13 @@ $('#one_form').submit(function one_product (e) {
             },
             'success': function (data) {
                 if (data.response == "added") {
+                    cart_noti_value = cart_noti_value + 1;
+                    cart_noti.value = cart_noti_value
+                            
+                    element_cart_noti.innerHTML = cart_noti_value;
+                    mobile_element_cart_noti.innerHTML = cart_noti_value;
+                    mobile_element_cart_noti2.innerHTML = cart_noti_value;
+
                     alert("Successfully added");
                 }
                 else if (data.response == "duplicate") {
