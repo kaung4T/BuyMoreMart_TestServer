@@ -25,7 +25,10 @@ class Order_class:
             cart_all_products = ""
 
             for each_cart in user_relative_cart:
-                cart_all_products += f"{each_cart.product.title}= {each_cart.amount},  "
+                if user_relative_cart.last() != each_cart:
+                    cart_all_products += f"{each_cart.product.title}= {each_cart.amount},  "
+                else:
+                    cart_all_products += f"{each_cart.product.title}= {each_cart.amount}  "
 
 
             instant = Order.objects.create(user=request.user, each_product=cart_all_products,
