@@ -4,6 +4,7 @@ from app_controller.Application import views
 from app_controller.Application.foods import foods
 from app_controller.Application.accessories import accessories
 from app_controller.Application.gb import gb
+from app_controller.Application.website import header
 
 from app_controller.Application.others import discount
 from app_controller.Application.others import new_arrivals
@@ -15,6 +16,7 @@ from app_controller.Application.others import product
 urlpatterns = [
     path('', views.Index().home, name='index'),
     path('search', views.Index().search, name='search'),
+    path('header_bmm', header.Index().header, name='header_bmm'),
 
 
     path('registration', views.Account().registration, name='registration'),

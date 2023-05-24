@@ -84,7 +84,10 @@
                                         
                                     </div>
                                     <div class="cart_click">
-                                        <a href="" class="btn btn-sm cart_btn">Cancel</a>
+                            <form action="{% url 'cancel_cart' item.id  %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-sm cart_btn">Cancel</button>
+                            </form>
                                     </div>
                                 </div>
                 </div>

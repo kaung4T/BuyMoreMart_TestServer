@@ -46,7 +46,17 @@ class Cart_class:
         return render(request, 'order/cart.html',
                     context)
 
-    
+
+    def cancel_cart(self, request, cart_item_id):
+        if request.method == 'POST':
+            cart = Cart.objects.get(id=cart_item_id)
+            cart.delete()
+
+            return redirect('cart')
+
+        return redirect('cart')
+
+
     def add_cart(self, request):
         if request.method == 'POST':
             if request.user.is_authenticated == False:
