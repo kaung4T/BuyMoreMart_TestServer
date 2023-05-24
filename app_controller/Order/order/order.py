@@ -6,7 +6,7 @@ from django.http import JsonResponse
 class Order_class:
     def check_out(self, request):
         if request.user.is_authenticated == False:
-            return redirect('order_fail')
+            return redirect('login')
             
         try:
             cart_delivery_fee = request.POST['cart_delivery_fee']
@@ -41,4 +41,4 @@ class Order_class:
 
             return redirect(f'/order_success/{instant.order_id}')
         except:
-            return redirect(f'/order_fail/{instant.order_id}')
+            return redirect(f'/order_fail/null')

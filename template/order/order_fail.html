@@ -17,7 +17,7 @@
 
 </head>
 
-
+{% load humanize %}
 
 
 
@@ -45,11 +45,14 @@
                             <div class="order_user">
                                 <h4>User Detail</h4>
                                 <ul>
-                                    <li><label class="order_user_info" for="">Name: </label> KaungKaung</li>
-                                    <li><label class="order_user_info" for="">Phone: </label> +959455033077</li>
-                                    <li><label class="order_user_info" for="">Email: </label> mrkaungminnkhant@gmail.com</li>
-                                    <li><label class="order_user_info" for="">City: </label> Yangon</li>
-                                    <li><label class="order_user_info" for="">Address: </label> SHweingyin Housing Thuwana</li>
+                                    
+                                    <li><label class="order_user_info" for="">Order Id: </label> {{ user_order.order_id }}</li>
+                                    <li><label class="order_user_info" for="">Name: </label> {{ user.username }}</li>
+                                    <li><label class="order_user_info" for="">Phone: </label> {{ user.phone_number }}</li>
+                                    <li><label class="order_user_info" for="">Email: </label> {{ user.email }}</li>
+                                    <li><label class="order_user_info" for="">City: </label> {{ user.city }}</li>
+                                    <li><label class="order_user_info" for="">Address: </label> {{ user.address }}</li>
+
                                 </ul>
                             </div>
 
@@ -57,9 +60,10 @@
                             <div class="order_item">
                                 <h4>Item Detail</h4>
                                 <ul>
-                                    <li><label class="order_item_info" for="">Total Items: </label> </li>
-                                    <li><label class="order_item_info" for="">Total Amount: </label> </li>
-                                    <li><label class="order_item_info" for="">Delivery Fee: </label> </li>
+                <li><label class="order_item_info" for="">Total Items: </label> {{ user_order.total_items }}</li>
+                <li><label class="order_item_info" for="">Total Amount: </label> Ks{{ user_order.grand_total_price|intcomma }}</li>
+                <li><label class="order_item_info" for="">Delivery Fee: </label> KS{{ user_order.delivery_fee|intcomma }}</li>
+                <li><label class="order_item_info" for="">Order Items: </label> {{ user_order.each_product }}</li>
                                 </ul>
                             </div>
                         </div>

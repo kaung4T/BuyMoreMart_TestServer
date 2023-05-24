@@ -23,8 +23,12 @@ class Order_end:
 
         if User.objects.filter(id=request.user.id).exists():
             user = User.objects.get(id=request.user.id)
+
+            if user_order:
+                if user != user_order.user:
+                    return redirect(f'/order_fail/{order_id}')
         else:
-            user = None
+            return redirect(f'/order_fail/{order_id}')
 
 
         context = {
@@ -45,17 +49,19 @@ class Order_end:
             cart_len = 0
 
         
-        try:
-            if Order.objects.filter(order_id=order_id).exists():
-                user_order = Order.objects.get(order_id=order_id)
-            else:
-                user_order = None
-        except:
-            user_order = None
+        user_order = None
+
+
+        if User.objects.filter(id=request.user.id).exists():
+            user = User.objects.get(id=request.user.id)
+        else:
+            user = None
         
 
         context = {
-            "cart_noti": cart_len
+            "cart_noti": cart_len,
+            "user_order": user_order,
+            "user": user
         }
         
         return render(request, 'order/order_fail.html',
