@@ -123,7 +123,7 @@
 
                         <input type="text" name="cart_total_items" value="{{ total_item }}" hidden>
                         <input type="text" name="cart_total" value="{{ all_total_price }}" hidden>
-            <li><label class="grand_key">Grand total:</label> <label id="grand_price" class="grand_value">Ks{{ grand_total_price }}</label></li>
+            <li><label class="grand_key">Grand total:</label> <label id="grand_price" class="grand_value">Ks{{ grand_total_price|intcomma }}</label></li>
                     </ul>
                 </div>
         </div>

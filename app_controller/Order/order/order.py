@@ -39,6 +39,6 @@ class Order_class:
             # second method for adding order
             # instant.product.set(each_cart.product for each_cart in user_relative_cart)
 
-            return redirect('order_success')
+            return redirect(f'/order_success/{instant.order_id}')
         except:
-            return redirect('order_fail')
+            return redirect(f'/order_fail/{instant.order_id}')

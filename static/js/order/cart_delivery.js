@@ -13,6 +13,12 @@ $("#cart_delivery").change(function(){
 
     let grand_total = parseInt(total_val) + parseInt(selected_fee);
 
-    grand_price.innerHTML = `Ks${grand_total}`;
+    let grand_total_comma = numberWithCommas(grand_total);
+    grand_price.innerHTML = `Ks${grand_total_comma}`;
 
 });
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

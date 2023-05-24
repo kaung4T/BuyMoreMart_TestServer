@@ -22,7 +22,7 @@ class Index:
 
 
         context = {
-            'cart_noti': cart_len
+            'cart_noti': cart_len,
         }
         return render(request, "header.html",
                     context)

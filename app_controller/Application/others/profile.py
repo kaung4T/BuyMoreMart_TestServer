@@ -71,7 +71,7 @@ class Profile:
                     user.otp = otp
                     user.save()
 
-                    return redirect(f"profile_verification/{password}")
+                    return redirect(f"/profile_verification/{password}")
                 
                 messages.info(request, "Please register an account!")
                 return redirect("security")
@@ -145,5 +145,5 @@ class Profile:
                                     context)
         
         else:
-            return redirect("registration")
+            return redirect("login")
 
