@@ -89,30 +89,39 @@
                         <div class="mb-3">
                             <a href="{% url 'security' %}" class="profile_password btn btn-sm">Change Password</a>
                         </div>
+
+                        <div class="mb-3">
+                            <div class="form-text">Users can change their info in here. Please doubly check 
+                                    your phone number before update.
+                                We will ignore for a user with wrong number. Please fill a correct field.</div>
+                        </div>
+
                             <div class="mb-5">
                             <label for="phone" class="form-label">Phone number</label>
                             <input name="phone" type="text" class="form-control" id="phone">
-                            <div class="form-text">Ph: {{ request.user.phone_number }}</div>
+                            <div class="form-text">You are currently using number, Ph: {{ request.user.phone_number }}.
+                                Foreign numbers will not be work.
+                            </div>
                             </div>
                                 <div class="mb-3">
                                 <label for="name" class="form-label">User name</label>
                                 <input name="name" type="text" class="form-control" id="name">
-                                <div class="form-text">{{ request.user.username }}</div>
+                                <div class="form-text">You are currently using {{ request.user.username }}.</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input name="email" type="email" class="form-control" id="email">
-                                    <div class="form-text">{{ request.user.email }}</div>
+                                    <div class="form-text">You are currently using {{ request.user.email }}.</div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="address" class="form-label">Address</label>
                                         <input name="address" type="text" class="form-control" id="address">
-                                        <div class="form-text">{{ request.user.address }}</div>
+                                        <div class="form-text">You are currently using {{ request.user.address }}.</div>
                                         </div>
                                         <div class="mb-3">
                                             <label for="city" class="form-label">City</label>
                                             <input name="city" type="text" class="form-control" id="city">
-                                            <div class="form-text">{{ request.user.city }}</div>
+                                            <div class="form-text">You are currently using {{ request.user.city }}.</div>
                                             </div>
 
 
@@ -365,7 +374,7 @@
                                                 <option value="Zambia">Zambia</option>
                                                 <option value="Zimbabwe">Zimbabwe</option>
                                             </select>
-                                            <div class="form-text">{{ request.user.country }}</div>
+                                            <div class="form-text">You are currently using {{ request.user.country }}.</div>
                                             </div>
                                 
                                 <button type="submit" class="profile_update btn btn-sm">Update</button>
