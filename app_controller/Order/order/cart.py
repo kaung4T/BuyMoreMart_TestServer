@@ -128,7 +128,7 @@ class Cart_class:
 
                         existing_cart.save()
                         context = {
-                        "response": "added"
+                        "response": "updated"
                         }
                         return JsonResponse(context)
 

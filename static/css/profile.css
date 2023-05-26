@@ -34,13 +34,13 @@
 .profile_header_image {
     margin-right: 10px;
     /* border: 1px solid #3d3d3d; */
-    height: 51px;
-    padding: 8px 23px 0 23px;
+    height: 59px;
+    padding: 9px 29px 0 29px;
     border-radius: 45%;
-    background-color: #FD8C00;
-    color: #3d3d3d;
-    font-weight: 500;
-    font-size: 23px;
+    background-color: #434756;
+    color: #eeeeee;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .profile_header_text_group {
@@ -131,6 +131,14 @@
 
 .profile_right .form-control:focus {border-color: rgb(183, 185, 37);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(183, 185, 37);}
+
+
+
+.profile_label {
+    font-weight: bold;
+}
+
+
 
 
 @media (max-width: 900px) {

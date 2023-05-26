@@ -64,7 +64,10 @@ $('#one_form').submit(function one_product (e) {
                 'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
             },
             'success': function (data) {
-                if (data.response == "added") {
+                if (data.response == "updated") {
+                    alert("Successfully updated");
+                }
+                else if (data.response == "added") {
                     cart_noti_value = cart_noti_value + 1;
                     cart_noti.value = cart_noti_value
                             

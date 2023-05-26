@@ -35,7 +35,7 @@
             <div class="profile_header">
 
                 {% if request.user.is_authenticated %}
-                <div class="profile_header_image">{{ request.user|make_list|first }}</div>
+                <div class="profile_header_image">{{ request.user|make_list|first|capfirst }}</div>
                 {% else %}
                 <div class="profile_header_image">?</div>
                 {% endif %}
@@ -97,36 +97,36 @@
                         </div>
 
                             <div class="mb-5">
-                            <label for="phone" class="form-label">Phone number</label>
+                            <label for="phone" class="form-label profile_label">Phone number</label>
                             <input name="phone" type="text" class="form-control" id="phone">
                             <div class="form-text">You are currently using number, Ph: {{ request.user.phone_number }}.
                                 Foreign numbers will not be work.
                             </div>
                             </div>
                                 <div class="mb-3">
-                                <label for="name" class="form-label">User name</label>
+                                <label for="name" class="form-label profile_label">User name</label>
                                 <input name="name" type="text" class="form-control" id="name">
                                 <div class="form-text">You are currently using {{ request.user.username }}.</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label profile_label">Email</label>
                                     <input name="email" type="email" class="form-control" id="email">
                                     <div class="form-text">You are currently using {{ request.user.email }}.</div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="address" class="form-label">Address</label>
+                                        <label for="address" class="form-label profile_label">Address</label>
                                         <input name="address" type="text" class="form-control" id="address">
                                         <div class="form-text">You are currently using {{ request.user.address }}.</div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="city" class="form-label">City</label>
+                                            <label for="city" class="form-label profile_label">City</label>
                                             <input name="city" type="text" class="form-control" id="city">
                                             <div class="form-text">You are currently using {{ request.user.city }}.</div>
                                             </div>
 
 
                                             <div class="mb-4 profile_country">
-                                            <label for="country" class="form-label">Country</label>
+                                            <label for="country" class="form-label profile_label">Country</label>
                                             <select id="country" name="country" class="form-control account_country">
                                                 <option value="Myanmar">Myanmar</option>
                                                 <option value="Afghanistan">Afghanistan</option>
