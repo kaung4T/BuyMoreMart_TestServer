@@ -58,9 +58,19 @@ urlpatterns = [
 
 
     path('discount', discount.Discount().home, name='discount'),
+    path('discount/discount_type/<str:name>/', discount.Discount().discount_type, name='discount_type'),
+    path('discount/discount_brand/<str:brand>/', discount.Discount().discount_brand, name='discount_brand'),
+
+
+
     path('new_arrivals', new_arrivals.New_arrivals().home, name='new_arrivals'),
+    path('new/new_type/<str:name>/', new_arrivals.New_arrivals().new_type, name='new_type'),
+    path('new/new_brand/<str:brand>/', new_arrivals.New_arrivals().new_brand, name='new_brand'),
+
 
     # all products
     path('products', products.Products().home, name='products'),
+    path('products/products_type/<str:name>/', products.Products().products_type, name='products_type'),
+    path('products/products_brand/<str:brand>/', products.Products().products_brand, name='products_brand'),
 
 ]

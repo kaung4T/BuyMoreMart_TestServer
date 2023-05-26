@@ -36,28 +36,12 @@
               Types
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Types</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
-              <li><a class="dropdown-item" href="#">Foods</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
-              <li><a class="dropdown-item" href="#">Foods</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
-              <li><a class="dropdown-item" href="#">Foods</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
+              
+              <li><a class="dropdown-item" href="{% url 'products' %}">Types</a></li>
+                {% for each_type in item_type %}
+              <li><a class="dropdown-item" href="{% url 'products_type' each_type.product_type.name %}">{{ each_type.product_type.name }}</a></li>
+                {% endfor %}
 
-              <li><a class="dropdown-item" href="#">Foods</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
-              <li><a class="dropdown-item" href="#">Foods</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
-              <li><a class="dropdown-item" href="#">Foods</a></li>
-              <li><a class="dropdown-item" href="#">Noodle</a></li>
-              <li><a class="dropdown-item" href="#">Drink</a></li>
             </ul>
           </div>
 
@@ -79,9 +63,14 @@
               Brand
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Brand</a></li>
-              <li><a class="dropdown-item" href="#">Shin</a></li>
-              <li><a class="dropdown-item" href="#">Cola</a></li>
+              
+              <li><a class="dropdown-item" href="{% url 'products' %}">Brand</a></li>
+              {% for products_food in all_products %}
+                {% if products_food.brand %}
+              <li><a class="dropdown-item" href="{% url 'products_brand' products_food.brand %}">{{ products_food.brand }}</a></li>
+                {% endif %}
+              {% endfor %}
+
             </ul>
           </div>
 
