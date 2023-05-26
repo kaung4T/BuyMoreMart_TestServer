@@ -11,8 +11,8 @@ class Accessories:
         else:
             cart_len = 0
 
-        if Category.objects.filter(name='Accessories').exists():
-            accessories_id = Category.objects.get(name='Accessories')
+        if Category.objects.filter(id=2).exists():
+            accessories_id = Category.objects.get(id=2)
             accessories = Product.objects.filter(category=accessories_id.id).order_by('-id')
         else:
             accessories = None

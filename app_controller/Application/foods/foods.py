@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from app_controller.Application.models import Category, Product
+from app_controller.Application.models import Category, Product, Product_type
 from app_controller.Order.models import Cart
 
 class Food:
@@ -11,8 +11,8 @@ class Food:
         else:
             cart_len = 0
 
-        if Category.objects.filter(name='Foods').exists():
-            foods_id = Category.objects.get(name='Foods')
+        if Category.objects.filter(id=1).exists():
+            foods_id = Category.objects.get(id=1)
             foods = Product.objects.filter(category=foods_id.id).order_by('-id')
         else:
             foods = None
@@ -25,9 +25,20 @@ class Food:
         else:
             items = None
 
+
+        # Category group
+        if Category.objects.filter(id=1).exists():
+            categrory_id = Category.objects.get(id=1)
+            item_type = Product_type.objects.filter(category=categrory_id.id)
+        else:
+            item_type = None
+
+
         context = {
             "items": items,
-            "cart_noti": cart_len
+            "foods": foods,
+            "cart_noti": cart_len,
+            "item_type": item_type
         }
         return render(request, 'foods/foods.html',
                         context)
@@ -37,7 +48,7 @@ class Food:
         product = Product.objects.filter(product_type=name)
 
         
-        p = Paginator(product, 2)
+        p = Paginator(product, 12)
         
         page = request.GET.get("page")
         items = p.get_page(page)
@@ -60,7 +71,7 @@ class Food:
         # if price_chose == "min":
         #     product.order_by("price")
 
-        p = Paginator(product, 2)
+        p = Paginator(product, 12)
         
         page = request.GET.get("page")
         items = p.get_page(page)

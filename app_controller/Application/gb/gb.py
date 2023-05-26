@@ -11,8 +11,8 @@ class Gb:
         else:
             cart_len = 0
 
-        if Category.objects.filter(name='Beauty').exists():
-            beauty_id = Category.objects.get(name='Beauty')
+        if Category.objects.filter(id=3).exists():
+            beauty_id = Category.objects.get(id=3)
             beauty = Product.objects.filter(category=beauty_id.id).order_by('-id')
         else:
             beauty = None
