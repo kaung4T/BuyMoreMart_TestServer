@@ -69,7 +69,7 @@
               <li><a class="dropdown-item" href="{% url 'foods' %}">Brand</a></li>
               {% for each_food in foods %}
                 {% if each_food.brand %}
-              <li><a class="dropdown-item" href="#">{{ each_food.brand }}</a></li>
+              <li><a class="dropdown-item" href="{% url 'food_brand' each_food.brand %}">{{ each_food.brand }}</a></li>
                 {% endif %}
               {% endfor %}
 

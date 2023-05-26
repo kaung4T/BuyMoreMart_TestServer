@@ -41,11 +41,21 @@ urlpatterns = [
     path('foods', foods.Food().home, name='foods'),
     path('foods/food_type/<str:name>/', foods.Food().food_type, name='food_type'),
     path('foods/food_price/<str:price_chose>/', foods.Food().food_price, name='food_price'),
+    path('foods/food_brand/<str:brand>/', foods.Food().food_brand, name='food_brand'),
 
 
 
     path('accessories', accessories.Accessories().home, name='accessories'),
+    path('accessories/accessories_type/<str:name>/', accessories.Accessories().accessories_type, name='accessories_type'),
+    path('accessories/accessories_brand/<str:brand>/', accessories.Accessories().accessories_brand, name='accessories_brand'),
+
+
+
     path('gb', gb.Gb().home, name='gb'),
+    path('beauty/beauty_type/<str:name>/', gb.Gb().beauty_type, name='beauty_type'),
+    path('beauty/beauty_brand/<str:brand>/', gb.Gb().beauty_brand, name='beauty_brand'),
+
+
 
     path('discount', discount.Discount().home, name='discount'),
     path('new_arrivals', new_arrivals.New_arrivals().home, name='new_arrivals'),
