@@ -25,6 +25,12 @@ class Index:
         else:
             cart_len = 0
 
+        if Category.objects.filter(id=1).exists():
+            foods_id = Category.objects.get(id=1)
+            foods = Product.objects.filter(category=foods_id.id).order_by('-id')[:12]
+        else:
+            foods = None
+
         if Category.objects.filter(id=2).exists():
             accessories_id = Category.objects.get(id=2)
             accessories = Product.objects.filter(category=accessories_id.id).order_by('-id')[:12]
@@ -40,6 +46,7 @@ class Index:
 
         context = {
             'all_products': all_products,
+            'foods': foods,
             'accessories': accessories,
             'beauty': beauty,
             'discount': discount,
