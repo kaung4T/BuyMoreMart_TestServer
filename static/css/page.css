@@ -122,14 +122,14 @@ body {
 }
 
 .carousel-indicators li {
-    background-color: rgb(44, 43, 43);
+    background-color: #3d3d3d;
     height: 7px;
     width: 40px;
     border-radius: 20px;
 }
 
 .carousel-indicators .active {
-    background-color: rgb(170, 156, 156);
+    background-color: #ffa83d;
 }
 
 .line_arrow_bow {
