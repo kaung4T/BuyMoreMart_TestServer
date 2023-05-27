@@ -101,6 +101,13 @@ class Food:
         else:
             cart_len = 0
 
+        # brand group
+        if Category.objects.filter(id=1).exists():
+            foods_id = Category.objects.get(id=1)
+            foods = Product.objects.filter(category=foods_id.id).order_by('-id')
+        else:
+            foods = None
+
         # for min value 
         if price_chose == "min_price":
             # product = []
@@ -150,11 +157,19 @@ class Food:
         elif product2 == None and price_chose == "max_price":
             items = None
 
+        # Category group
+        if Category.objects.filter(id=1).exists():
+            categrory_id = Category.objects.get(id=1)
+            item_type = Product_type.objects.filter(category=categrory_id.id).order_by('-id')
+        else:
+            item_type = None
 
         context = {
             "items": items,
+            "foods": foods,
             "name": price_chose,
-            "cart_len": cart_len
+            "cart_noti": cart_len,
+            "item_type": item_type
         }
         return render(request, 'foods/foods.html',
                         context)
