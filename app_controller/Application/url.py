@@ -40,8 +40,8 @@ urlpatterns = [
     
     path('foods', foods.Food().home, name='foods'),
     path('foods/food_type/<str:name>/', foods.Food().food_type, name='food_type'),
-    path('foods/food_price/<str:price_chose>/', foods.Food().food_price, name='food_price'),
     path('foods/food_brand/<str:brand>/', foods.Food().food_brand, name='food_brand'),
+    path('foods/food_price/<str:price_chose>/', foods.Food().food_price, name='food_price'),
 
 
 
