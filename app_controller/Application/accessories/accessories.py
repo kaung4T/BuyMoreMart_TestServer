@@ -24,6 +24,7 @@ class Accessories:
             items = p.get_page(page)
         else:
             items = None
+        
 
         # Category group
         if Category.objects.filter(id=2).exists():

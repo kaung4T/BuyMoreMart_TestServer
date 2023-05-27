@@ -80,7 +80,7 @@
 
 
         
-
+{% if items %}
 <div class="new_feature">
       <div class="feature_body">
 
@@ -251,6 +251,14 @@
           </ul>
         </div>
   </div>
+
+
+{% else %}
+
+<p class="no_item">No products found.</p>
+
+{% endif %}
+
 
 
 

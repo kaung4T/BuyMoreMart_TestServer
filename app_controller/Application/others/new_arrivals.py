@@ -21,7 +21,7 @@ class New_arrivals:
         else:
             items = None
 
-        
+
         # Category group
         if items:
             item_type = new_arrivals
