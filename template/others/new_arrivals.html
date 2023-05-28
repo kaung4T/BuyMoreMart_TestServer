@@ -77,9 +77,11 @@
       </div>
 
 
+{% if category_key and category_value %}
+<p class="category_info">{{ category_key }}: <span>{{ category_value }}</span></p>
+{% endif %}
 
 
-        
 {% if items %}
 <div class="new_feature">
       <div class="feature_body">

@@ -86,6 +86,8 @@ class Accessories:
         context = {
             "items": items,
             "accessories": accessories,
+            "category_key": "Type",
+            "category_value": name,
             "cart_noti": cart_len,
             "item_type": item_type
         }
@@ -155,10 +157,19 @@ class Accessories:
             item_type = Product_type.objects.filter(category=categrory_id.id).order_by('-id')
         else:
             item_type = None
+        
+        if price_chose == "min_price":
+            price_info = "min-max"
+        elif price_chose == "max_price":
+            price_info = "max-min"
+        else:
+            price_info = None
 
         context = {
             "items": items,
             "accessories": accessories,
+            "category_key": "Price",
+            "category_value": price_info,
             "cart_noti": cart_len,
             "item_type": item_type
         }
@@ -208,6 +219,8 @@ class Accessories:
         context = {
             "items": items,
             "accessories": accessories,
+            "category_key": "Brand",
+            "category_value": brand,
             "cart_noti": cart_len,
             "item_type": item_type
         }

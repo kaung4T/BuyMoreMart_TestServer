@@ -79,9 +79,11 @@
       </div>
 
 
+{% if category_key and category_value %}
+<p class="category_info">{{ category_key }}: <span>{{ category_value }}</span></p>
+{% endif %}
 
 
-        
 {% if items %}
 <div class="accessories_feature">
       <div class="feature_body">
@@ -251,7 +253,7 @@
           </ul>
             </div>
 
-            
+
 {% else %}
 
 <p class="no_item">No products found.</p>

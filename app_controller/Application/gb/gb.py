@@ -43,7 +43,7 @@ class Gb:
         return render(request, 'gb/gb.html',
                         context)
         
-        
+
 
     def beauty_type(self, request, name):
         if request.user.is_authenticated:
@@ -87,6 +87,8 @@ class Gb:
         context = {
             "items": items,
             "beauty": beauty,
+            "category_key": "Type",
+            "category_value": name,
             "cart_noti": cart_len,
             "item_type": item_type
         }
@@ -157,9 +159,18 @@ class Gb:
         else:
             item_type = None
 
+        if price_chose == "min_price":
+            price_info = "min-max"
+        elif price_chose == "max_price":
+            price_info = "max-min"
+        else:
+            price_info = None
+
         context = {
             "items": items,
             "beauty": beauty,
+            "category_key": "Price",
+            "category_value": price_info,
             "cart_noti": cart_len,
             "item_type": item_type
         }
@@ -209,6 +220,8 @@ class Gb:
         context = {
             "items": items,
             "beauty": beauty,
+            "category_key": "Brand",
+            "category_value": brand,
             "cart_noti": cart_len,
             "item_type": item_type
         }

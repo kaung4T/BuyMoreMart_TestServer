@@ -37,7 +37,7 @@ class New_arrivals:
         return render(request, 'others/new_arrivals.html',
                         context)
     
-    
+
 
     def new_type(self, request, name):
         if request.user.is_authenticated:
@@ -75,6 +75,8 @@ class New_arrivals:
         context = {
             "items": items,
             "new_arrivals": new_arrivals,
+            "category_key": "Type",
+            "category_value": name,
             "cart_noti": cart_len,
             "item_type": item_type
         }
@@ -131,10 +133,18 @@ class New_arrivals:
         else:
             item_type = None
 
+        if price_chose == "min_price":
+            price_info = "min-max"
+        elif price_chose == "max_price":
+            price_info = "max-min"
+        else:
+            price_info = None
 
         context = {
             "items": items,
             "new_arrivals": new_arrivals,
+            "category_key": "Price",
+            "category_value": price_info,
             "cart_noti": cart_len,
             "item_type": item_type
         }
@@ -178,6 +188,8 @@ class New_arrivals:
         context = {
             "items": items,
             "new_arrivals": new_arrivals,
+            "category_key": "Brand",
+            "category_value": brand,
             "cart_noti": cart_len,
             "item_type": item_type
         }
