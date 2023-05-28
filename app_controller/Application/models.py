@@ -124,3 +124,49 @@ class Product(models.Model):
         return new_arrivals_list
 
 
+
+    def min_price_all_discount_items(self):
+        discount_list = []
+        all_product = Product.objects.all().order_by('discount')
+        for each_product in all_product:
+            if each_product.discount:
+                discount_list.append(each_product) 
+        
+        if len(discount_list) == 0:
+            discount_list = None
+        return discount_list
+    def max_price_all_discount_items(self):
+        discount_list = []
+        all_product = Product.objects.all().order_by('-discount')
+        for each_product in all_product:
+            if each_product.discount:
+                discount_list.append(each_product) 
+        
+        if len(discount_list) == 0:
+            discount_list = None
+        return discount_list
+
+
+    
+    def min_price_all_new_items(self):
+        new_arrivals_list = []
+        all_product = Product.objects.all().order_by('price')
+        for each_product in all_product:
+            if each_product.new_arrival == True:
+                new_arrivals_list.append(each_product)
+
+        if len(new_arrivals_list) == 0:
+            new_arrivals_list = None
+        return new_arrivals_list
+    def max_price_all_new_items(self):
+        new_arrivals_list = []
+        all_product = Product.objects.all().order_by('-price')
+        for each_product in all_product:
+            if each_product.new_arrival == True:
+                new_arrivals_list.append(each_product)
+
+        if len(new_arrivals_list) == 0:
+            new_arrivals_list = None
+        return new_arrivals_list
+    
+

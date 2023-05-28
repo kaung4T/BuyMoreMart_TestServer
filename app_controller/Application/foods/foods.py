@@ -167,7 +167,6 @@ class Food:
         context = {
             "items": items,
             "foods": foods,
-            "name": price_chose,
             "cart_noti": cart_len,
             "item_type": item_type
         }

@@ -50,9 +50,9 @@
               Price
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Price</a></li>
-              <li><a class="dropdown-item" href="#">Start from min</a></li>
-              <li><a class="dropdown-item" href="#">Start from max</a></li>
+              <li><a class="dropdown-item" href="{% url 'gb' %}">Price</a></li>
+              <li><a class="dropdown-item" href="{% url 'beauty_price' 'min_price' %}">Start from min</a></li>
+              <li><a class="dropdown-item" href="{% url 'beauty_price' 'max_price' %}">Start from max</a></li>
             </ul>
           </div>
 

@@ -48,29 +48,35 @@ urlpatterns = [
     path('accessories', accessories.Accessories().home, name='accessories'),
     path('accessories/accessories_type/<str:name>/', accessories.Accessories().accessories_type, name='accessories_type'),
     path('accessories/accessories_brand/<str:brand>/', accessories.Accessories().accessories_brand, name='accessories_brand'),
+    path('accessories/accessories_price/<str:price_chose>/', accessories.Accessories().accessories_price, name='accessories_price'),
 
 
 
     path('gb', gb.Gb().home, name='gb'),
     path('beauty/beauty_type/<str:name>/', gb.Gb().beauty_type, name='beauty_type'),
     path('beauty/beauty_brand/<str:brand>/', gb.Gb().beauty_brand, name='beauty_brand'),
+    path('beauty/beauty_price/<str:price_chose>/', gb.Gb().beauty_price, name='beauty_price'),
 
 
 
     path('discount', discount.Discount().home, name='discount'),
     path('discount/discount_type/<str:name>/', discount.Discount().discount_type, name='discount_type'),
     path('discount/discount_brand/<str:brand>/', discount.Discount().discount_brand, name='discount_brand'),
+    path('discount/discount_price/<str:price_chose>/', discount.Discount().discount_price, name='discount_price'),
 
 
 
     path('new_arrivals', new_arrivals.New_arrivals().home, name='new_arrivals'),
     path('new/new_type/<str:name>/', new_arrivals.New_arrivals().new_type, name='new_type'),
     path('new/new_brand/<str:brand>/', new_arrivals.New_arrivals().new_brand, name='new_brand'),
+    path('new/new_price/<str:price_chose>/', new_arrivals.New_arrivals().new_price, name='new_price'),
+
 
 
     # all products
     path('products', products.Products().home, name='products'),
     path('products/products_type/<str:name>/', products.Products().products_type, name='products_type'),
     path('products/products_brand/<str:brand>/', products.Products().products_brand, name='products_brand'),
+    path('products/products_price/<str:price_chose>/', products.Products().products_price, name='products_price'),
 
 ]
