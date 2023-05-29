@@ -178,6 +178,7 @@ body {
     
     text-align: center;
     width: 20%;
+    animation: header_effect 0.3s;
 }
 
 /* .first_main_body_content .body_content_item:hover {
@@ -709,6 +710,31 @@ body {
 .category_info span {
     font-size: 18px;
 } 
+
+
+
+
+
+
+
+
+@keyframes header_effect {
+    from {
+        opacity: 0;
+
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+
+
+
+
+
+
+
 
 
 
