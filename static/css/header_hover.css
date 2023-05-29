@@ -266,7 +266,7 @@
 .first_row {
     text-align: center;
     position:relative;
-    left: -218px;
+    left: -220px;
     border-right: 1px solid #ebebeb;
     height: 240px;
 }
@@ -354,7 +354,7 @@
 }
 
 .food2 .main_row {display: flex;justify-content: center;}
-.food2 .main_row .first_row {margin-left: 0;overflow-y: scroll;position:relative;left: -4px;margin-left: 0;text-align: center;border-right: 1px solid #ebebeb;height: 240px;}
+.food2 .main_row .first_row {margin-left: 0;overflow-y: scroll;position:relative;left: -6px;margin-left: 0;text-align: center;border-right: 1px solid #ebebeb;height: 240px;}
 
 
 .food2 .main_row .first_row::-webkit-scrollbar {width: 5px;}
@@ -395,7 +395,7 @@
 }
 
 .accessories2 .main_row {display: flex;justify-content: center;}
-.accessories2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: -6px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
+.accessories2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: -7px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
 .accessories2 .website_hover_slide {margin-left: 0;margin-right: -380px;}
 
 .accessories2 .main_row .first_row::-webkit-scrollbar {width: 5px;}
@@ -435,7 +435,7 @@
 }
 
 .beauty2 .main_row {display: flex;justify-content: center;}
-.beauty2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: -165px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
+.beauty2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: -166px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
 .beauty2 .website_hover_slide {margin-left: 0;margin-right: 120px;}
 
 .beauty2 .main_row .first_row::-webkit-scrollbar {width: 5px;}
@@ -475,7 +475,7 @@
 }
 
 .discount2 .main_row {display: flex;justify-content: center;}
-.discount2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: 13px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
+.discount2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: 14px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
 .discount2 .website_hover_slide {margin-left: 0;margin-right: -50px;}
 
 .discount2 .main_row .first_row::-webkit-scrollbar {width: 5px;}
@@ -515,7 +515,7 @@
 }
 
 .new2 .main_row {display: flex;justify-content: center;}
-.new2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: 238px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
+.new2 .main_row .first_row {overflow-y: scroll;text-align: center;position:relative;left: 241px;margin-left: 0;border-right: 1px solid #ebebeb;height: 240px; }
 .new2 .website_hover_slide {margin-left: 0;margin-right: -280px;}
 
 .new2 .main_row .first_row::-webkit-scrollbar {width: 5px;}
