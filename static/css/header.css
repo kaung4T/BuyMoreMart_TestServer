@@ -76,7 +76,9 @@
 
 
 .mobile_second_header_content_fixed {
+    position: static;
     z-index: 20;
+    top: -90px;
 }
 .mobile_second_header_content {
     display: none;
@@ -492,6 +494,7 @@
 
 
 .mobile_third_header_content {
+    position: static;
     z-index: 20;
     font-size: 13px;
     display: none;
@@ -499,6 +502,7 @@
     margin: auto;
     width: 100%;
     background-color: #f2f2f2;
+    top: 0;
 }
 
 .mobile_third_header {

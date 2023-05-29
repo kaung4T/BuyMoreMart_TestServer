@@ -56,7 +56,7 @@ function fun () {
     }
 
     else if (current_scroll > 190 && screen.width < 493 && !clicked) {
-        second_header_content.style.transition = "all 1s";
+        second_header_content.style.transition = "top 0.3s ease 0s";
         second_header_content.style.position = "fixed";
         second_header_content.style.top = "0";
         second_header_content.style.width = "100%";
@@ -64,6 +64,7 @@ function fun () {
         fixed_mobile_second_header_content.style.padding = "20px 0 10px 0";
 
 
+        mobile_third_header_content.style.transition = "top 0.3s ease 0s";
         mobile_third_header_content.style.position = "fixed";
         mobile_third_header_content.style.top = "90px";
 
