@@ -373,6 +373,7 @@
     margin: auto;
     width: 100%;
     background-color: #f2f2f2;
+    font-family: sans-serif;
 }
 
 .third_header {
@@ -396,6 +397,12 @@
 .third_header ul li a {
     text-decoration: none;
     color: #3d3d3d;
+}
+
+.third_header .main_one,
+.third_header .main_two,
+.third_header .main_three {
+    font-weight: 700;
 }
 
 .third_header ul li:nth-child(1) {font-size: 26px;position: relative;bottom: 8px;cursor: pointer;}
@@ -482,6 +489,7 @@
     margin: auto;
     width: 100%;
     background-color: #f2f2f2;
+    font-family: sans-serif;
 }
 
 .mobile_third_header {
@@ -506,6 +514,12 @@
 .mobile_third_header ul li a {
     text-decoration: none;
     color: #3d3d3d;
+}
+
+.mobile_third_header .main_one,
+.mobile_third_header .main_two,
+.mobile_third_header .main_three {
+    font-weight: 700;
 }
 
 .mobile_third_header ul li:nth-child(1) {cursor: pointer;}
@@ -594,6 +608,7 @@
     margin: auto;
     width: 100%;
     background-color: #f2f2f2;
+    font-family: sans-serif;
 }
 
 .tablet_third_header {
@@ -617,6 +632,12 @@
 .tablet_third_header ul li a {
     text-decoration: none;
     color: #3d3d3d;
+}
+
+.tablet_third_header .main_one,
+.tablet_third_header .main_two,
+.tablet_third_header .main_three {
+    font-weight: 700;
 }
 
 .tablet_third_header ul li:nth-child(1) {cursor: pointer;}
