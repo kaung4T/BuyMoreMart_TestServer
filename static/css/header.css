@@ -140,12 +140,14 @@
 
 .second_header .search_form_submit {
     position: relative;
+    top: 1px;
     right: 50px;
     padding: 0 8px 0 8px;
     /* background-color: #f3f4f7; */
     background-color: transparent;
     border: none;
     margin-right: -20px;
+    font-size: 18px;
 }
 
 .second_header .second_header_cart {
