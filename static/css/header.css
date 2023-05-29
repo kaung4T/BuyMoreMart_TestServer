@@ -153,6 +153,7 @@
 
     font-size: 22px;
     color: #000;
+    font-weight: 600;
 }
 
 .second_header .second_header_cart_number {
@@ -178,6 +179,7 @@
     font-size: 22px;
     color: #000;
     margin-right: 40px;
+    font-weight: 600;
 }
 
 .mobile_second_header_lists {
@@ -192,6 +194,7 @@
     height: 28px;
     font-size: 19px;
     color: #000;
+    font-weight: 600;
 }
 .mobile_second_header_cart_number {
     display: none;
@@ -220,6 +223,7 @@
     font-size: 19px;
     color: #000;
     margin-left: -7px;
+    font-weight: 600;
 }
 
 
