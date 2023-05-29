@@ -56,6 +56,7 @@ function fun () {
     }
 
     else if (current_scroll > 190 && screen.width < 493 && !clicked) {
+        second_header_content.style.transition = "all 1s";
         second_header_content.style.position = "fixed";
         second_header_content.style.top = "0";
         second_header_content.style.width = "100%";
