@@ -6,6 +6,11 @@ from app_controller.Order.models import Cart
 
 class Products:
     def home(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -30,6 +35,10 @@ class Products:
             item_type = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "all_products": all_products,
             "cart_noti": cart_len,
@@ -41,6 +50,11 @@ class Products:
 
 
     def products_type(self, request, name):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -74,6 +88,10 @@ class Products:
             item_type = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "all_products": all_products,
             "category_key": "Type",
@@ -87,6 +105,11 @@ class Products:
 
 
     def products_price(self, request, price_chose):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -142,6 +165,10 @@ class Products:
             price_info = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "all_products": all_products,
             "category_key": "Price",
@@ -155,6 +182,11 @@ class Products:
 
 
     def products_brand(self, request, brand):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -187,6 +219,10 @@ class Products:
             item_type = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "all_products": all_products,
             "category_key": "Brand",

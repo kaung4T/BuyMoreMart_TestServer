@@ -19,7 +19,6 @@ class Index:
         header_accessories = Product_type.objects.filter(category=2)
         header_beauty = Product_type.objects.filter(category=3)
 
-
         all_products = Product.objects.all().order_by('-id')[:12]
         
         new_arrivals = Product().limit_new_items()
@@ -68,6 +67,11 @@ class Index:
 
     
     def search(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.method == "POST":
             search = request.POST["search"]
 
@@ -93,6 +97,10 @@ class Index:
                 items = None
 
             context = {
+                'header_food': header_food,
+                'header_accessories': header_accessories,
+                'header_beauty': header_beauty,
+
                 "search": search,
                 "items": items,
                 "total_item": total_item,
@@ -108,6 +116,10 @@ class Index:
             cart_len = 0
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "cart_noti": cart_len
         }
         

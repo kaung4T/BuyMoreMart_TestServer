@@ -1,13 +1,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
-from app_controller.Application.models import User, Category, Product
+from app_controller.Application.models import User, Category, Product, Product_type
 from app_controller.Order.models import Cart
 from django.http import Http404
 
 
 class Index:
     def home(self, request, id):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -27,6 +32,10 @@ class Index:
         
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "item": item,
             "suggest_items": suggest_items,
             "user_cart_item": user_cart_item,

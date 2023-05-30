@@ -78,7 +78,7 @@ body {
 .website_cover {
     margin: auto;
     max-width: 1920px;
-    height: 540px;
+    min-height: 250px;
     object-fit: cover;
     /* animation: transition 40.00s; */
 }

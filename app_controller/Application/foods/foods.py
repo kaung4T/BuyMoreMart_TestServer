@@ -5,6 +5,11 @@ from app_controller.Order.models import Cart
 
 class Food:
     def home(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -35,6 +40,10 @@ class Food:
 
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "foods": foods,
             "cart_noti": cart_len,
@@ -45,6 +54,11 @@ class Food:
 
 
     def food_type(self, request, name):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -84,6 +98,10 @@ class Food:
             item_type = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "foods": foods,
             "category_key": "Type",
@@ -97,6 +115,11 @@ class Food:
 
 
     def food_price(self, request, price_chose):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -174,6 +197,10 @@ class Food:
             price_info = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "foods": foods,
             "category_key": "Price",
@@ -187,6 +214,11 @@ class Food:
 
 
     def food_brand(self, request, brand):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -225,6 +257,10 @@ class Food:
             item_type = None
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "foods": foods,
             "category_key": "Brand",

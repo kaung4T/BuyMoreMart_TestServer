@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
-from app_controller.Application.models import User
+from app_controller.Application.models import User, Product_type
 from app_controller.Order.models import Cart, Order
 
 class Order_end:
     def success(self, request, order_id):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -32,6 +37,10 @@ class Order_end:
 
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "cart_noti": cart_len,
             "user_order": user_order,
             "user": user
@@ -42,6 +51,11 @@ class Order_end:
 
 
     def fail(self, request, order_id):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user)
             cart_len = len(list(cart))
@@ -59,6 +73,10 @@ class Order_end:
         
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "cart_noti": cart_len,
             "user_order": user_order,
             "user": user

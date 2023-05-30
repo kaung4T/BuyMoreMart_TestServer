@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from app_controller.Application.models import User
+from app_controller.Application.models import User, Product_type
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from app_controller.Application.verification import send_otp, send_email
@@ -7,6 +7,11 @@ from app_controller.Order.models import Cart
 
 class Profile:
     def home(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.method == "POST":
             phone = request.POST["phone"]
             name = request.POST["name"]
@@ -49,6 +54,10 @@ class Profile:
             cart_len = 0
         
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "cart_noti": cart_len
         }
 
@@ -57,6 +66,11 @@ class Profile:
 
 
     def security(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.method == "POST":
             password = request.POST["password"]
             password2 = request.POST["password2"]
@@ -90,6 +104,10 @@ class Profile:
             cart_len = 0
         
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "cart_noti": cart_len
         }
 
@@ -98,6 +116,11 @@ class Profile:
         
 
     def profile_verification(self, request, new_password):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
         if request.method == "POST":
             otp = request.POST["otp"]
             
@@ -118,6 +141,10 @@ class Profile:
                         cart_len = 0
                         
                     context = {
+                        'header_food': header_food,
+                        'header_accessories': header_accessories,
+                        'header_beauty': header_beauty,
+
                         "new_password": new_password,
                         "cart_noti": cart_len
                     }
@@ -137,6 +164,10 @@ class Profile:
                 cart_len = 0
 
             context = {
+                'header_food': header_food,
+                'header_accessories': header_accessories,
+                'header_beauty': header_beauty,
+
                 "new_password": new_password,
                 "cart_noti": cart_len
             }

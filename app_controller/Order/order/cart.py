@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
-from app_controller.Application.models import User
+from app_controller.Application.models import User, Product_type
 from app_controller.Order.models import Cart, Product
 from app_controller.PaymentAndDelivery.models import Delivery_fee
 from django.http import JsonResponse, HttpResponse
 
 class Cart_class:
     def home(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
 
         if request.user.is_authenticated == False:
             return redirect('login')
@@ -35,6 +39,10 @@ class Cart_class:
             
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             "items": items,
             "total_item": total_item,
             "total_type": total_type,
