@@ -711,6 +711,11 @@ body {
     font-size: 18px;
 } 
 
+.dropdown-menu {
+    width: 210px;
+}
+
+
 
 
 
