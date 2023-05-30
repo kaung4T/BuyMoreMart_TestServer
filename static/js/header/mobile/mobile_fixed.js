@@ -54,7 +54,7 @@ function fun () {
         mobile_third_header_content.style.animation = "header_effect 0.7s";
         mobile_third_header_content.style.position = "fixed";
 
-        // fixed_mobile_second_header_content.style.height = "155px";
+        fixed_mobile_second_header_content.style.height = "155px";
         // fixed_mobile_third_header_content.style.top = "155px";
     }
 
@@ -81,7 +81,7 @@ function fun () {
         second_header_content.style.position = "static";
         mobile_third_header_content.style.position = "static";
 
-        fixed_mobile_second_header_content.style.padding = "30px 0 30px 0";
+        fixed_mobile_second_header_content.style.padding = "20px 0 30px 0";
         
         fixed_second_mobile_searchheader_content2.style.position = "static";
         fixed_second_mobile_searchheader_content2.style.padding = "10px 0 0 0";
