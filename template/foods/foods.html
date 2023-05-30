@@ -39,9 +39,9 @@
             </button>
             <ul class="dropdown-menu drop-menu-bs" layout="row">
 
-              <li><a class="dropdown-item" href="{% url 'foods' %}">Types</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'foods' %}">Types</a></li>
                 {% for each_type in item_type %}
-              <li><a class="dropdown-item" href="{% url 'food_type' each_type.name %}">{{ each_type.name }}</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'food_type' each_type.name %}">{{ each_type.name }}</a></li>
                 {% endfor %}
               
             </ul>
@@ -66,10 +66,10 @@
             </button>
             <ul class="dropdown-menu drop-menu-bs">
 
-              <li><a class="dropdown-item" href="{% url 'foods' %}">Brand</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'foods' %}">Brand</a></li>
               {% for each_food in foods %}
                 {% if each_food.brand %}
-              <li><a class="dropdown-item" href="{% url 'food_brand' each_food.brand %}">{{ each_food.brand }}</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'food_brand' each_food.brand %}">{{ each_food.brand }}</a></li>
                 {% endif %}
               {% endfor %}
 

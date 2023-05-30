@@ -715,16 +715,15 @@ body {
     
 }
 
-.dropdown-menu .dropdown-item {
-    white-space: pre-line;
-    width: 110px;
-    word-break: break-word;
-
+.dropdown-menu .drop-item-bs {
+    white-space: break-spaces;
+    word-break: keep-all;
+    width: 115px;
 }
 
 .drop-menu-bs.show {
     display: flex;
-    width: 220px;
+    width: 225px;
     flex-wrap: wrap;
   }
 

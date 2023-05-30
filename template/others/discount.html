@@ -35,11 +35,11 @@
             <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Types
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu drop-menu-bs">
               
-              <li><a class="dropdown-item" href="{% url 'discount' %}">Types</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'discount' %}">Types</a></li>
                 {% for each_type in item_type %}
-              <li><a class="dropdown-item" href="{% url 'discount_type' each_type.product_type.name %}">{{ each_type.product_type.name }}</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'discount_type' each_type.product_type.name %}">{{ each_type.product_type.name }}</a></li>
                 {% endfor %}
 
             </ul>
@@ -62,12 +62,12 @@
             <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Brand
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu drop-menu-bs">
               
-              <li><a class="dropdown-item" href="{% url 'discount' %}">Brand</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'discount' %}">Brand</a></li>
               {% for each_discount in discount %}
                 {% if each_discount.brand %}
-              <li><a class="dropdown-item" href="{% url 'discount_brand' each_discount.brand %}">{{ each_discount.brand }}</a></li>
+              <li><a class="dropdown-item drop-item-bs" href="{% url 'discount_brand' each_discount.brand %}">{{ each_discount.brand }}</a></li>
                 {% endif %}
               {% endfor %}
 
