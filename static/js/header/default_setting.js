@@ -16,6 +16,7 @@ default_closer.addEventListener("click", setting_off_with_cross);
 
 
 function setting_on () {
+    main_default_page.style.animation= "left_to_right 0.7s ease";
     main_default_page.style.display = "block";
     second_default_page.style.display = "block";
     default_body.style.overflow = "hidden";

@@ -27,6 +27,7 @@ tablet_closer.addEventListener("click", tablet_off_with_cross);
 
 
 function tablet_on () {
+    main_tablet_page.style.animation= "left_to_right 0.7s ease";
     main_tablet_page.style.display = "block";
     second_tablet_page.style.display = "block";
     body.style.overflow = "hidden";

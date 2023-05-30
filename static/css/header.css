@@ -254,6 +254,7 @@
 }
 
 .second_mobile_searchheader_content .mobile_search_form_cancel {
+    animation: header_effect 1s;
     display: none;
     position: relative;
     top: 11px;
@@ -269,6 +270,7 @@
 
 
 .second_mobile_searchheader_content .mobile_search_form_input {
+    animation: header_effect 1s;
     font-size: 13px;
     display: none;
     margin-top: 10px;
@@ -337,6 +339,7 @@
 }
 
 .second_mobile_searchheader_content2 .mobile_search_form_cancel2 {
+    animation: header_effect 1s;
     display: none;
     position: relative;
     top: 12px;
@@ -351,6 +354,7 @@
 .second_mobile_searchheader_content2 .mobile_search_form_cancel2:hover {background-color: #f7a644;color: #3d3d3d;}
 
 .second_mobile_searchheader_content2 .mobile_search_form_input {
+    animation: header_effect 1s;
     font-size: 11px;
     display: none;
     margin-top: 10px;
@@ -740,6 +744,8 @@
 
 
 
+
+
 @keyframes header_effect {
     from {
         opacity: 0;
@@ -749,6 +755,16 @@
         opacity: 1;
 
     }
+}
+
+@keyframes left_to_right {
+    from {
+        transform: translateX(-50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+
 }
 
 

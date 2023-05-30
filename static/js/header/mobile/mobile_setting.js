@@ -25,6 +25,7 @@ mobile_closer.addEventListener("click", mobile_off_with_cross);
 
 
 function mobile_on () {
+    main_mobile_page.style.animation= "left_to_right 0.7s ease";
     main_mobile_page.style.display = "block";
     second_mobile_page.style.display = "block";
     body2.style.overflow = "hidden";
