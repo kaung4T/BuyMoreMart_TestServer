@@ -712,10 +712,21 @@ body {
 } 
 
 .dropdown-menu {
-    width: 210px;
+    
 }
 
+.dropdown-menu .dropdown-item {
+    white-space: pre-line;
+    width: 110px;
+    word-break: break-word;
 
+}
+
+.drop-menu-bs.show {
+    display: flex;
+    width: 220px;
+    flex-wrap: wrap;
+  }
 
 
 

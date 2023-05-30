@@ -37,7 +37,7 @@
             <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Types
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu drop-menu-bs" layout="row">
 
               <li><a class="dropdown-item" href="{% url 'foods' %}">Types</a></li>
                 {% for each_type in item_type %}
@@ -64,7 +64,7 @@
             <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Brand
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu drop-menu-bs">
 
               <li><a class="dropdown-item" href="{% url 'foods' %}">Brand</a></li>
               {% for each_food in foods %}
@@ -262,7 +262,7 @@
 {% endif %}
 
 
-<script src="{% static 'js/other/items.js' %}"></script>
+
   <script src="{% static 'js/add_cart.js' %}"></script>
   <script src="{% static 'js/prodcut_active.js' %}"></script>
 
