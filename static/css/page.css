@@ -711,19 +711,20 @@ body {
     font-size: 18px;
 } 
 
-.dropdown-menu {
-    
+.dropdown-menu li {
+
+    margin-bottom: 7px;
 }
 
 .dropdown-menu .drop-item-bs {
     white-space: break-spaces;
-    word-break: keep-all;
-    width: 115px;
+    word-break: break-word;
+    width: 128px;
 }
 
 .drop-menu-bs.show {
     display: flex;
-    width: 225px;
+    width: 255px;
     flex-wrap: wrap;
   }
 

@@ -62,12 +62,12 @@
             <button class="btn btn btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Brand
             </button>
-            <ul class="dropdown-menu drop-menu-bs">
+            <ul class="dropdown-menu">
               
-              <li><a class="dropdown-item drop-item-bs" href="{% url 'discount' %}">Brand</a></li>
+              <li><a class="dropdown-item" href="{% url 'discount' %}">Brand</a></li>
               {% for each_discount in discount %}
                 {% if each_discount.brand %}
-              <li><a class="dropdown-item drop-item-bs" href="{% url 'discount_brand' each_discount.brand %}">{{ each_discount.brand }}</a></li>
+              <li><a class="dropdown-item" href="{% url 'discount_brand' each_discount.brand %}">{{ each_discount.brand }}</a></li>
                 {% endif %}
               {% endfor %}
 
