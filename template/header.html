@@ -175,51 +175,44 @@
                                                         <div class="shop_food">
                                                             <div class="shop_food2">
                                                                 <ul>
-                                                                <li>Noodle</li>
-                                                                <li>Rice</li>
-                                                                <li>Cooking Oil</li>
-                                                                <li>Cola</li>
-                                                                <li>Noodle</li>
-                                                                <li>Rice</li>
-                                                                <li>Cooking Oil</li>
-                                                                <li>Cola</li>
+                                                                    
+                                                        {% for each_food_type in header_food %}
+                            <a href="{% url 'food_type' each_food_type.name %}"><li>{{ each_food_type.name }}</li></a>
+                                                        {% endfor %}
+                                                                
                                                                 </ul>
                                                             </div>
                                                         </div>
                             </li>
+
                             <li class="shop_li2">Accessories <i class="bi bi-chevron-right"></i>
                                                         <div class="shop_accessories">
                                                             <div class="shop_accessories2">
                                                                 <ul>
-                                                                <li>Cleaning</li>
-                                                                <li>Book</li>
-                                                                <li>Material</li>
-                                                                <li>Cooking items</li>
-                                                                <li>Must Have</li>
-                                                                <li>Rice</li>
-                                                                <li>Cooking Oil</li>
-                                                                <li>Cola</li>
+                                                                
+                                                        {% for each_accessories_type in header_accessories %}
+                            <a href="{% url 'accessories_type' each_accessories_type.name %}"><li>{{ each_accessories_type.name }}</li></a>
+                                                        {% endfor %}
+
                                                                 </ul>
                                                             </div>
                                                         </div>
                             </li>
+
                             <li class="shop_li3">Beauty <i class="bi bi-chevron-right"></i>
                                                     <div class="shop_beauty">
                                                         <div class="shop_beauty2">
                                                             <ul>
-                                                            <li>Hair</li>
-                                                            <li>Makeup</li>
-                                                            <li>Lip</li>
-                                                            <li>Eyes</li>
-                                                            <li>Face</li>
-                                                            <li>Rice</li>
-                                                            <li>Cooking Oil</li>
-                                                            <li>Cola</li>
+                                                            
+                                                        {% for each_beauty_type in header_beauty %}
+                            <a href="{% url 'beauty_type' each_beauty_type.name %}"><li>{{ each_beauty_type.name }}</li></a>
+                                                        {% endfor %}
+
                                                             </ul>
                                                         </div>
                                                     </div>
                             </li>
-                            <li class="shop_li4">Disount
+                        <a href="{% url 'discount' %}"><li class="shop_li4">Disount
                                                     <!-- <div class="shop_discount">
                                                         <div class="shop_discount2">
                                                             <ul>
@@ -234,8 +227,8 @@
                                                             </ul>
                                                         </div>
                                                     </div> -->
-                            </li>
-                            <li class="shop_li5">New Arrivals
+                            </li></a>
+                            <a href="{% url 'new_arrivals' %}"><li class="shop_li5">New Arrivals
                                                     <!-- <div class="shop_new">
                                                         <div class="shop_new2">
                                                             <ul>
@@ -250,7 +243,7 @@
                                                             </ul>
                                                         </div>
                                                     </div> -->
-                            </li>
+                            </li></a>
                         </ul>
                         </div>
                     
@@ -269,16 +262,11 @@
                         <div class="first_row">
                             <h6>Category</h6>
                         <ul>
-                            <li class="shop_li1">Foods</li>
-                            <li class="shop_li2">Accessories</li>
-                            <li class="shop_li3">Beauty</li>
-                            <li class="shop_li4">Disount</li>
-                            <li class="shop_li5">New Arrivals</li>
-                            <li class="shop_li1">Foods</li>
-                            <li class="shop_li2">Accessories</li>
-                            <li class="shop_li3">Beauty</li>
-                            <li class="shop_li4">Disount</li>
-                            <li class="shop_li5">New Arrivals</li>
+                            
+                            {% for each_food_type in header_food %}
+                <a href="{% url 'food_type' each_food_type.name %}"><li>{{ each_food_type.name }}</li></a>
+                            {% endfor %}
+
                         </ul>
                         </div>
 
@@ -315,16 +303,11 @@
                             <div class="first_row">
                                 <h6>Category</h6>
                             <ul>
-                                <li class="shop_li1">Accessories</li>
-                                <li class="shop_li2">Accessories</li>
-                                <li class="shop_li3">Beauty</li>
-                                <li class="shop_li4">Disount</li>
-                                <li class="shop_li5">New Arrivals</li>
-                                <li class="shop_li1">Foods</li>
-                                <li class="shop_li2">Accessories</li>
-                                <li class="shop_li3">Beauty</li>
-                                <li class="shop_li4">Disount</li>
-                                <li class="shop_li5">New Arrivals</li>
+                                
+                                {% for each_accessories_type in header_accessories %}
+                <a href="{% url 'accessories_type' each_accessories_type.name %}"><li>{{ each_accessories_type.name }}</li></a>
+                                {% endfor %}
+
                             </ul>
                             </div>
 
@@ -386,16 +369,11 @@
                         <div class="first_row">
                             <h6>Category</h6>
                         <ul>
-                            <li class="shop_li1">Beauty</li>
-                            <li class="shop_li2">Accessories</li>
-                            <li class="shop_li3">Beauty</li>
-                            <li class="shop_li4">Disount</li>
-                            <li class="shop_li5">New Arrivals</li>
-                            <li class="shop_li1">Foods</li>
-                            <li class="shop_li2">Accessories</li>
-                            <li class="shop_li3">Beauty</li>
-                            <li class="shop_li4">Disount</li>
-                            <li class="shop_li5">New Arrivals</li>
+                            
+                        {% for each_beauty_type in header_beauty %}
+                <a href="{% url 'beauty_type' each_beauty_type.name %}"><li>{{ each_beauty_type.name }}</li></a>
+                        {% endfor %}
+                        
                         </ul>
                         </div>
 
@@ -437,7 +415,7 @@
                                 <div class="first_row">
                                     <h6>Category</h6>
                                 <ul>
-                                    <li class="shop_li1">Discount</li>
+                                    <a href="{% url 'discount' %}"><li class="shop_li1">Discount</li></a>
                                 </ul>
                                 </div>
 
@@ -477,7 +455,7 @@
                                 <div class="first_row">
                                     <h6>Category</h6>
                                 <ul>
-                                    <li class="shop_li1">New Arrivals</li>
+                                    <a href="{% url 'new_arrivals' %}"><li class="shop_li1">New Arrivals</li></a>
                                 </ul>
                                 </div>
 

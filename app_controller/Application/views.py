@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.models import auth
 from django.contrib import messages
 from django.http import Http404
-from app_controller.Application.models import User, Category, Product
+from app_controller.Application.models import User, Category, Product, Product_type
 from app_controller.Application.verification import send_otp, send_email
 from app_controller.Application.check_phone import check_phone_num
 from app_controller.Order.models import Cart
@@ -14,6 +14,12 @@ from app_controller.Order.models import Cart
 'Index Page Start'
 class Index:
     def home(self, request):
+        # header product types
+        header_food = Product_type.objects.filter(category=1)
+        header_accessories = Product_type.objects.filter(category=2)
+        header_beauty = Product_type.objects.filter(category=3)
+
+
         all_products = Product.objects.all().order_by('-id')[:12]
         
         new_arrivals = Product().limit_new_items()
@@ -45,13 +51,17 @@ class Index:
 
 
         context = {
+            'header_food': header_food,
+            'header_accessories': header_accessories,
+            'header_beauty': header_beauty,
+
             'all_products': all_products,
             'foods': foods,
             'accessories': accessories,
             'beauty': beauty,
             'discount': discount,
             'new_arrivals': new_arrivals,
-            'cart_noti': cart_len
+            'cart_noti': cart_len     
         }
         return render(request, 'index.html',
                     context)
