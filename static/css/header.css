@@ -1,5 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+
+.header_website_cover img {
+    object-fit: cover;
+}
+
 .first_line_arrow {
     border-bottom: 1px solid;
     border-color: #f3efef;
