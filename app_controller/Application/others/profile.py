@@ -37,7 +37,7 @@ class Profile:
                     user.country = country
 
                 user.save()
-                messages.info(request, "Successfully Update!")
+                messages.success(request, "Successfully Update!")
             
             else:
                 messages.info(request, "Please register an account!")
@@ -131,6 +131,8 @@ class Profile:
                     user.set_password(new_password)
                     user.save()
                     update_session_auth_hash(request, user)
+
+                    messages.success(request, "Successfully Update!")
                     return redirect("security")
 
                 else:
