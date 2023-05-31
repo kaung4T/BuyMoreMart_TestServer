@@ -169,13 +169,17 @@ class Account:
 
 
                 otp = send_otp(phone)
-                send_email(name, email, otp)
+                # send_email(name, email, otp)
 
                 user = User.objects.create_user(username=name, email=email, password=password, phone_number=new_phone_method, address=address, city=city, country=country, otp=otp)
+                user.is_verified = True
                 user.save()
 
-                return redirect(f"/account_verification/{user.id}")
+                # we skip verify step
+                # return redirect(f"/account_verification/{user.id}")
 
+                messages.success(request, "Your account has been successfully created! You can now login and access our service.")
+                return redirect("login")
 
             else:
                 messages.info(request, "Passwords do not match!")
@@ -207,6 +211,7 @@ class Account:
             if user:
                 if user.is_verified == True:
                     auth.login(request, user)
+                    
                     return redirect("index")
                 else:
                     messages.info(request, "Your account wasn't verified. Please try again with same phone-number and email!")
@@ -237,6 +242,7 @@ class Account:
                 user.is_verified = True
                 user.save()
 
+                messages.success(request, "Your account has been successfully created! You can now login and access our service.")
                 return redirect("/login")
             
             messages.info(request, "Entered a wrong code. Please check the number and try again!")
