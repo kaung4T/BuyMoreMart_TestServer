@@ -13,9 +13,14 @@ let color2 = getAverageRGB(main_cover2);
 let color3 = getAverageRGB(main_cover3);
 
 
-main_cover1.style.background = `rgb(${color1['r']}, ${color1['g']}, ${color1['b']})`;
-main_cover2.style.background = `rgb(${color2['r']}, ${color2['g']}, ${color2['b']})`;
-main_cover3.style.background = `rgb(${color3['r']}, ${color3['g']}, ${color3['b']})`;
+
+let website_cover_item1 = document.querySelector('.website_cover_item1');
+let website_cover_item2 = document.querySelector('.website_cover_item2');
+let website_cover_item3 = document.querySelector('.website_cover_item3');
+
+website_cover_item1.style.background = `rgb(${color1['r']}, ${color1['g']}, ${color1['b']})`;
+website_cover_item2.style.background = `rgb(${color2['r']}, ${color2['g']}, ${color2['b']})`;
+website_cover_item3.style.background = `rgb(${color3['r']}, ${color3['g']}, ${color3['b']})`;
 
 
 // main_cover1.style.background = `rgb(${color1[0]}, ${color1[1]}, ${color1[2]})`;
