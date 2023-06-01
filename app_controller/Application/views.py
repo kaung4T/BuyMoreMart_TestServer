@@ -7,6 +7,7 @@ from app_controller.Application.models import User, Category, Product, Product_t
 from app_controller.Application.verification import send_otp, send_email
 from app_controller.Application.check_phone import check_phone_num
 from app_controller.Order.models import Cart
+from app_controller.Website_Interface.models import Info, Header_ImageGroup, Index_ImageGroup
 
 # Create your views here.
 
@@ -14,6 +15,19 @@ from app_controller.Order.models import Cart
 'Index Page Start'
 class Index:
     def home(self, request):
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
+        # Index Image
+        if Index_ImageGroup.objects.filter(id=1).exists():
+            index_image = Index_ImageGroup.objects.get(id=1)
+        else:
+            index_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -50,6 +64,9 @@ class Index:
 
 
         context = {
+            'header_image': header_image,
+            'index_image': index_image,
+            
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,

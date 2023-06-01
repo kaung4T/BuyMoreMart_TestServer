@@ -10,7 +10,8 @@ class InfoAdmin(admin.ModelAdmin):
                     'location']
 
 class Header_ImageGroupAdmin(admin.ModelAdmin):
-    list_display = ['one_image1',
+    list_display = ['name',
+                    'one_image1',
                     'one_image2',
                     'two_image1',
                     'two_image2',
@@ -23,7 +24,8 @@ class Header_ImageGroupAdmin(admin.ModelAdmin):
 
 
 class Index_ImageGroupAdmin(admin.ModelAdmin):
-    list_display = ['one_image1',
+    list_display = ['name',
+                    'one_image1',
                     'one_image2',
                     'one_image3',
                     'two_image1',

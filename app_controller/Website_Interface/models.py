@@ -11,6 +11,8 @@ class Info(models.Model):
 
 
 class Header_ImageGroup(models.Model):
+    name = models.CharField(max_length=255, default='Edit', null=True, blank=True)
+
     one_image1 = models.ImageField(upload_to='website_interface', null=True, blank=True, default=None)
     one_image2 = models.ImageField(upload_to='website_interface', null=True, blank=True, default=None)
 
@@ -28,6 +30,8 @@ class Header_ImageGroup(models.Model):
 
 
 class Index_ImageGroup(models.Model):
+    name = models.CharField(max_length=255, default='Edit', null=True, blank=True)
+
     one_image1 = models.ImageField(upload_to='website_interface', null=True, blank=True, default=None)
     one_image2 = models.ImageField(upload_to='website_interface', null=True, blank=True, default=None)
     one_image3 = models.ImageField(upload_to='website_interface', null=True, blank=True, default=None)

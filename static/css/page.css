@@ -71,13 +71,13 @@ body {
     bottom: 0.6px;
 }
 
-.main_website_cover .carousel .carousel-inner .website_cover_item1 {background: transparent;}
-.main_website_cover .carousel .carousel-inner .website_cover_item2 {background: transparent;}
-.main_website_cover .carousel .carousel-inner .website_cover_item3 {background: transparent;}
+.main_website_cover .carousel .carousel-inner .website_cover_item1 {}
+.main_website_cover .carousel .carousel-inner .website_cover_item2 {}
+.main_website_cover .carousel .carousel-inner .website_cover_item3 {}
 
-.website_cover_item1 img {width: 400px;height: 700px;object-fit:scale-down;}
-.website_cover_item2 img {width: 400px;height: 700px;object-fit:scale-down;}
-.website_cover_item3 img {width: 400px;height: 700px;object-fit:scale-down;}
+.website_cover_item1 img {width: 400px;height: 700px;object-fit:cover;}
+.website_cover_item2 img {width: 400px;height: 700px;object-fit:cover;}
+.website_cover_item3 img {width: 400px;height: 700px;object-fit:cover;}
 
 .website_cover {
     margin: auto;
