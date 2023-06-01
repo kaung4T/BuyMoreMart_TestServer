@@ -71,9 +71,9 @@ body {
     bottom: 0.6px;
 }
 
-.main_website_cover .carousel .carousel-inner .website_cover_item1 {background: #0B0B0B;}
-.main_website_cover .carousel .carousel-inner .website_cover_item2 {background: #EFF3F6;}
-.main_website_cover .carousel .carousel-inner .website_cover_item3 {background: #E3010F;}
+.main_website_cover .carousel .carousel-inner .website_cover_item1 {background: transparent;}
+.main_website_cover .carousel .carousel-inner .website_cover_item2 {background: transparent;}
+.main_website_cover .carousel .carousel-inner .website_cover_item3 {background: transparent;}
 
 .website_cover_item1 img {width: 400px;height: 700px;object-fit:scale-down;}
 .website_cover_item2 img {width: 400px;height: 700px;object-fit:scale-down;}

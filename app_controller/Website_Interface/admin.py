@@ -1,33 +1,23 @@
 from django.contrib import admin
-from app_controller.Website_Interface.models import One_IndexImageGroup, Two_IndexImageGroup, Three_IndexImageGroup, Four_IndexImageGroup
+from app_controller.Website_Interface.models import Index_ImageGroup
 # Register your models here.
 
 
 
-class One_IndexImageGroupAdmin(admin.ModelAdmin):
-    list_display = ['image1',
-                    'image2',
-                    'image3']
-
-class Two_IndexImageGroupAdmin(admin.ModelAdmin):
-    list_display = ['image1',
-                    'image2',
-                    'image3']
-
-class Three_IndexImageGroupAdmin(admin.ModelAdmin):
-    list_display = ['image1',
-                    'image2',
-                    'image3']
-
-class Four_IndexImageGroupAdmin(admin.ModelAdmin):
-    list_display = ['image1',
-                    'image2',
-                    'image3']
+class Index_ImageGroupAdmin(admin.ModelAdmin):
+    list_display = ['one_image1',
+                    'one_image2',
+                    'one_image3',
+                    'two_image1',
+                    'two_image2',
+                    'two_image3',
+                    'three_image1',
+                    'three_image2',
+                    'three_image3',
+                    'four_image1',
+                    'four_image2',
+                    'four_image3']
 
 
+admin.site.register(Index_ImageGroup, Index_ImageGroupAdmin)
 
-
-admin.site.register(One_IndexImageGroup, One_IndexImageGroupAdmin)
-admin.site.register(Two_IndexImageGroup, Two_IndexImageGroupAdmin)
-admin.site.register(Three_IndexImageGroup, Three_IndexImageGroupAdmin)
-admin.site.register(Four_IndexImageGroup, Four_IndexImageGroupAdmin)
