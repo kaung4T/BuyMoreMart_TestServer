@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'app_controller.Application.apps.ApplicationConfig',
     'app_controller.Order.apps.OrderConfig',
-    'app_controller.PaymentAndDelivery.apps.PaymentanddeliveryConfig'
+    'app_controller.PaymentAndDelivery.apps.PaymentanddeliveryConfig',
+    'app_controller.Website_Interface.apps.Website_interfaceConfig'
 ]
 
 AUTH_USER_MODEL = 'Application.User'
