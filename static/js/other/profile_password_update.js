@@ -3,19 +3,24 @@
 
 
 // for disabling duplicate + sign
-let count = 0
-$("#phone").keypress(function(event) {
-    var character = String.fromCharCode(event.keyCode);
+// let count = 0
 
-    if (character == "+") {
-        if (count > 0) {
-            return false
-        }
-        if (count == 0) {
-            count = 1
-        }
+
+
+$("#phone").keypress(function(event) {
+
+    let phone_number = $("#phone").val();
+
+    var character = String.fromCharCode(event.keyCode);
+    let valid = isValid(character);
+    
+    
+    if (character == "+" && phone_number.length > 0) {
+        return false;
     }
-    return isValid(character);
+
+    return valid;
+    
 });
 
 function isValid(str) {

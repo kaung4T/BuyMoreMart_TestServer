@@ -5,6 +5,7 @@ from django.contrib import messages
 from app_controller.Application.verification import send_otp, send_email
 from app_controller.Order.models import Cart
 from app_controller.Website_Interface.models import Info, Header_ImageGroup
+from app_controller.Application.check_phone import check_phone_num
 
 class Profile:
     def home(self, request):
@@ -33,35 +34,37 @@ class Profile:
             city = request.POST["city"]
             country = request.POST["country"]
 
+            new_phone_method = check_phone_num(phone)
+
             if request.user.is_authenticated:
                 user = User.objects.get(id=request.user.id)
                 
                 if phone:
-                    if User.objects.filter(phone_number=phone).exists():
+                    if User.objects.filter(phone_number=new_phone_method).exists():
                         messages.info(request, "Phone Number already exist!")
                         return redirect("profile")
                     else:    
-                        user.phone_number = phone
+                        user.phone_number = new_phone_method
 
-                elif name:
+                if name:
                     if User.objects.filter(username=name).exists():
                         messages.info(request, "Username already exist!")
                         return redirect("profile")
                     else:    
                         user.username = name
                     
-                elif email:
+                if email:
                     if User.objects.filter(email=email).exists():
                         messages.info(request, "Email already exist!")
                         return redirect("profile")
                     else:    
                         user.email = email
                     
-                elif address:
+                if address:
                     user.address = address
-                elif city:
+                if city:
                     user.city = city
-                elif country:
+                if country:
                     user.country = country
 
                 user.save()
