@@ -2,10 +2,22 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from app_controller.Application.models import Category, Product, Product_type
 from app_controller.Order.models import Cart
-
+from app_controller.Website_Interface.models import Info, Header_ImageGroup
 
 class Products:
     def home(self, request):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -35,6 +47,9 @@ class Products:
             item_type = None
 
         context = {
+            'info': info,
+            'header_image': header_image,
+
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,
@@ -50,6 +65,18 @@ class Products:
 
 
     def products_type(self, request, name):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -88,6 +115,9 @@ class Products:
             item_type = None
 
         context = {
+            'info': info,
+            'header_image': header_image,
+
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,
@@ -105,6 +135,18 @@ class Products:
 
 
     def products_price(self, request, price_chose):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -165,6 +207,9 @@ class Products:
             price_info = None
 
         context = {
+            'info': info,
+            'header_image': header_image,
+
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,
@@ -182,6 +227,18 @@ class Products:
 
 
     def products_brand(self, request, brand):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -219,6 +276,9 @@ class Products:
             item_type = None
 
         context = {
+            'info': info,
+            'header_image': header_image,
+
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,

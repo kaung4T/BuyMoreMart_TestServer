@@ -4,9 +4,22 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from app_controller.Application.verification import send_otp, send_email
 from app_controller.Order.models import Cart
+from app_controller.Website_Interface.models import Info, Header_ImageGroup
 
 class Profile:
     def home(self, request):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -24,11 +37,26 @@ class Profile:
                 user = User.objects.get(id=request.user.id)
                 
                 if phone:
-                    user.phone_number = phone
+                    if User.objects.filter(phone_number=phone).exists():
+                        messages.info(request, "Phone Number already exist!")
+                        return redirect("profile")
+                    else:    
+                        user.phone_number = phone
+
                 elif name:
-                    user.username = name
+                    if User.objects.filter(username=name).exists():
+                        messages.info(request, "Username already exist!")
+                        return redirect("profile")
+                    else:    
+                        user.username = name
+                    
                 elif email:
-                    user.email = email
+                    if User.objects.filter(email=email).exists():
+                        messages.info(request, "Email already exist!")
+                        return redirect("profile")
+                    else:    
+                        user.email = email
+                    
                 elif address:
                     user.address = address
                 elif city:
@@ -54,6 +82,9 @@ class Profile:
             cart_len = 0
         
         context = {
+            'info': info,
+            'header_image': header_image,
+
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,
@@ -66,6 +97,18 @@ class Profile:
 
 
     def security(self, request):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -104,6 +147,9 @@ class Profile:
             cart_len = 0
         
         context = {
+            'info': info,
+            'header_image': header_image,
+
             'header_food': header_food,
             'header_accessories': header_accessories,
             'header_beauty': header_beauty,
@@ -116,6 +162,18 @@ class Profile:
         
 
     def profile_verification(self, request, new_password):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
+
+        # Header Image
+        if Header_ImageGroup.objects.filter(id=1).exists():
+            header_image = Header_ImageGroup.objects.get(id=1)
+        else:
+            header_image = None
+
         # header product types
         header_food = Product_type.objects.filter(category=1)
         header_accessories = Product_type.objects.filter(category=2)
@@ -143,6 +201,9 @@ class Profile:
                         cart_len = 0
                         
                     context = {
+                        'info': info,
+                        'header_image': header_image,
+
                         'header_food': header_food,
                         'header_accessories': header_accessories,
                         'header_beauty': header_beauty,
@@ -156,7 +217,7 @@ class Profile:
             
             
             messages.info(request, "Please register an account!")
-            return redirect("registration")
+            return redirect("login")
         
         if request.user.is_authenticated:
             if request.user.is_authenticated:
@@ -166,6 +227,9 @@ class Profile:
                 cart_len = 0
 
             context = {
+                'info': info,
+                'header_image': header_image,
+
                 'header_food': header_food,
                 'header_accessories': header_accessories,
                 'header_beauty': header_beauty,
