@@ -263,9 +263,13 @@
                             <h6>Category</h6>
                         <ul>
                             
+                        {% if header_food %}
                             {% for each_food_type in header_food %}
                 <a href="{% url 'food_type' each_food_type.name %}"><li>{{ each_food_type.name }}</li></a>
                             {% endfor %}
+                        {% else %}
+                <a href="{% url 'foods' %}"><li>Foods</li></a>
+                        {% endif %}
 
                         </ul>
                         </div>
@@ -301,9 +305,13 @@
                                 <h6>Category</h6>
                             <ul>
                                 
+                            {% if header_accessories %}
                                 {% for each_accessories_type in header_accessories %}
                 <a href="{% url 'accessories_type' each_accessories_type.name %}"><li>{{ each_accessories_type.name }}</li></a>
                                 {% endfor %}
+                            {% else %}
+                <a href="{% url 'accessories' %}"><li>Accessories</li></a>
+                            {% endif %}
 
                             </ul>
                             </div>
@@ -361,9 +369,13 @@
                             <h6>Category</h6>
                         <ul>
                             
+                            {% if header_beauty %}
                         {% for each_beauty_type in header_beauty %}
                 <a href="{% url 'beauty_type' each_beauty_type.name %}"><li>{{ each_beauty_type.name }}</li></a>
                         {% endfor %}
+                            {% else %}
+                <a href="{% url 'gb' %}"><li>Beauty</li></a>
+                            {% endif %}
                         
                         </ul>
                         </div>
