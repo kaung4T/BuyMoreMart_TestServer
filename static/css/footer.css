@@ -48,6 +48,7 @@
     font-size: 12px;
     display: inline-block;
     line-height: 17px;
+    word-break: break-word;
 }
 
 

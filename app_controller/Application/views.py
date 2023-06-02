@@ -15,12 +15,18 @@ from app_controller.Website_Interface.models import Info, Header_ImageGroup, Ind
 'Index Page Start'
 class Index:
     def home(self, request):
+        # Info
+        if Info.objects.filter(id=1).exists():
+            info = Info.objects.get(id=1)
+        else:
+            info = None
 
         # Header Image
         if Header_ImageGroup.objects.filter(id=1).exists():
             header_image = Header_ImageGroup.objects.get(id=1)
         else:
             header_image = None
+
 
         # Index Image
         if Index_ImageGroup.objects.filter(id=1).exists():
@@ -64,6 +70,7 @@ class Index:
 
 
         context = {
+            'info': info,
             'header_image': header_image,
             'index_image': index_image,
             

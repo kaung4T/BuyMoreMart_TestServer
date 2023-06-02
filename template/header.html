@@ -26,9 +26,23 @@
                 <div class="first_header">
                     
                     <div class="first_header_left">
+                        {% if info.phone %}
+                    <label for=""><i class="bi bi-telephone-fill"></i> {{ info.phone }} |</label>&nbsp;
+                        {% else %}
                     <label for=""><i class="bi bi-telephone-fill"></i> +959455033077 |</label>&nbsp;
+                        {% endif %}
+
+                        {% if info.email %}
+                    <label for=""><i class="bi bi-envelope-fill"></i> {{ info.email }} |</label>&nbsp;
+                        {% else %}
                     <label for=""><i class="bi bi-envelope-fill"></i> BuyMoreMart@gmail.com |</label>&nbsp;
-                    <label for=""><i class="bi bi-geo-alt-fill"></i><a href=""> Yatanar Mon 5th St, Yangon</a></label>
+                        {% endif %}
+
+                        {% if info.address %}
+                    <label for=""><i class="bi bi-geo-alt-fill"></i><a href="{{ info.location }}"> {{ info.address }}</a></label>
+                        {% else %}
+<label for=""><i class="bi bi-geo-alt-fill"></i><a href="https://www.google.com/maps/place/Buy+More+Mart/@16.8357569,96.1136676,15z/data=!4m6!3m5!1s0x30c1956299e6b48b:0xd2f9fd3513d2e941!8m2!3d16.8357569!4d96.1136676!16s%2Fg%2F11s640nsb1?entry=ttu"> Yatanar Mon 5th St, Yangon</a></label>
+                        {% endif %}
                     
                     </div>
                     
