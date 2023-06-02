@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from app_controller.Application.models import Category, Product, Product_type
 from app_controller.Order.models import Cart
+from app_controller.Website_Interface.models import Info, Header_ImageGroup
 
 class Discount:
     def home(self, request):
