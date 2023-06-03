@@ -67,6 +67,7 @@ function fun2 () {
 
 
 function cancel1 () {
+    clicked = false;
     second_mobile_searchheader_content.style.display = "none";
     mobile_search_form.style.display = "none";
     mobile_search_form_input.style.display = "none";
@@ -79,6 +80,7 @@ let cancel_mobile_third_header_content = document.querySelector(".mobile_third_h
 
 
 function cancel2 () {
+    clicked = false;
     second_mobile_searchheader_content2.style.display = "none";
     mobile_search_form2.style.display = "none";
     mobile_search_form_input2.style.display = "none";
