@@ -238,7 +238,7 @@ body {
 
 .feature_body .feature_products .feature_products_item {
     width: 23.7%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 7px;
@@ -304,7 +304,7 @@ body {
 
 .discount_body .discount_products .discount_products_item {
     width: 25.1%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 10px;
@@ -433,7 +433,7 @@ body {
 
 .foods_body .foods_products .foods_products_item {
     min-width: 17.9%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 3px;
@@ -510,7 +510,7 @@ body {
 
 .beauty_body .beauty_products .beauty_products_item {
     min-width: 17.9%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 3px;
@@ -587,7 +587,7 @@ body {
 
 .accessories_body .accessories_products .accessories_products_item {
     min-width: 17.9%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 3px;
@@ -668,7 +668,7 @@ body {
 
 .newArrivals_body .newArrivals_products .newArrivals_products_item {
     min-width: 17.9%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 3px;

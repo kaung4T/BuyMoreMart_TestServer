@@ -213,7 +213,7 @@
 
 .one_product_array .one_products .one_products_item {
     min-width: 16.9%;
-    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px 1px rgba(0,0,0,0.2);
     padding: 12px;
     padding-bottom: 20px;
     margin-left: 3px;
