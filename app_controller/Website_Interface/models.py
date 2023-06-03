@@ -9,6 +9,8 @@ class Info(models.Model):
     address = models.CharField(max_length=255, null=True, blank=True)
     location = models.URLField(null=True, blank=True)
     buy_more_mart_info = models.TextField(max_length=255, null=True, blank=True)
+    facebook_link = models.URLField(null=True, blank=True)
+    messenger_link = models.URLField(null=True, blank=True)
 
 
 class Header_ImageGroup(models.Model):

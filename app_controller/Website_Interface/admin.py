@@ -7,7 +7,10 @@ class InfoAdmin(admin.ModelAdmin):
     list_display = ['phone',
                     'email',
                     'address',
-                    'location']
+                    'location',
+                    'facebook_link',
+                    'messenger_link',]
+
 
 class Header_ImageGroupAdmin(admin.ModelAdmin):
     list_display = ['name',
