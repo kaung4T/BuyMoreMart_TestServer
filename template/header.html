@@ -29,7 +29,7 @@
                         {% if info.phone %}
                     <label for=""><i class="bi bi-telephone-fill"></i> {{ info.phone }} |</label>&nbsp;
                         {% else %}
-                    <label for=""><i class="bi bi-telephone-fill"></i> +959455033077 |</label>&nbsp;
+                    <label for=""><i class="bi bi-telephone-fill"></i> +959785525528 |</label>&nbsp;
                         {% endif %}
 
                         {% if info.email %}
@@ -511,8 +511,18 @@
                         </ul>
 
                         <ul class="default_page1_ul4">
+                            {% if info.phone %}
+                            <li><i class="bi bi-telephone-fill"></i> {{ info.phone }}</li>
+                            {% else %}
                             <li><i class="bi bi-telephone-fill"></i> +959455033077</li>
-                            <li><a href=""><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                            {% endif %}
+                            
+                            {% if info.address %}
+                            <li><a href="{{ info.location }}"><i class="bi bi-geo-alt-fill"></i> {{ info.address }}</li></a>
+                            {% else %}
+<li><a href="https://www.google.com/maps/place/Buy+More+Mart/@16.8357569,96.1136676,15z/data=!4m6!3m5!1s0x30c1956299e6b48b:0xd2f9fd3513d2e941!8m2!3d16.8357569!4d96.1136676!16s%2Fg%2F11s640nsb1?entry=ttu"><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                            {% endif %}
+                            
                         </ul>
 
         </div>
@@ -580,8 +590,19 @@
                             </ul>
 
                             <ul class="tablet_page1_ul4">
-                                <li><i class="bi bi-telephone-fill"></i> +959455033077</li>
-                                <li><a href=""><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                                
+                            {% if info.phone %}
+                            <li><i class="bi bi-telephone-fill"></i> {{ info.phone }}</li>
+                            {% else %}
+                            <li><i class="bi bi-telephone-fill"></i> +959455033077</li>
+                            {% endif %}
+                            
+                            {% if info.address %}
+                            <li><a href="{{ info.location }}"><i class="bi bi-geo-alt-fill"></i> {{ info.address }}</li></a>
+                            {% else %}
+<li><a href="https://www.google.com/maps/place/Buy+More+Mart/@16.8357569,96.1136676,15z/data=!4m6!3m5!1s0x30c1956299e6b48b:0xd2f9fd3513d2e941!8m2!3d16.8357569!4d96.1136676!16s%2Fg%2F11s640nsb1?entry=ttu"><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                            {% endif %}
+
                             </ul>
 
             </div>
@@ -644,8 +665,17 @@
                     </ul>
 
                     <ul class="mobile_page1_ul4">
-                        <li><i class="bi bi-telephone-fill"></i> +959455033077</a></li>
-                        <li><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li>
+                            {% if info.phone %}
+                            <li><i class="bi bi-telephone-fill"></i> {{ info.phone }}</li>
+                            {% else %}
+                            <li><i class="bi bi-telephone-fill"></i> +959455033077</li>
+                            {% endif %}
+                            
+                            {% if info.address %}
+                            <li><a href="{{ info.location }}"><i class="bi bi-geo-alt-fill"></i> {{ info.address }}</li></a>
+                            {% else %}
+<li><a href="https://www.google.com/maps/place/Buy+More+Mart/@16.8357569,96.1136676,15z/data=!4m6!3m5!1s0x30c1956299e6b48b:0xd2f9fd3513d2e941!8m2!3d16.8357569!4d96.1136676!16s%2Fg%2F11s640nsb1?entry=ttu"><i class="bi bi-geo-alt-fill"></i> Yatanar Mon 5th St, Yangon</li></a>
+                            {% endif %}
                     </ul>
     
             </div>
