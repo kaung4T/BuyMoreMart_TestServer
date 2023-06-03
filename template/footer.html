@@ -65,7 +65,7 @@
         <div class="below_first_footer_content1">
             <label for="">Connect with us</label>
 
-<p><a href=""><i class="bi bi-facebook"></i></a> <a href=""><i class="bi bi-youtube"></i></a> <a href=""><i class="bi bi-messenger"></i></a>
+<p>{% if info.facebook_link %} <a href="{{ info.facebook_link }}"><i class="bi bi-facebook"></i></a> {% else %} <a href="https://www.facebook.com/profile.php?id=100086483622253"><i class="bi bi-facebook"></i></a> {% endif %} {% if info.messenger_link %} <a href="{{ info.messenger_link }}"><i class="bi bi-messenger"></i></a> {% else %} <a href="https://www.facebook.com/profile.php?id=100086483622253"><i class="bi bi-messenger"></i></a> {% endif %} 
 </p>
 </div>
         </div>
