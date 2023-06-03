@@ -184,7 +184,15 @@
 
         <div class="one_product_array_top">
           <h3>Suggestion</h3>
+          {% if item.category.id == 1 %}
           <a href="{% url 'foods' %}">More <i class="bi bi-arrow-right"></i></a>
+
+          {% elif item.category.id == 2 %}
+          <a href="{% url 'accessories' %}">More <i class="bi bi-arrow-right"></i></a>
+
+          {% elif item.category.id == 3 %}
+          <a href="{% url 'gb' %}">More <i class="bi bi-arrow-right"></i></a>
+          {% endif %}
         </div>
     
     
