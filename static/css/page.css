@@ -256,7 +256,7 @@ body {
 
 .feature_body .feature_products .feature_products_item .feature_products_item_img {text-align: center;}
 
-.feature_body .feature_products .feature_products_item img {width: 100px;height: 100px;margin-bottom: 10px;object-fit: contain;}
+.feature_body .feature_products .feature_products_item img {width: 110px;height: 110px;margin-bottom: 10px;object-fit: contain;}
 
 .feature_body .feature_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;font-weight: normal;}
 
