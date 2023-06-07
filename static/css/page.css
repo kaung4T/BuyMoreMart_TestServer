@@ -322,7 +322,7 @@ body {
 
 .discount_body .discount_products .discount_products_item .discount_products_item_img {text-align: center;}
 
-.discount_body .discount_products .discount_products_item img {width: 180px;height: 160px;margin-bottom: 10px;object-fit: contain;}
+.discount_body .discount_products .discount_products_item img {width: 150px;height: 140px;margin-bottom: 10px;object-fit: contain;}
 
 .discount_body .discount_products p {font-size: 14px;line-height: 18px;color:#3d3d3d;word-break: break-word;font-weight: normal;}
 
