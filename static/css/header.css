@@ -939,7 +939,7 @@
 }
 
 
-@media (max-width: 297px) {
+@media (max-width: 298px) {
     .mobile_third_header ul li:nth-child(2) {
         width: 51px;
     }
