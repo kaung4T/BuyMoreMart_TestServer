@@ -753,6 +753,11 @@ body {
 
 
 
+/* @media (min-width: 1639px) {
+    .feature_body .feature_products .feature_products_item {
+        width: 15.6%;
+    }
+} */
 
 @media (max-width: 1498px) {
     .feature_body .feature_products .feature_products_item {
