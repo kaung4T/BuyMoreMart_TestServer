@@ -123,7 +123,7 @@ class Index:
                 product = None
                 total_item = 0
             
-            p = Paginator(product, 12)
+            p = Paginator(product, 24)
             page = request.GET.get("page")
 
             if product is not None:

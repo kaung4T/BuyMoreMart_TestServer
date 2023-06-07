@@ -31,7 +31,7 @@ class Discount:
 
         discount = Product().all_discount_items()
 
-        p = Paginator(discount, 12)
+        p = Paginator(discount, 24)
         page = request.GET.get("page")
         
         if discount is not None:
@@ -98,7 +98,7 @@ class Discount:
         else:
             product = None
         
-        p = Paginator(product, 12)
+        p = Paginator(product, 24)
         
         page = request.GET.get("page")
 
@@ -169,7 +169,7 @@ class Discount:
             product = None
         
         if product:
-            p = Paginator(product, 12)
+            p = Paginator(product, 24)
             p_page = request.GET.get("page")
             items = p.get_page(p_page)
         # product is for mini and cant be None
@@ -186,7 +186,7 @@ class Discount:
             product2 = None
 
         if product2:
-            p2 = Paginator(product2, 12)
+            p2 = Paginator(product2, 24)
             p2_page = request.GET.get("page")
             items = p2.get_page(p2_page)
         # product2 is for max and cant be None
@@ -259,7 +259,7 @@ class Discount:
         else:
             product = None
         
-        p = Paginator(product, 12)
+        p = Paginator(product, 24)
         
         page = request.GET.get("page")
 

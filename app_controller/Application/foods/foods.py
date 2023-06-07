@@ -35,7 +35,7 @@ class Food:
         else:
             foods = None
 
-        p = Paginator(foods, 12)
+        p = Paginator(foods, 24)
         page = request.GET.get("page")
 
         if foods is not None:
@@ -108,7 +108,7 @@ class Food:
         else:
             product = None
         
-        p = Paginator(product, 12)
+        p = Paginator(product, 24)
         
         page = request.GET.get("page")
 
@@ -197,7 +197,7 @@ class Food:
             product = None
         
         if product:
-            p = Paginator(product, 12)
+            p = Paginator(product, 24)
             p_page = request.GET.get("page")
             items = p.get_page(p_page)
         # product is for mini and cant be None
@@ -218,7 +218,7 @@ class Food:
             product2 = None
 
         if product2:
-            p2 = Paginator(product2, 12)
+            p2 = Paginator(product2, 24)
             p2_page = request.GET.get("page")
             items = p2.get_page(p2_page)
         # product2 is for max and cant be None
@@ -297,7 +297,7 @@ class Food:
         else:
             product = None
         
-        p = Paginator(product, 12)
+        p = Paginator(product, 24)
         
         page = request.GET.get("page")
 

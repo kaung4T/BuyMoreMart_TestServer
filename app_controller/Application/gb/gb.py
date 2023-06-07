@@ -35,7 +35,7 @@ class Gb:
         else:
             beauty = None
 
-        p = Paginator(beauty, 12)
+        p = Paginator(beauty, 24)
         page = request.GET.get("page")
 
         if beauty is not None:
@@ -109,7 +109,7 @@ class Gb:
         else:
             product = None
         
-        p = Paginator(product, 12)
+        p = Paginator(product, 24)
         
         page = request.GET.get("page")
 
@@ -190,7 +190,7 @@ class Gb:
             product = None
         
         if product:
-            p = Paginator(product, 12)
+            p = Paginator(product, 24)
             p_page = request.GET.get("page")
             items = p.get_page(p_page)
         # product is for mini and cant be None
@@ -211,7 +211,7 @@ class Gb:
             product2 = None
 
         if product2:
-            p2 = Paginator(product2, 12)
+            p2 = Paginator(product2, 24)
             p2_page = request.GET.get("page")
             items = p2.get_page(p2_page)
         # product2 is for max and cant be None
@@ -290,7 +290,7 @@ class Gb:
         else:
             product = None
         
-        p = Paginator(product, 12)
+        p = Paginator(product, 24)
         
         page = request.GET.get("page")
 
